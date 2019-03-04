@@ -1,10 +1,17 @@
 <div class="container">
-  <h2>Create a new Event</h2>
+  <h2>Create a campaign for your event!</h2>
   <%= simple_form_for @event do |f| %>
-    <%= f.input :name, as: :string %>
-    <%= f.input :address, as: :string %>
-    <%= f.input :description, as: :string %>
-    <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
-    <%= f.button :submit, class: "btn btn-primary button" %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :date %>
+    <%= f.simple_fields_for :performances do |p| %>
+      <%# musician_names = [] %>
+      <%# Musician.all.each do |musician| %>
+        <%# musician_names << musician.name %>
+      <%# end %>
+      <%= p.input :musician, label: "Musicians", collection: Musician.all%>
     <% end %>
+    <%= f.button :submit, class: "btn btn-primary button" %>
+  <% end %>
 </div>
