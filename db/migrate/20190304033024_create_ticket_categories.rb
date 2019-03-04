@@ -4,7 +4,7 @@ class CreateTicketCategories < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :quantity
       t.text :description
-      t.references :event, foreign_key: true
+      t.references :campaign, foreign_key: true
 
       t.timestamps
     end

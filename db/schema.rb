@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_033249) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "events", force: :cascade do |t|
+  create_table "campaigns", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.text "description"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_033249) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_events_on_user_id"
+    t.index ["user_id"], name: "index_campaigns_on_user_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -52,30 +52,30 @@ ActiveRecord::Schema.define(version: 2019_03_04_033249) do
   end
 
   create_table "performances", force: :cascade do |t|
-    t.bigint "event_id"
+    t.bigint "campaign_id"
     t.bigint "musician_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_performances_on_event_id"
+    t.index ["campaign_id"], name: "index_performances_on_campaign_id"
     t.index ["musician_id"], name: "index_performances_on_musician_id"
   end
 
   create_table "photos", force: :cascade do |t|
     t.string "image_url"
-    t.bigint "event_id"
+    t.bigint "campaign_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_photos_on_event_id"
+    t.index ["campaign_id"], name: "index_photos_on_campaign_id"
   end
 
   create_table "ticket_categories", force: :cascade do |t|
     t.string "name"
     t.integer "quantity"
     t.text "description"
-    t.bigint "event_id"
+    t.bigint "campaign_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_ticket_categories_on_event_id"
+    t.index ["campaign_id"], name: "index_ticket_categories_on_campaign_id"
   end
 
   create_table "tickets", force: :cascade do |t|
@@ -104,13 +104,13 @@ ActiveRecord::Schema.define(version: 2019_03_04_033249) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "events", "users"
+  add_foreign_key "campaigns", "users"
   add_foreign_key "musicians", "genres"
   add_foreign_key "orders", "users"
-  add_foreign_key "performances", "events"
+  add_foreign_key "performances", "campaigns"
   add_foreign_key "performances", "musicians"
-  add_foreign_key "photos", "events"
-  add_foreign_key "ticket_categories", "events"
+  add_foreign_key "photos", "campaigns"
+  add_foreign_key "ticket_categories", "campaigns"
   add_foreign_key "tickets", "orders"
   add_foreign_key "tickets", "ticket_categories"
 end

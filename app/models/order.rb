@@ -3,6 +3,6 @@ class Order < ApplicationRecord
   has_many :tickets
 
   has_many :ticket_categories, through: :tickets
-  belongs_to :event, through: :ticket_categories
+  belongs_to :campaign, through: :ticket_categories
 
 end
