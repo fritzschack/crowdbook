@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  def my-profile
+  def my_profile
   end
 
   def show
