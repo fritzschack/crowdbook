@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :profiles, only: :show
   get "/my_profile", to: "profiles#my_profile", as: "my_profile"
 
-  resources :events
+  resources :campaigns
 
   resources :orders, only: [:new, :create, :edit, :update]
 end

@@ -6,8 +6,8 @@
 
   <div class="navbar-right hidden-xs hidden-sm">
     <% if user_signed_in?  %>
-      <%= link_to "Create A Event", new_event_path, :class => 'btn btn-primary add-space-button' %>
-      <%= link_to "Book An Event", new_order_path, :class => 'btn btn-primary add-space-button' %>
+      <%= link_to "Create A Campaign", new_campaign_path, :class => 'btn btn-primary add-space-button' %>
+      <%= link_to "Find A Campaign", campaigns_path, :class => 'btn btn-primary add-space-button' %>
     <% end %>
     <div class="navbar-item">
       <div class="dropdown">
@@ -34,8 +34,8 @@
 
   <div class="navbar-item hidden-md hidden-lg">
     <% if user_signed_in?  %>
-      <%= link_to "Create A Event", new_event_path, :class => 'btn btn-primary add-space-button' %>
-      <%= link_to "Book An Event", new_order_path, :class => 'btn btn-primary add-space-button' %>
+      <%= link_to "Create A campaign", new_campaign_path, :class => 'btn btn-primary add-space-button' %>
+      <%= link_to "Find A Campaign", campaigns_path, :class => 'btn btn-primary add-space-button' %>
     <% end %>
     <div class="dropdown-small">
       <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button" style="color: white;"></i>

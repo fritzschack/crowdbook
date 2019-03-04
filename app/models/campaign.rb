@@ -1,4 +1,4 @@
-class Event < ApplicationRecord
+class Campaign < ApplicationRecord
   belongs_to :user
   has_many :performances, dependent: :destroy
   has_many :photos, dependent: :destroy

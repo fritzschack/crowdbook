@@ -1,5 +1,5 @@
 class TicketCategory < ApplicationRecord
-  belongs_to :event
+  belongs_to :campaign
   has_many :tickets, dependent: :destroy
 
   has_many :orders, through: :tickets, dependent: :destroy
