@@ -1,4 +1,7 @@
 import "bootstrap";
 
 
-import { addMusician } from '../components/add_musician';
+import { addPerformanceForm } from '../components/add_musician';
+
+
+addPerformanceForm();
