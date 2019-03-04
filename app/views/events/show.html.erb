@@ -1,4 +1,9 @@
 <%= render "./components/navbar" %>
 <div class="container">
-
+  <ul>
+    <li><%= @event.name %></li>
+    <li><%= @event.address %></li>
+    <li><%= @event.description %></li>
+    <li><%= @event.date %></li>
+  </ul>
 </div>
