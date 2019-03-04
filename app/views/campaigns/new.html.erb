@@ -1,0 +1,15 @@
+<div class="container">
+  <%= simple_form_for @campaign do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :date %>
+    <%= f.input :url %>
+    <%= f.input :is_private %>
+    <%= f.simple_fields_for :performances do |p| %>
+      <%= p.input :musician, label: 'Musician' %>
+    <% end %>
+    <button id="addPerformanceForm" class="btn btn-light">Add a Performance</button>
+    <%= f.button :submit, class: "btn btn-primary button" %>
+  <% end %>
+</div>

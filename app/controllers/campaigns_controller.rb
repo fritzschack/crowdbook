@@ -16,7 +16,6 @@ class CampaignsController < ApplicationController
   end
 
   def create
-    raise
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
     if @campaign.save
