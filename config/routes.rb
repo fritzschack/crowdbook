@@ -59,5 +59,12 @@ Rails.application.routes.draw do
   get 'profiles/show'
   devise_for :users
   root to: 'pages#home'
-  resources :users
+
+  resources :events
+
+  resources :orders, only: [:new, :create, :edit, :update]
+
+
+
+
 end
