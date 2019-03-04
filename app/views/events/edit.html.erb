@@ -1,2 +1,11 @@
-<h1>Events#edit</h1>
-<p>Find me in app/views/events/edit.html.erb</p>
+<%= render "./components/navbar" %>
+<div class="container">
+  <h2>Edit a new Event</h2>
+  <%= simple_form_for @event do |f| %>
+    <%= f.input :name, as: :string %>
+    <%= f.input :address, as: :string %>
+    <%= f.input :description, as: :string %>
+    <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
+    <%= f.button :submit, class: "btn btn-primary button" %>
+    <% end %>
+</div>

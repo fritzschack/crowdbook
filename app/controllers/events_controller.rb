@@ -13,19 +13,12 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    @event_images = @event.photos.build
   end
 
   def create
     @event = Event.new(event_params)
     @event.user = current_user
-    @user = current_user
-    @user.is_host = true
-    @user.save
     if @event.save
-      params[:event][:photos_attributes]['0']['image_url'].each do |a|
-        @event_images = @event.photos.create!(image_url: a)
-      end
       redirect_to event_path(@event)
     else
       render :new
@@ -41,11 +34,10 @@ class EventsController < ApplicationController
 
   def update
     @event.update(event_params)
-    redirect_to event_path(@event)
+    redirect_to my_profile_path
   end
 
   def destroy
-    @event = Event.find(params[:id])
     @event.destroy
     redirect_to my_profile_path
   end
