@@ -1,11 +1,14 @@
 class PerformancesController < ApplicationController
+  def index
+  end
+
+  def show
+  end
+
   def new
-    @performance = Performance.new
   end
 
   def create
-    @performance.event = Event.find(params[:event_id])
-    @performance.event = Event.find(params[:musician_id])
   end
 
   def edit

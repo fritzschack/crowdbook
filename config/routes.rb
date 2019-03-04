@@ -5,8 +5,4 @@ Rails.application.routes.draw do
   resources :events
 
   resources :orders, only: [:new, :create, :edit, :update]
-
-
-
-
 end
