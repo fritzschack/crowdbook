@@ -1,9 +1,33 @@
-<%= render "./components/navbar" %>
 <div class="container">
-  <ul>
-    <li><%= @event.name %></li>
-    <li><%= @event.address %></li>
-    <li><%= @event.description %></li>
-    <li><%= @event.date %></li>
-  </ul>
+  <h1>@event.name Show Page</h1>
+  <div class="row">
+    <div class="event-left">
+      <div class="event-host-pic">
+      </div>
+      <%#= @event.host.description %>
+    </div>
+    <div class="event-right">
+      <%#= @event.name %>
+      <%#= @event.description %>
+    </div>
+  </div>
+  <div class="event-left-below">
+  <%#= render "./components/gallery" %>
+  </div>
+  <div class="event-right-below">
+    <%#= Total Funded %>
+    <%#= % Funded %>
+    <%#= Time until event/ time to back event %>
+  </div>
+  <button type="button" class="btn btn-secondary contact-me-button">Book Event</button>
+</div>
+<div class="container">
+  <div class="event-left-below-fold">
+  <%#= @event.full_description" %>
+  </div>
+  <div class="event-right-below-fold">
+    <%#= Ticket Category 1 %>
+    <%#= Ticket Category 2 %>
+    <%#= Ticket Category 3 %>
+  </div>
 </div>
