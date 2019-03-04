@@ -7,4 +7,8 @@ class Event < ApplicationRecord
   has_many :musicians, through: :performances
   has_many :genres, through: :musicians
   has_many :tickets, through: :ticket_categories, dependant: :destroy
+
+  validates :name, presence: true
+  validates :address, presence: true
+  validates :date, presence: true
 end
