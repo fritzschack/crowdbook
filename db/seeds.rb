@@ -1,7 +1,6 @@
 puts "Creating Seed..."
 
 puts "Adding Users..."
-
 10.times do
   User.create(email: Faker::Internet.email, password: '123456', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Lorem.paragraphs(1))
 end
@@ -17,8 +16,12 @@ puts "Adding Campaigns..."
 end
 
 puts "Creating Ticket Categories..."
-10.times do
-  TicketCategory.create(name: Faker::Company.bs, campaign: Campaign.all.sample, quantity: rand(1..100), available_tickets: rand(1..50), description: Faker::Lorem.paragraphs(3))
+5.times do
+  TicketCategory.create(name: "Regular", campaign: Campaign.all.sample, quantity: rand(1..100), available_tickets: rand(1..50), description: Faker::Lorem.paragraphs(3))
+end
+
+5.times do
+  TicketCategory.create(name: "VIP", campaign: Campaign.all.sample, quantity: rand(1..100), available_tickets: rand(1..50), description: Faker::Lorem.paragraphs(3))
 end
 
 puts "Creating Tickets..."

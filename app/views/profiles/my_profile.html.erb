@@ -3,14 +3,15 @@
   <p><%= current_user.first_name %></p>
   <p><%= current_user.last_name %></p>
   <p><%= current_user.description %></p>
-  <p><%= current_user.is_creator %></p>
+  <%= link_to "Edit Profile", edit_user_registration_path %>
+  <hr>
 
   <% @orders.each do |order| %>
     <% order.ticket_categories.each do |ticket_category|  %>
-      <h1>Order for campaign:</h1>
       <%= ticket_category.campaign.name %> at: <%= ticket_category.campaign.address %>
       <h4>Ticket Type: <%= ticket_category.name %></h4>
       <hr>
     <% end %>
   <% end %>
 </div>
+

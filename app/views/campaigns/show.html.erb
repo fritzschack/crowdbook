@@ -8,7 +8,7 @@
         <%= f.input :campaign_id, as: :hidden, :input_html => { :value => @campaign.id } %>
         <%= simple_fields_for :categories do |c| %>
           <% @campaign.ticket_categories.each do |category| %>
-            <p>Cat name: <%= category.name %></p>
+            <p>Ticket Type: <%= category.name %></p>
             <%= c.input "#{category.id}", collection: [1,2,3,4,5], label: "Quantity" %>
           <% end %>
         <% end %>
