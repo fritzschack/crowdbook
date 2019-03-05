@@ -19,6 +19,8 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
     if @campaign.save
+      params[:campaign][:performances_attributes].each { |performance| @campaign.performances.create(musician: Musician.find(performance[:musician].to_i)) }
+      raise
       redirect_to campaign_path(@campaign)
     else
       render :new
@@ -40,6 +42,10 @@ class CampaignsController < ApplicationController
   def destroy
     @campaign.destroy
     redirect_to my_profile_path
+  end
+
+  def new_performance_field
+    @musicians = Musician.all
   end
 
   private

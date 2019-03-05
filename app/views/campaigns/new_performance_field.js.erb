@@ -1,0 +1,9 @@
+function createHTMLOptions() {
+  <% musicians = "" %>;
+  <% @musicians.each do |musician| %>;
+    <% musicians += "<option value=#{musician.id}>#{musician.name}</option>" %>;
+  <% end %>;
+  document.getElementById("addPerformanceForm").insertAdjacentHTML('beforebegin', `<select class="form-control select required" name="campaign[performances_attributes][][musician]" id="campaign_performances_attributes__musician"><option value=""></option><%== musicians %></select>`);
+};
+
+createHTMLOptions();

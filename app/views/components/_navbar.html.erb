@@ -15,7 +15,7 @@
               <% if current_user.profile_picture_url.nil? %>
                 <i class="fas fa-user user-icon"></i>
               <% else %>
-                <%= cl_image_tag current_user.profile_picture, height: 50, width: 50, crop: :fill, :style => 'border-radius:50%;' %>
+                <%= cl_image_tag current_user.profile_picture_url, height: 50, width: 50, crop: :fill, :style => 'border-radius:50%;' %>
               <% end %>
             </p>
             <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
@@ -31,9 +31,9 @@
   </div>
 
 
-  <div class="navbar-item hidden-md hidden-lg">
+  <div class="navbar-item hidden-md hidden-lg" style="margin:0">
     <div class="dropdown-small">
-      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button" style="color: white;"></i>
+      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button" style="color: black; align-self: right;"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
         <% if user_signed_in? %>
           <li> <%= link_to "Find A Campaign", campaigns_path, :class => 'btn btn-primary find-campaign-button' %></li>
