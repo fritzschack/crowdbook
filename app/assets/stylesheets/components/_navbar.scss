@@ -4,11 +4,14 @@
   background: white;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0px 30px;
+  padding: 0px 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position:relative;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .navbar-logo-text {
@@ -59,17 +62,23 @@
   text-decoration: none;
 }
 
+.dropdown-small {
+  position: absolute;
+  top: 22px;
+  right: 30px;
+}
+
 /* Dropdown menu */
 .navbar-dropdown-menu {
   margin-top: 15px;
-  margin-right: 8px;
+  margin-right: 0px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
 }
 .navbar-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: black !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
