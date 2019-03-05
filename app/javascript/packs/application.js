@@ -1,7 +1,11 @@
 import "bootstrap";
+import $ from 'jquery';
+import 'select2';
 
-
-import { addPerformanceForm } from '../components/add_musician';
-
-
-addPerformanceForm();
+$(function() {
+  $('.js-new-performance-form').select2({
+    tags: true,
+    theme: "bootstrap",
+    width: '100%'
+  });
+});
