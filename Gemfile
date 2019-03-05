@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.5.3'
 
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem "select2-rails"
 
 gem 'bootsnap', require: false
 gem 'devise'
