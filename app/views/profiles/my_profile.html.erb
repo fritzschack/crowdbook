@@ -1,2 +1,8 @@
-<h1>Profiles#my-profile</h1>
-<p>Find me in app/views/profiles/my-profile.html.erb</p>
+<div class="container">
+  <p><%= current_user.email %></p>
+  <p><%= current_user.first_name %></p>
+  <p><%= current_user.last_name %></p>
+  <p><%= current_user.description %></p>
+  <p><%= current_user.is_creator %></p>
+
+</div>

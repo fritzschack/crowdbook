@@ -1,8 +1,6 @@
 class Order < ApplicationRecord
   belongs_to :user
-  has_many :tickets
+  has_many :tickets, dependent: :destroy
 
-  has_many :ticket_categories, through: :tickets
-  belongs_to :campaign, through: :ticket_categories
-
+  has_many :ticket_categories, through: :tickets, dependent: :destroy
 end

@@ -1,8 +1,8 @@
 class TicketCategory < ApplicationRecord
   belongs_to :campaign
-  has_many :tickets, dependent: :destroy
+  has_many :tickets
 
-  has_many :orders, through: :tickets, dependent: :destroy
+  has_many :orders, through: :tickets
 
   validates :name, presence: true
   validates :quantity, presence: true

@@ -1,20 +1,19 @@
 <div class="navbar">
-  <a href="/" class="navbar-brand">
-    <div class="navbar-logo-text">Crowdbook</div>
-    <i class="fas fa-volume-up"></i>
+  <a href="/" class="navbar-logo-text">
+    <i class="fas fa-user-friends"></i> Crowdbook
   </a>
 
   <div class="navbar-right hidden-xs hidden-sm">
     <% if user_signed_in?  %>
-      <%= link_to "Create A Campaign", new_campaign_path, :class => 'btn btn-primary add-space-button' %>
-      <%= link_to "Find A Campaign", campaigns_path, :class => 'btn btn-primary add-space-button' %>
+      <%= link_to "Find A Campaign", campaigns_path, :class => 'btn btn-primary find-campaign-button' %>
+      <%= link_to "Create A Campaign", new_campaign_path, :class => 'btn btn-success create-campaign-button' %>
     <% end %>
     <div class="navbar-item">
       <div class="dropdown">
           <% if user_signed_in? %>
             <p class="avatar dropdown-toggle" id="navbar-menu" data-toggle="dropdown">
               <% if current_user.profile_picture_url.nil? %>
-                <i class="fas fa-user"></i>
+                <i class="fas fa-user user-icon"></i>
               <% else %>
                 <%= cl_image_tag current_user.profile_picture, height: 50, width: 50, crop: :fill, :style => 'border-radius:50%;' %>
               <% end %>
@@ -33,14 +32,12 @@
 
 
   <div class="navbar-item hidden-md hidden-lg">
-    <% if user_signed_in?  %>
-      <%= link_to "Create A campaign", new_campaign_path, :class => 'btn btn-primary add-space-button' %>
-      <%= link_to "Find A Campaign", campaigns_path, :class => 'btn btn-primary add-space-button' %>
-    <% end %>
     <div class="dropdown-small">
       <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button" style="color: white;"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
         <% if user_signed_in? %>
+          <li> <%= link_to "Find A Campaign", campaigns_path, :class => 'btn btn-primary find-campaign-button' %></li>
+          <li><%= link_to "Create A Campaign", new_campaign_path, :class => 'btn btn-primary create-campaign-button' %></li>
           <li><%= link_to "My Profile", my_profile_path %></li>
           <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
         <% else %>

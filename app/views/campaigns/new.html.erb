@@ -7,9 +7,9 @@
     <%= f.input :url %>
     <%= f.input :is_private %>
     <%= f.simple_fields_for :performances do |p| %>
-      <%= p.input :musician, label: 'Musician' %>
+      <%= p.input :musician, label: 'Musician', collection: Musician.all, input_html: { multiple: true } %>
+      <button id="addPerformanceForm" class="btn btn-light">Add a Performance</button>
     <% end %>
-    <button id="addPerformanceForm" class="btn btn-light">Add a Performance</button>
     <%= f.button :submit, class: "btn btn-primary button" %>
   <% end %>
 </div>
