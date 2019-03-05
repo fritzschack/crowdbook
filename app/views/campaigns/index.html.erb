@@ -1,14 +1,13 @@
 <div class="container">
-  <div class="Campaign">
+  <div class="campaign">
     <% if @campaigns.size == 0 %>
       <h3>Sorry, No Results Were Found!</h3>
     <% else %>
       <% @campaigns.each do |campaign| %>
         <div class="card-description">
           <div class="col-xs-12 col-sm-6 col-md-6" style="justify-content: space-around; margin-bottom: 25px;">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-               url('<%= cl_image_path campaign.photos[1].image_url, height: 300, width: 400, crop: :fill %>')">
-             <div class="card-name">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path campaign.photos[1].image_url, height: 300, width: 400, crop: :fill %>')">
+              <div class="card-name">
                 <h2><%= campaign.name %></h2>
               </div>
               <div class="card-description">
@@ -18,7 +17,8 @@
               <%= link_to "", campaign_path(campaign), :class => "card_link"  %>
             </div>
           </div>
-        <% end %>
+        </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
+</div>

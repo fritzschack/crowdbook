@@ -1,0 +1,17 @@
+<div class="container">
+
+  <h1> Campaign name: <%= @campaign.name %></h1>
+
+  <p>Ticket Type(s) Available:</p>
+
+    <%= simple_form_for :order, url: orders_path do |f| %>
+        <%= f.input :campaign_id, as: :hidden, :input_html => { :value => @campaign.id } %>
+        <%= simple_fields_for :categories do |c| %>
+          <% @campaign.ticket_categories.each do |category| %>
+            <p>Cat name: <%= category.name %></p>
+            <%= c.input "#{category.id}", collection: [1,2,3,4,5], label: "Quantity" %>
+          <% end %>
+        <% end %>
+      <%= f.button :submit %>
+  <% end %>
+</div>

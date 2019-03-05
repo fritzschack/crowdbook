@@ -1,14 +1,14 @@
 class CampaignsController < ApplicationController
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: :index
-  skip_before_action :authenticate_user!, only: :show
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @campaigns = Campaign.all
   end
 
   def show
-    @created_by = @campaign.user
+    @campaign = Campaign.find(params[:id])
+    # @order = Order.new
   end
 
   def new
@@ -28,7 +28,7 @@ class CampaignsController < ApplicationController
   end
 
   def edit
-    if current_user.id != @campaign.user_id
+    if current_user != @campaign.user
       redirect_to root_path
       flash[:alert] = 'Not Gonna Happen'
     end
