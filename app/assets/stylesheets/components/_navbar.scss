@@ -8,12 +8,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position:relative;
 }
 
-/* Logo */
-.navbar-brand img {
-  height: 50px;
+.navbar-logo-text {
+  position: absolute;
+  left: 10px;
+  margin: 10px;
+  font-size: 25px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: black;
+    opacity: 0.5;
+  }
 }
+
 
 /* User Avatar */
 .navbar .avatar {
@@ -27,6 +39,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: absolute;
+  right: 10px;
 }
 
 /* Basic navbar item */
@@ -48,6 +62,7 @@
 /* Dropdown menu */
 .navbar-dropdown-menu {
   margin-top: 15px;
+  margin-right: 8px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
 }
@@ -75,3 +90,28 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+.find-campaign-button {
+  font-size: 14px;
+  border-radius: 50px;
+  margin: 10px;
+}
+
+.create-campaign-button {
+  font-size: 14px;
+  border-radius: 50px;
+  margin: 10px;
+}
+
+.user-icon {
+  font-size: 25px;
+  position: absolute;
+  top: 10px;
+}
+
+
+
+
+
+
+

@@ -1,19 +1,7 @@
 <div class="container">
-<h1>Profiles#my-profile</h1>
-  <div class ="banner">
-  </div>
-  <div class="profile-left"></div>
-    <div class="profile-info">
-      <div class="profile-pic">
-      </div>
-      <div class="profile-description">
-      </div>
-    </div>
-  </div>
-  <div class="profile-right">
-    <div class="spotify links">
-    </div>
-    <div class="profile-full-description">
-    </div>
-  </div>
+  <p><%= current_user.email %></p>
+  <p><%= current_user.first_name %></p>
+  <p><%= current_user.last_name %></p>
+  <p><%= current_user.description %></p>
+  <p><%= current_user.is_creator %></p>
 </div>

@@ -1,4 +1,4 @@
 class Performance < ApplicationRecord
-  belongs_to :campaign
   belongs_to :musician
+  belongs_to :campaign
 end
