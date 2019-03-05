@@ -11,4 +11,6 @@ class Campaign < ApplicationRecord
   validates :name, presence: true
   validates :address, presence: true
   validates :date, presence: true
+
+  accepts_nested_attributes_for :performances
 end
