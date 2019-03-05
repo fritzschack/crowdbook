@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="Campaign">
+    <% if @campaigns.size == 0 %>
+      <h3>Sorry, No Results Were Found!</h3>
+    <% else %>
+      <% @campaigns.each do |campaign| %>
+        <div class="card-description">
+          <h2><%= campaign.name %></h2>
+          <p>$<%= campaign.description %></p>
+          <p><%= campaign.address %></p>
+           <p><%= campaign.date %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="Musician">
+    <% if @musician.size == 0 %>
+      <h3>Sorry, No Results Were Found!</h3>
+    <% else %>
+      <% @musicians.each do |musician| %>
+        <div class="card-description">
+          <h2><%= musician.name %></h2>
+          <p>$<%= musician.description %></p>
+          <p><%= musician.genre %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
