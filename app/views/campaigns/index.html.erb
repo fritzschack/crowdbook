@@ -1,0 +1,10 @@
+<div class="container">
+  <% @campaigns.each do |campaign| %>
+    <%= link_to campaign.name, campaign_path(campaign) %>
+    <p><%= campaign.address %></p>
+    <p><%= campaign.description %></p>
+    <p><%= campaign.date %></p>
+    <p><%= campaign.is_private %></p>
+    <hr>
+  <% end %>
+</div>
