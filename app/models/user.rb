@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :orders
 
   has_many :tickets, through: :orders
+
+  mount_uploader :profile_picture_url, PhotoUploader
 end
