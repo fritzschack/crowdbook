@@ -13,12 +13,14 @@ class CampaignsController < ApplicationController
 
   def new
     @campaign = Campaign.new
+    # @campaign.performances.build
   end
 
   def create
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
     if @campaign.save
+      params[:campaign][:performances_attributes].each { |performance| @campaign.performances.create(musician: Musician.find(performance[:musician].to_i)) }
       redirect_to campaign_path(@campaign)
     else
       render :new
@@ -42,6 +44,10 @@ class CampaignsController < ApplicationController
     redirect_to my_profile_path
   end
 
+  def new_performance_field
+    @musicians = Musician.all
+  end
+
   private
 
   def set_campaign
@@ -52,3 +58,5 @@ class CampaignsController < ApplicationController
     params.require(:campaign).permit(:name, :address, :description, :date, :url, :is_private?)
   end
 end
+
+# , performances_attributes: [:id, :musician]

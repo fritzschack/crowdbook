@@ -1,0 +1,4 @@
+<% musicians = "" %>
+<% Musician.all.each_with_index { |musician, index| musicians += "<option value=#{index + 1}>#{musician}</option>" } %>
+
+<select class="form-control select required" name="campaign[performances][musician]" id="campaign_performances_musician"><option value=""></option><%= musicians %></select>

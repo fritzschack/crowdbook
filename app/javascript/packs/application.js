@@ -1,7 +1,5 @@
 import "bootstrap";
 
+// import { addPerformanceForm } from 'components/add_performance_form';
 
-import { addPerformanceForm } from '../components/add_musician';
-
-
-addPerformanceForm();
+// addPerformanceForm();

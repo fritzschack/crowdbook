@@ -1,4 +1,5 @@
 <div class="container">
+  <%# raise %>
   <%= simple_form_for @campaign do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
@@ -6,10 +7,7 @@
     <%= f.input :date %>
     <%= f.input :url %>
     <%= f.input :is_private %>
-    <%= f.simple_fields_for :performances do |p| %>
-      <%= p.input :musician, label: 'Musician' %>
-    <% end %>
-    <button id="addPerformanceForm" class="btn btn-light">Add a Performance</button>
+    <%= link_to "Add new performance", new_performance_field_path, remote: true, :id => "addPerformanceForm" %>
     <%= f.button :submit, class: "btn btn-primary button" %>
   <% end %>
 </div>

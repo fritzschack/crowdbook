@@ -1,6 +1,6 @@
 class Campaign < ApplicationRecord
   belongs_to :user
-  has_many :performances, dependent: :destroy
+  has_many :performances, dependent: :destroy # , inverse_of: :campaign
   has_many :photos, dependent: :destroy
   has_many :ticket_categories, dependent: :destroy
 
@@ -11,4 +11,6 @@ class Campaign < ApplicationRecord
   validates :name, presence: true
   validates :address, presence: true
   validates :date, presence: true
+
+  accepts_nested_attributes_for :performances
 end
