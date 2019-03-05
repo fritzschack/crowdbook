@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/my_profile", to: "profiles#my_profile", as: "my_profile"
 
   resources :campaigns
-  get "/new_performance_field", to: "campaigns#new_performance_field", as: "new_performance_field"
+  get "/new_ticket_category", to: "campaigns#new_ticket_category", as: "new_ticket_category"
 
   resources :orders, only: [:new, :create, :edit, :update]
 end

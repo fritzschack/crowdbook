@@ -6,9 +6,9 @@
     <%= f.input :date %>
     <%= f.input :url %>
     <%= f.input :is_private %>
-    <!-- <div id="addPerformanceForm"> -->
-      <%#= link_to "Add new performance", new_performance_field_path, :class => "btn btn-primary", remote: true %>
-    <!-- </div> -->
+    <div id="addTicketCategory">
+      <%= link_to "Add new ticket category", new_ticket_category_path, :class => "btn btn-primary", remote: true %>
+    </div>
     <% musicians = Musician.all.collect { |p| [p.name, p.id] } %>
     <p style="font-size: 18px; font-weight: 700;">Add musicians that are playing at your event!</p>
     <%= f.select :performances, musicians, {}, :class => 'js-new-performance-form', :multiple => "multiple" %>
