@@ -13,4 +13,5 @@ class Campaign < ApplicationRecord
   validates :date, presence: true
 
   accepts_nested_attributes_for :performances
+  accepts_nested_attributes_for :ticket_categories
 end

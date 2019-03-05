@@ -1,9 +1,0 @@
-function createHTMLOptions() {
-  <% musicians = "" %>;
-  <% @musicians.each do |musician| %>;
-    <% musicians += "<option value=#{musician.id}>#{musician.name}</option>" %>;
-  <% end %>;
-  document.getElementById("addPerformanceForm").insertAdjacentHTML('beforebegin', `<div class="form-row"><div class="form-group col-xs-10"><select class="form-control select required" name="campaign[performances_attributes][][musician]" id="campaign_performances_attributes__musician"><option value=""></option><%== musicians %></select></div><div class="form-group col-xs-2"><%= link_to "Delete performance", "#", :class => "btn btn-primary btn-sm" %></div></div>`);
-};
-
-createHTMLOptions();
