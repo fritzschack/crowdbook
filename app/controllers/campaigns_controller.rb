@@ -8,7 +8,7 @@ class CampaignsController < ApplicationController
 
   def show
     @campaign = Campaign.find(params[:id])
-    # @order = Order.new
+    @campaign_creator = User.find(@campaign.user_id)
   end
 
   def new
