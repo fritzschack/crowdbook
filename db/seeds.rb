@@ -43,101 +43,92 @@ end
 
 
 
-puts "Creating Genres..."
-Genre.create(
-  name: "Indie"
-)
+# puts "Creating Genres..."
+# Genre.create(
+#   name: "Indie"
+# )
 
-rock = Genre.create(
-  name: "Rock"
-)
+# rock = Genre.create(
+#   name: "Rock"
+# )
 
-Genre.create(
-  name: "Metal"
-)
+# Genre.create(
+#   name: "Metal"
+# )
 
-Genre.create(
-  name: "Pop"
-)
+# Genre.create(
+#   name: "Pop"
+# )
 
-Genre.create(
-  name: "Punk",
-)
+# Genre.create(
+#   name: "Punk",
+# )
 
-Genre.create(
-  name: "Electronic",
-)
+# Genre.create(
+#   name: "Electronic",
+# )
 
-Genre.create(
-  name: "Garage"
-)
+# Genre.create(
+#   name: "Garage"
+# )
 
-Genre.create(
-  name: "Hip-hop",
-)
+# Genre.create(
+#   name: "Hip-hop",
+# )
 
-Genre.create(
-  name: "Rap",
-)
+# Genre.create(
+#   name: "Rap",
+# )
 
 puts "Creating Musicians..."
 
 Musician.create(
-  name: "Dulcie",
-  genre_id: 3
+  name: "Dulcie"
 )
 
 Musician.create(
-  name: "Fergus James",
-  genre: rock
+  name: "Fergus James"
 )
 
 Musician.create(
-  name: "Grace Turner",
-  genre_id: 2
+  name: "Grace Turner"
 )
 
 Musician.create(
-  name: "Murmur",
-  genre_id: "2"
+  name: "Murmur"
 )
 
 Musician.create(
-  name: "Nerve",
-  genre_id: 6
+  name: "Nerve"
 )
 
 Musician.create(
-  name: "Ollie English",
-  genre_id: 7
+  name: "Ollie English"
 )
 
 Musician.create(
-  name: "Pridelands",
-  genre_id: 3
+  name: "Pridelands"
 )
 
 Musician.create(
-  name: "Redhook",
-  genre_id: 5
+  name: "Redhook"
 )
 
 Musician.create(
-  name: "Tobiahs",
-  genre_id: 8
+  name: "Tobiahs"
 )
 
 Musician.create(
-  name: "Will Clift",
-  genre: rock
+  name: "Will Clift"
 )
 
 Musician.create(
-  name: "Yours Truly",
-  genre_id: 5
+  name: "Yours Truly"
 )
 
 puts "Adding Campaigns..."
+
+genres = ["Industrial & Gothic", "(Heavy) Metal", "Rock 'n' Roll", "Golden Age", "Punk (Rock) / (New) Wave", "Hardcore (Punk)", "Alternative / Indie (Rock)", "Contemporary (Rock)", "Pop (Music)", "Country", "Rhythm 'n' Blues (R&B)", "Gospel & Pioneers", "Blues", "Jazz", "Jamaican (Music) / Reggae", "Rap / Hip-hop Music", "Breakbeat", "Drum 'n' Bass / Jungle", "Hardcore (Techno)", "Techno", "House", "Trance", "Downtempo / Ambient"]
 
 Campaign.create(
   name: "Duclie plays Richmond Club Hotel",
@@ -145,6 +136,7 @@ Campaign.create(
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
+  genre: genres.sample
 )
 
 Campaign.create(
@@ -153,6 +145,7 @@ Campaign.create(
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
+  genre: genres.sample
 )
 
 Campaign.create(
@@ -161,6 +154,7 @@ Campaign.create(
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
+  genre: genres.sample
 )
 
 Campaign.create(
@@ -169,6 +163,7 @@ Campaign.create(
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
+  genre: genres.sample
 )
 
 Campaign.create(
@@ -177,6 +172,7 @@ Campaign.create(
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
+  genre: genres.sample
 )
 
 Campaign.create(
@@ -185,6 +181,7 @@ Campaign.create(
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
+  genre: genres.sample
 )
 
 Campaign.create(
@@ -193,6 +190,7 @@ Campaign.create(
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
+  genre: genres.sample
 )
 
 Campaign.create(
@@ -201,6 +199,7 @@ Campaign.create(
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
+  genre: genres.sample
 )
 
 Campaign.create(
@@ -209,6 +208,7 @@ Campaign.create(
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
+  genre: genres.sample
 )
 
 Campaign.create(
@@ -217,6 +217,7 @@ Campaign.create(
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
+  genre: genres.sample
 )
 
 puts "Creating Performances..."
