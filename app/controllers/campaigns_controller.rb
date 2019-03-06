@@ -18,25 +18,33 @@ class CampaignsController < ApplicationController
   def create
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
+    instance_array = []
     if @campaign.save
       params[:campaign][:categories].each do |ticket_category|
-        @campaign.ticket_categories.create(
+        category = @campaign.ticket_categories.new(
           name: ticket_category[:name],
           description: ticket_category[:description],
           quantity: ticket_category[:quantity]
         )
+        instance_array << category
       end
-      params[:campaign][:performances][1..-1].each do |performance|
-        if performance.match?(/^[0-9]+$/) && Musician.find(performance.to_i).nil? == false
-          @campaign.performances.create(musician: Musician.find(performance.to_i))
+      params[:campaign][:performances].each do |performance|
+        if Musician.exists?(performance.to_i)
+          performance_instance = @campaign.performances.new(musician: Musician.find(performance.to_i))
+          instance_array << performance_instance
         elsif performance.length >= 1
-          musician = Musician.new(name: performance, genre_id: 1)
-          musician.save!
-          Performance.create(campaign: @campaign, musician: musician)
+          musician = Musician.new(name: performance)
+          instance_array << musician
+          performance_instance = Performance.new(campaign: @campaign, musician: musician)
+          instance_array << performance_instance
         end
       end
-      redirect_to campaign_path(@campaign)
+      if instance_array.all?(&:valid?)
+        instance_array.each(&:save)
+        redirect_to campaign_path(@campaign)
+      end
     else
+      # Send a variable to the new action that contains the amount of simplefields partials we need to render.
       render :new
     end
   end
