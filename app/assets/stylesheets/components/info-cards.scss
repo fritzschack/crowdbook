@@ -1,0 +1,20 @@
+.col-xs-12 {
+  margin: 60px 0;
+}
+
+.info-icon {
+  font-size: 60px;
+  transform: rotate(-20deg);
+}
+
+.info-text {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration:none;
+    opacity: 0.5;
+    cursor: none;
+  }
+}

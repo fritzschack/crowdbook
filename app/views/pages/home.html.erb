@@ -1,11 +1,23 @@
-<div class="container">
-  <div>
-    <h1>Home</h1>
-  </div>
-  <div class = "searchbar">
-  </div>
-  <div class="info">
-  </div>
-  <div class="card">
+<%= render 'components/banner' %>
+<div class="container text-center padded features" id="about-cards" style="margin-top: 0;">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <p class="info-icon"><i class="fas fa-music"></i></p>
+      <p class="info-text">Hear Your Favourite Performers!</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <p class="info-icon" style="transform: rotate(20deg);"><i class="fas fa-money-bill-alt"></i></p>
+      <p class="info-text">Raise Money!</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <p class="info-icon"><i class="fas fa-people-carry"></i></p>
+      <p class="info-text">Work Together!</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <%= link_to campaigns_path, class: 'info-text' do %>
+        <p class="info-icon" style="transform: rotate(20deg);"><i class="fas fa-arrow-right"></i></p>
+        <p class="info-text">Explore Now!</p>
+      <% end %>
+    </div>
   </div>
 </div>

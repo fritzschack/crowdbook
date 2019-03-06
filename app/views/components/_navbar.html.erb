@@ -5,8 +5,8 @@
 
   <div class="navbar-right hidden-xs hidden-sm">
     <% if user_signed_in?  %>
-      <%= link_to "Find A Campaign", campaigns_path, :class => 'btn btn-primary find-campaign-button' %>
-      <%= link_to "Create A Campaign", new_campaign_path, :class => 'btn btn-success create-campaign-button' %>
+      <%= link_to "Find A Campaign", campaigns_path, :class => 'btn btn-primary navbar-item navbar-link' %>
+      <%= link_to "Create A Campaign", new_campaign_path, :class => 'btn btn-success navbar-item navbar-link' %>
     <% end %>
     <div class="navbar-item">
       <div class="dropdown">
@@ -15,7 +15,7 @@
               <% if current_user.profile_picture_url.nil? %>
                 <i class="fas fa-user user-icon"></i>
               <% else %>
-                <%= cl_image_tag current_user.profile_picture_url, height: 50, width: 50, crop: :fill, :style => 'border-radius:50%;' %>
+                <%= cl_image_tag current_user.profile_picture_url, height: 45, width: 45, :style => 'border-radius:50%;' %>
               <% end %>
             </p>
             <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">

@@ -1,6 +1,7 @@
 import "bootstrap";
 import $ from 'jquery';
 import 'select2';
+import { autoScrollHome } from '../components/autoScroll';
 
 $(function() {
   $('.js-new-performance-form').select2({
@@ -9,3 +10,5 @@ $(function() {
     width: '100%'
   });
 });
+
+autoScrollHome();
