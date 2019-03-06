@@ -28,8 +28,8 @@ class CampaignsController < ApplicationController
         )
         instance_array << category
       end
-      params[:campaign][:performances][1..-1].each do |performance|
-        if performance.match?(/^[0-9]+$/) && Musician.find(performance.to_i).nil? == false
+      params[:campaign][:performances].each do |performance|
+        if Musician.exists?(performance.to_i)
           performance_instance = @campaign.performances.new(musician: Musician.find(performance.to_i))
           instance_array << performance_instance
         elsif performance.length >= 1
@@ -40,14 +40,11 @@ class CampaignsController < ApplicationController
         end
       end
       if instance_array.all?(&:valid?)
-        instance_array.each do |instance|
-          instance.save
-        end
+        instance_array.each(&:save)
         redirect_to campaign_path(@campaign)
-      else
-        render :new
       end
     else
+      # Send a variable to the new action that contains the amount of simplefields partials we need to render.
       render :new
     end
   end
