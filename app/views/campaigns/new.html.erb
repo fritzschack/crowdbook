@@ -3,27 +3,28 @@
   <%= simple_form_for @campaign do |f| %>
     <div class="form-row">
       <div class="form-group col-xs-12">
-        <%= f.input :name %>
+        <%= f.input :name, placeholder: "Please enter the name of your campaign", input_html: {class: "input"} %>
       </div>
       <div class="form-group col-xs-12">
-        <%= f.input :description %>
+        <%= f.input :description, placeholder: "Please describe your campaign.", input_html: {class: "input"} %>
       </div>
-      <div class="form-group col-xs-3">
-        <%= f.input :address %>
+      <div class="form-group col-xs-4">
+        <%= f.input :address, placeholder: "Please enter the address of the venue for the event.", input_html: {class: "input"} %>
       </div>
-      <div class="form-group col-xs-3">
-        <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
+      <div class="form-group col-xs-4">
+        <%= f.input :date, as: :string, input_html: {class: "datepicker input"}, placeholder: "Please select the date of the event." %>
       </div>
-      <div class="form-group col-xs-3">
-        <%= f.input :url %>
+      <div class="form-group col-xs-4">
+        <%= f.input :url, placeholder: "Please enter your website or social media link.", input_html: {class: "input"} %>
       </div>
-      <div class="form-group col-xs-3">
-        <%= f.input :is_private %>
+      <div class="form-group col-xs-8">
+        <% collection =  ["Industrial & Gothic", "(Heavy) Metal", "Rock 'n' Roll", "Golden Age", "Punk (Rock) / (New) Wave", "Hardcore (Punk)", "Alternative / Indie (Rock)", "Contemporary (Rock)", "Pop (Music)", "Country", "Rhythm 'n' Blues (R&B)", "Gospel & Pioneers", "Blues", "Jazz", "Jamaican (Music) / Reggae", "Rap / Hip-hop Music", "Breakbeat", "Drum 'n' Bass / Jungle", "Hardcore (Techno)", "Techno", "House", "Trance", "Downtempo / Ambient"] %>
+        <p style="font-size: 18px; font-weight: 700;">Genre</p>
+        <%= f.select :genre, collection, {}, :class => 'js-genre-selection-form', required: true %>
       </div>
-    </div>
-    <div id="addTicketCategory" class="form-row">
-      <div class="form-group col-xs-12">
-        <%= link_to "Add new ticket category", new_ticket_category_path, :class => "btn btn-primary", remote: true %>
+      <div class="form-group col-xs-4">
+        <p style="font-size: 18px; font-weight: 700;">Is this event private?</p>
+        <%= f.input :is_private, label: "Select if you want your campaign to be private", label_html: { class: "label-checkbox" } %>
       </div>
     </div>
     <% musicians = Musician.all.collect { |p| [p.name, p.id] } %>
@@ -34,7 +35,8 @@
       </div>
     </div>
     <div class="form-row">
-      <div class="form-group col-xs-12">
+      <div id="addTicketCategory" class="form-group col-xs-12" style="margin-top: 20px;">
+        <%= link_to "Add new ticket category", new_ticket_category_path, :class => "btn btn-success", remote: true %>
         <%= f.button :submit, class: "btn btn-primary" %>
       </div>
     </div>
