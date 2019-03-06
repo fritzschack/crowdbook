@@ -41,18 +41,14 @@
   right: 30px;
 }
 
-/* Basic navbar item */
 .navbar-item {
-  cursor: pointer;
-  padding: 0 20px;
+  margin: 0;
 }
 
-/* Navbar link */
 .navbar-link {
   font-size: 14px;
-  border-radius: 50px;
-  margin: 10px;
-  color: white;
+  margin: 8px;
+  color: black;
   padding: 10px 15px;
 }
 .navbar-link:hover {
@@ -64,6 +60,10 @@
   position: absolute;
   top: 22px;
   right: 30px;
+}
+
+.avatar.dropdown-toggle {
+  cursor: pointer;
 }
 
 /* Dropdown menu */
