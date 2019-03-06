@@ -40,7 +40,7 @@ class CampaignsController < ApplicationController
         end
       end
       if instance_array.all?(&:valid?)
-        instance_array.each(&:save)
+        instance_array.each(&:save!)
         redirect_to campaign_path(@campaign)
       end
     else
@@ -66,7 +66,7 @@ class CampaignsController < ApplicationController
     redirect_to my_profile_path
   end
 
-  def new_performance_field
+  def new_ticket_category
     @musicians = Musician.all
   end
 
