@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_010155) do
+ActiveRecord::Schema.define(version: 2019_03_06_071933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,22 +25,15 @@ ActiveRecord::Schema.define(version: 2019_03_05_010155) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "genre"
     t.index ["user_id"], name: "index_campaigns_on_user_id"
-  end
-
-  create_table "genres", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "musicians", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.bigint "genre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["genre_id"], name: "index_musicians_on_genre_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -96,17 +89,16 @@ ActiveRecord::Schema.define(version: 2019_03_05_010155) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "profile_picture_url", default: "default-profile-pic-png-8.jpg"
     t.string "first_name"
     t.string "last_name"
     t.text "description"
+    t.string "profile_picture_url"
     t.boolean "is_creator", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "campaigns", "users"
-  add_foreign_key "musicians", "genres"
   add_foreign_key "orders", "users"
   add_foreign_key "performances", "campaigns"
   add_foreign_key "performances", "musicians"
