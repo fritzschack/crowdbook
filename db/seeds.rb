@@ -83,58 +83,47 @@ end
 puts "Creating Musicians..."
 
 Musician.create(
-  name: "Dulcie",
-  genre_id: 3
+  name: "Dulcie"
 )
 
 Musician.create(
-  name: "Fergus James",
-  genre: rock
+  name: "Fergus James"
 )
 
 Musician.create(
-  name: "Grace Turner",
-  genre_id: 2
+  name: "Grace Turner"
 )
 
 Musician.create(
-  name: "Murmur",
-  genre_id: "2"
+  name: "Murmur"
 )
 
 Musician.create(
-  name: "Nerve",
-  genre_id: 6
+  name: "Nerve"
 )
 
 Musician.create(
-  name: "Ollie English",
-  genre_id: 7
+  name: "Ollie English"
 )
 
 Musician.create(
-  name: "Pridelands",
-  genre_id: 3
+  name: "Pridelands"
 )
 
 Musician.create(
-  name: "Redhook",
-  genre_id: 5
+  name: "Redhook"
 )
 
 Musician.create(
-  name: "Tobiahs",
-  genre_id: 8
+  name: "Tobiahs"
 )
 
 Musician.create(
-  name: "Will Clift",
-  genre: rock
+  name: "Will Clift"
 )
 
 Musician.create(
-  name: "Yours Truly",
-  genre_id: 5
+  name: "Yours Truly"
 )
 
 puts "Adding Campaigns..."
