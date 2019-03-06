@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-2">
+    <div class="col-sm-2">
       <div class="user-info">
         <p><%= cl_image_tag current_user.profile_picture_url, height: 60, :style => 'border-radius:50%;' %></p>
         <p><small>By <%= @campaign_creator.first_name %> <%= @campaign_creator.last_name %></small></p>
       </div>
     </div>
-    <div class="col-xs-9">
+    <div class="col-sm-9">
       <h1 style="margin: 0;"><%= @campaign.name %></h1>
       <h4>
         <%= @campaign.date %> |
@@ -15,29 +15,33 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-8">
+    <div class="col-sm-8">
       <div class="campaign-photos">
-        <img src="https://images.unsplash.com/photo-1508973379184-7517410fb0bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Image" style="height: 500px">
+        <img src="https://images.unsplash.com/photo-1508973379184-7517410fb0bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Image" class="img-responsive" >
       </div>
       <div class="campaign-description">
         <%= @campaign.description %>
       </div>
     </div>
-    <div class="row tickets">
+    <div class="row responsive">
       <%= simple_form_for :order, url: orders_path do |f| %>
         <%= f.input :campaign_id, as: :hidden, :input_html => { :value => @campaign.id } %>
           <%= simple_fields_for :categories do |c| %>
             <% @campaign.ticket_categories.each do |category| %>
-              <div class="col-xs-3 ticket-category-boxes">
+              <div class="col-sm-3 ticket-category-boxes">
                 <h4><%= category.name %></h4>
                 <p><small><%= category.description %></small></p>
                 <%= c.input "#{category.id}", collection: [1,2,3,4,5], label: "Quantity" %>
-                <%= f.button :submit, "Pledge To Campaign" %>
-                <br>
               </div>
             <% end %>
+            <div style="text-align: center;">
+              <%= f.button :submit, "Pledge To Campaign", class: 'btn btn-primary' %>
+            </div>
           <% end %>
       <% end %>
     </div>
+  </div>
+  <div class="space" style="height: 500px;">
+
   </div>
 </div>
