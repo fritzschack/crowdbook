@@ -42,6 +42,8 @@ class CampaignsController < ApplicationController
       if instance_array.all?(&:valid?)
         instance_array.each(&:save!)
         redirect_to campaign_path(@campaign)
+      else
+        render :new
       end
     else
       # Send a variable to the new action that contains the amount of simplefields partials we need to render.
