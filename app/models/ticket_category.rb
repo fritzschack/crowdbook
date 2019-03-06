@@ -7,4 +7,6 @@ class TicketCategory < ApplicationRecord
   validates :name, presence: true
   validates :quantity, presence: true
   validates :description, presence: true
+
+  monetize :price_cents
 end
