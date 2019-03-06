@@ -11,7 +11,7 @@
     </div>
     <% musicians = Musician.all.collect { |p| [p.name, p.id] } %>
     <p style="font-size: 18px; font-weight: 700;">Add musicians that are playing at your event!</p>
-    <%= f.select :performances, musicians, {}, :class => 'js-new-performance-form', :multiple => "multiple" %>
+    <%= f.select :performances, musicians, {}, :class => 'js-new-performance-form', :multiple => "multiple", required: true %>
     <%= f.button :submit, class: "btn btn-primary" %>
   <% end %>
 </div>

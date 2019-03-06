@@ -1,5 +1,29 @@
 function createHTMLOptions() {
-  document.getElementById("addTicketCategory").insertAdjacentHTML('beforebegin', `<div class="form-row"><div class="form-group col-xs-10">New ticket category - please fill out the fields below</div><div class="form-group col-xs-2"><%= link_to "Delete category", "#", :class => "btn btn-primary btn-sm" %></div><div class="form-group col-xs-12"><input type="string" class="form-control" name="campaign[categories][][name]" id="campaign_categories__name" placeholder="Name"></div><div class="form-group col-xs-12"><input type="text" class="form-control"  name="campaign[categories][][description]" id="campaign_categories__description" placeholder="Description"></div><div class="form-group col-xs-6"><input type="integer" class="form-control" name="campaign[categories][][quantity]" id="campaign_categories__quantity" placeholder="Total number of tickets"></div><div class="form-group col-xs-6"><input type="integer" class="form-control" name="campaign[categories][][price]" id="campaign_categories__price" placeholder="Price per ticket"></div></div>`);
+  document
+    .getElementById("addTicketCategory")
+    .insertAdjacentHTML(
+      'beforebegin',
+      `<div class="form-row">
+        <div class="form-group col-xs-10">
+          New ticket category - please fill out the fields below
+        </div>
+        <div class="form-group col-xs-2">
+          <%= link_to "Delete category", "#", :class => "btn btn-primary btn-sm" %>
+        </div>
+        <div class="form-group col-xs-12">
+          <input type="string" class="form-control" name="campaign[categories][][name]" id="campaign_categories__name" placeholder="Name" required>
+        </div>
+        <div class="form-group col-xs-12">
+          <input type="text" class="form-control"  name="campaign[categories][][description]" id="campaign_categories__description" placeholder="Description" required>
+        </div>
+        <div class="form-group col-xs-6">
+          <input type="integer" class="form-control" name="campaign[categories][][quantity]" id="campaign_categories__quantity" placeholder="Total number of tickets" required>
+        </div>
+        <div class="form-group col-xs-6">
+          <input type="integer" class="form-control" name="campaign[categories][][price]" id="campaign_categories__price" placeholder="Price per ticket" required>
+        </div>
+      </div>`
+    );
 };
 
 createHTMLOptions();

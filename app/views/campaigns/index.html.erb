@@ -8,7 +8,8 @@
           <div class="col-xs-12 col-sm-6 col-md-6" style="justify-content: space-around; margin-bottom: 25px;">
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path campaign.photos.first.image_url, height: 300, width: 400, crop: :fill %>')">
               <div class="card-name">
-                <h2><%= campaign.name %></h2>
+                <h2> <%= link_to campaign.name, campaign_path(campaign)  %>
+                </h2>
               </div>
               <%= link_to "", campaign_path(campaign), :class => "card_link"  %>
             </div>
@@ -18,6 +19,3 @@
     <% end %>
   </div>
 </div>
-
-
-

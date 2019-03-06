@@ -1,5 +1,9 @@
-<% @orders.each do |order| %>
-  <p><%= order%></p>
+<div class="container">
+  <h1>Order for <%= @order.ticket_categories.first.campaign.name %></h1>
+  <% @order.tickets.group_by(&:ticket_category).each do |ticket_category, tickets| %>
+    <p><%= ticket_category.name %> : <%= tickets.count %> Tickets Booked</p>
+  <% end %>
+  <button class="btn btn-primary">Pay Now</button>
+</div>
 
 
-<% end %>
