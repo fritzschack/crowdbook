@@ -6,12 +6,6 @@
   <%= link_to "Edit Profile", edit_user_registration_path %>
   <hr>
 
-  <% @orders.each do |order| %>
-    <% order.ticket_categories.each do |ticket_category|  %>
-      <%= ticket_category.campaign.name %> at: <%= ticket_category.campaign.address %>
-      <h4>Ticket Type: <%= ticket_category.name %></h4>
-      <hr>
-    <% end %>
-  <% end %>
+
 </div>
 
