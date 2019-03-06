@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
   end
 
   def show
+    @order = Order.find(params[:id])
   end
 
   def new
@@ -13,6 +14,7 @@ class OrdersController < ApplicationController
     @order = Order.new
     @campaign = Campaign.find(order_params[:campaign_id])
     @order.user = current_user
+    @order.status = 'waiting for payment'
     # We find the Ticket Category based on the id
     @categories = category_params.to_h.map { |key, value| [TicketCategory.find(key), value.to_i] }
     # We create a 'quantity' amount of tickets for each of the TicketCategories.
@@ -22,7 +24,7 @@ class OrdersController < ApplicationController
           Ticket.create(order: @order, ticket_category: category[0])
         end
       end
-      redirect_to new_order_payments_path(@order)
+      redirect_to order_path(@order)
     else
       render 'campaigns/show'
     end
