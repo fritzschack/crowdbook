@@ -1,17 +1,42 @@
 <div class="container">
+  <h1>Create a new campaign to fund your event!</h1>
   <%= simple_form_for @campaign do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :description %>
-    <%= f.input :date %>
-    <%= f.input :url %>
-    <%= f.input :is_private %>
-    <div id="addTicketCategory">
-      <%= link_to "Add new ticket category", new_ticket_category_path, :class => "btn btn-primary", remote: true %>
+    <div class="form-row">
+      <div class="form-group col-xs-12">
+        <%= f.input :name %>
+      </div>
+      <div class="form-group col-xs-12">
+        <%= f.input :description %>
+      </div>
+      <div class="form-group col-xs-3">
+        <%= f.input :address %>
+      </div>
+      <div class="form-group col-xs-3">
+        <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
+      </div>
+      <div class="form-group col-xs-3">
+        <%= f.input :url %>
+      </div>
+      <div class="form-group col-xs-3">
+        <%= f.input :is_private %>
+      </div>
+    </div>
+    <div id="addTicketCategory" class="form-row">
+      <div class="form-group col-xs-12">
+        <%= link_to "Add new ticket category", new_ticket_category_path, :class => "btn btn-primary", remote: true %>
+      </div>
     </div>
     <% musicians = Musician.all.collect { |p| [p.name, p.id] } %>
-    <p style="font-size: 18px; font-weight: 700;">Add musicians that are playing at your event!</p>
-    <%= f.select :performances, musicians, {}, :class => 'js-new-performance-form', :multiple => "multiple", required: true %>
-    <%= f.button :submit, class: "btn btn-primary" %>
+    <div class="form-row">
+      <div class="form-group col-xs-12">
+        <p style="font-size: 18px; font-weight: 700;">Add musicians that are playing at your event!</p>
+        <%= f.select :performances, musicians, {}, :class => 'js-new-performance-form', :multiple => "multiple", required: true %>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-xs-12">
+        <%= f.button :submit, class: "btn btn-primary" %>
+      </div>
+    </div>
   <% end %>
 </div>
