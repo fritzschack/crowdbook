@@ -39,7 +39,6 @@ class CampaignsController < ApplicationController
           instance_array << performance_instance
         end
       end
-      raise
       if instance_array.all?(&:valid?)
         instance_array.each(&:save!)
         redirect_to campaign_path(@campaign)
