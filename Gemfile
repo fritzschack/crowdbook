@@ -5,6 +5,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem "select2-rails"
 
 gem 'money-rails'
+gem 'stripe'
 
 gem 'bootsnap', require: false
 gem 'devise'

@@ -37,7 +37,10 @@ ActiveRecord::Schema.define(version: 2019_03_06_233301) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string "status"
+    t.string "state"
+    t.string "ticket_category_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.jsonb "payment"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

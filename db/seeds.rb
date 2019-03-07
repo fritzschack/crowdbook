@@ -7,78 +7,9 @@ end
 
 puts "Creating Orders..."
 10.times do
-  Order.create(user: User.all.sample, status: 'Pending')
+  Order.create(user: User.all.sample)
 end
 
-# 10.times do
-#   Campaign.create(name: Faker::Company.catch_phrase, address: Faker::Address.full_address, description: Faker::Lorem.paragraphs(3), date: Faker::Date.forward(23), user: User.all.sample)
-# end
-
-puts "Creating Ticket Categories..."
-5.times do
-  TicketCategory.create(name: "Regular", price_cents: 10000,  campaign: Campaign.all.sample, quantity: rand(1..100), available_tickets: rand(1..50), description: Faker::Lorem.paragraphs(3))
-end
-
-5.times do
-  TicketCategory.create(name: "VIP", price_cents: 30000, campaign: Campaign.all.sample, quantity: rand(1..100), available_tickets: rand(1..50), description: Faker::Lorem.paragraphs(3))
-end
-
-puts "Creating Tickets..."
-10.times do
-  Ticket.create(order: Order.all.sample, ticket_category: TicketCategory.all.sample)
-end
-
-# ["Blues", "Classical", "Country", "Electronic", "Folk", "Jazz", "New age", "Reggae", "Rock"].each do |genre|
-#   Genre.create(name: genre)
-# end
-
-# 50.times do
-#   Musician.create(name: Faker::Music.band, genre: Genre.all.sample)
-# end
-
-# 10.times do
-#   Performance.create(campaign: Campaign.all.sample, musician: Musician.all.sample)
-# end
-
-
-
-
-# puts "Creating Genres..."
-# Genre.create(
-#   name: "Indie"
-# )
-
-# rock = Genre.create(
-#   name: "Rock"
-# )
-
-# Genre.create(
-#   name: "Metal"
-# )
-
-# Genre.create(
-#   name: "Pop"
-# )
-
-# Genre.create(
-#   name: "Punk",
-# )
-
-# Genre.create(
-#   name: "Electronic",
-# )
-
-# Genre.create(
-#   name: "Garage"
-# )
-
-# Genre.create(
-#   name: "Hip-hop",
-# )
-
-# Genre.create(
-#   name: "Rap",
-# )
 
 puts "Creating Musicians..."
 
@@ -321,5 +252,22 @@ Photo.create(
   campaign_id: 10,
   remote_image_url_url: "https://res.cloudinary.com/cjward/image/upload/v1551843074/band_7.jpg",
 )
+
+
+puts "Creating Ticket Categories..."
+5.times do
+  TicketCategory.create(name: "Regular", price_cents: 10000,  campaign: Campaign.all.sample, quantity: rand(1..100), available_tickets: rand(1..50), description: Faker::Lorem.paragraphs(3))
+end
+
+5.times do
+  TicketCategory.create(name: "VIP", price_cents: 30000, campaign: Campaign.all.sample, quantity: rand(1..100), available_tickets: rand(1..50), description: Faker::Lorem.paragraphs(3))
+end
+
+puts "Creating Tickets..."
+10.times do
+  Ticket.create(order: Order.all.sample, ticket_category: TicketCategory.all.sample)
+end
+
+puts "Done!"
 
 
