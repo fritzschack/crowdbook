@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
     @order.state = 'pending'
     @categories = category_params.to_h.map { |key, value| [TicketCategory.find(key), value.to_i] }
     @order.amount = @categories.map { |category| category[1] * category[0].price }.sum
+    @order.ticket_category_sku = @categories.map { |ids| ids[0].id }
     if @order.save
       @categories.each do |category|
         category[1].times do

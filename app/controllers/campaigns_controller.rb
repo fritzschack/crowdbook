@@ -46,6 +46,8 @@ class CampaignsController < ApplicationController
   def show
     @campaign = Campaign.find(params[:id])
     @campaign_creator = User.find(@campaign.user_id)
+    # @amount_of_pledges = Order.where(ticket_category_sku: TicketCategory.id)
+    # @amount_raised = Order.where((state: 'paid') && (ticketcategoty.find(ticket_category_sku).campaign_id == campaign )
   end
 
   def new
