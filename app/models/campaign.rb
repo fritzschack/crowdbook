@@ -14,4 +14,7 @@ class Campaign < ApplicationRecord
 
   accepts_nested_attributes_for :performances
   accepts_nested_attributes_for :ticket_categories
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

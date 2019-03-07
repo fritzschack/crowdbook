@@ -4,6 +4,13 @@ class CampaignsController < ApplicationController
 
   def index
     @campaigns = Campaign.all
+
+    @markers = @campaigns.map do |campaign|
+      {
+        lng: campaign.longitude,
+        lat: campaign.latitude
+      }
+    end
   end
 
   def show

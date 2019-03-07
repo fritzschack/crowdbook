@@ -17,8 +17,6 @@ class OrdersController < ApplicationController
     @order.state = 'pending'
     @categories = category_params.to_h.map { |key, value| [TicketCategory.find(key), value.to_i] }
     @order.amount = @categories.map { |category| category[1] * category[0].price }.sum
-    # We find the Ticket Category based on the id
-    # We create a 'quantity' amount of tickets for each of the TicketCategories.
     if @order.save
       @categories.each do |category|
         category[1].times do

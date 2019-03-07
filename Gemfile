@@ -6,6 +6,7 @@ gem "select2-rails"
 
 gem 'money-rails'
 gem 'stripe'
+gem "geocoder"
 
 gem 'bootsnap', require: false
 gem 'devise'
@@ -25,7 +26,7 @@ gem 'font-awesome-sass', '~> 5.5.0'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
-gem 'webpacker'
+gem 'webpacker', '~> 3.5.5'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

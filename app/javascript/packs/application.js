@@ -1,24 +1,29 @@
-import "bootstrap";
-import $ from 'jquery';
-import 'select2';
-import flatpickr from "flatpickr";
-import "flatpickr/dist/flatpickr.min.css";
-import { autoScrollHome } from '../components/autoScroll';
+import 'mapbox-gl/dist/mapbox-gl.css';
+// import "bootstrap";
+// import $ from 'jquery';
+// import flatpickr from "flatpickr";
+import { initMapbox } from '../plugins/init_mapbox.js';
+// import { autoScrollHome } from '../components/autoScroll.js';
+// import 'select2';
+// import "flatpickr/dist/flatpickr.min.css";
+// //maps///
+initMapbox();
+// ////////
+// autoScrollHome();
 
-flatpickr("#datepicker", {});
+// flatpickr("#datepicker", {});
 
-$(function() {
-  $('.js-new-performance-form').select2({
-    tags: true,
-    theme: "bootstrap",
-    width: '100%',
-    placeholder: 'Enter performances for your campaign'
-  });
-  $('.js-genre-selection-form').select2({
-    theme: "bootstrap",
-    width: '100%',
-    placeholder: 'Select a genre for your campaign'
-  });
-});
+// $(function() {
+//   $('.js-new-performance-form').select2({
+//     tags: true,
+//     theme: "bootstrap",
+//     width: '100%',
+//     placeholder: 'Enter performances for your campaign'
+//   });
+//   $('.js-genre-selection-form').select2({
+//     theme: "bootstrap",
+//     width: '100%',
+//     placeholder: 'Select a genre for your campaign'
+//   });
+// });
 
-autoScrollHome();
