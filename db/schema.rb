@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 2019_03_07_045748) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "profile_picture_url", default: "default-profile-pic-png-8.jpg"
+    t.string "profile_picture_url", default: "index"
     t.string "first_name"
     t.string "last_name"
     t.text "description"

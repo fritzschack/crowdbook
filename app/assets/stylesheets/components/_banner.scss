@@ -23,11 +23,8 @@
   margin-bottom: 30px;
 }
 
-.banner-content {
-  width: 70%;
-}
-
 .searchbar-banner {
+  margin-top: 20px;
   height: 44px;
   background: white;
   padding: 5px;
@@ -52,6 +49,7 @@
   border-bottom-left-radius: 10px;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
+}
 
 .flexbox-animation {
   display: flex;
@@ -66,9 +64,9 @@
 }
 
 .banner-content {
+  width: 70%;
   text-align: center;
   font-family: 'Lato', sans-serif;
-  font-size: 30px;
 
   .animation-container {
     overflow: hidden;
