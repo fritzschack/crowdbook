@@ -19,6 +19,16 @@ $(function() {
     width: '100%',
     placeholder: 'Select a genre for your campaign'
   });
+  $('.js-genre-selection-search').select2({
+    width: '100%',
+    theme: "bootstrap",
+    placeholder: 'Search for a genre'
+  });
+  $('.js-selection-search-banner').select2({
+    width: '100%',
+    theme: "bootstrap",
+    placeholder: 'Search for a genre',
+  });
 });
 
 autoScrollHome();

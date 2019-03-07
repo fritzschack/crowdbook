@@ -1,4 +1,28 @@
 <div class="container">
+  <div class="searchbar">
+    <%= form_tag campaigns_path, method: :get, class: "form-inline" do%>
+      <div class="col-xs-12 col-sm-3">
+        <%= text_field_tag :name_query,
+          params[:name_query],
+          class: "form-control input",
+          placeholder: "Find a space by name",
+          style: "width: 100%;"
+        %>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <% collection = Musician.all.collect { |p| [p.name, p.id] } %>
+        <% collection.unshift("All musicians") %>
+        <%= select_tag :musician_query, options_for_select(collection, params[:musician_query]), class: "js-genre-selection-search" %></div>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <% collection =  ["All genres", "Industrial & Gothic", "(Heavy) Metal", "Rock 'n' Roll", "Golden Age", "Punk (Rock) / (New) Wave", "Hardcore (Punk)", "Alternative / Indie (Rock)", "Contemporary (Rock)", "Pop (Music)", "Country", "Rhythm 'n' Blues (R&B)", "Gospel & Pioneers", "Blues", "Jazz", "Jamaican (Music) / Reggae", "Rap / Hip-hop Music", "Breakbeat", "Drum 'n' Bass / Jungle", "Hardcore (Techno)", "Techno", "House", "Trance", "Downtempo / Ambient"] %>
+        <%= select_tag :genre_query, options_for_select(collection, params[:genre_query]), class: "js-genre-selection-search" %>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <%= submit_tag 'Search', class: "btn btn-primary button" %>
+      </div>
+    <% end %>
+  </div>
   <div class="campaign">
     <% if @campaigns.size == 0 %>
       <h3>Sorry, No Results Were Found!</h3>
@@ -6,7 +30,7 @@
       <% @campaigns.each do |campaign| %>
         <div class="card-description">
           <div class="col-xs-12 col-sm-6 col-md-6 info-card-column" style="justify-content: space-around; margin-bottom: 25px;">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path campaign.photos.first.image_url, height: 300, width: 400, crop: :fill %>')">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%#= cl_image_path campaign.photos.first.image_url, height: 300, width: 400, crop: :fill %>')">
               <div class="card-name">
                 <h2> <%= link_to campaign.name, campaign_path(campaign)  %>
                 </h2>
@@ -19,3 +43,25 @@
     <% end %>
   </div>
 </div>
+
+<!-- <div> -->
+  <%#= text_field_tag :location_query,
+    params[:location_query],
+    class: "form-field",
+    placeholder: "Find a space by location"
+  %>
+<!-- </div> -->
+<!-- <div> -->
+  <%#= text_field_tag :min_price_query,
+    params[:min_price_query],
+    class: "form-field",
+    placeholder: "Select a minimum price"
+  %>
+<!-- </div> -->
+<!-- <div> -->
+  <%#= text_field_tag :max_price_query,
+    params[:max_price_query],
+    class: "form-field",
+    placeholder: "Select a maximum price"
+  %>
+<!-- </div> -->
