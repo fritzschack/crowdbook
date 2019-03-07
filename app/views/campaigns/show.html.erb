@@ -19,7 +19,7 @@
       <div class="campaign-photos">
         <%# @campaign.photos.each do |photo| %>
        <!--  change this to .each taking away @campaign.photos and replacing them with photo.image_url  -->
-        <%= cl_image_tag @campaign.photos.first.image_url, width: 600, height: 400, crop: :fill %>
+        <%= cl_image_tag @campaign.photos.first.image_url, class: 'img-responsive'%>
       <% #end %>
       </div>
       <div class="campaign-description">
@@ -27,6 +27,10 @@
       </div>
     </div>
     <div class="row responsive">
+      <div class="col-sm-3 ticket-category-boxes">
+        <h4>Amount Pledged</h4>
+        <h5># of People Backing Campaign</h5>
+      </div>
       <%= simple_form_for :order, url: orders_path do |f| %>
         <%= f.input :campaign_id, as: :hidden, :input_html => { :value => @campaign.id } %>
           <%= simple_fields_for :categories do |c| %>
