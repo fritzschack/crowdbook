@@ -9,7 +9,7 @@ flatpickr("#datepicker", {});
 
 $(function() {
   $('.js-new-performance-form').select2({
-    // tags: true,
+    tags: true,
     theme: "bootstrap",
     width: '100%',
     placeholder: 'Enter performances for your campaign'
