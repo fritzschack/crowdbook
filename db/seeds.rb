@@ -76,7 +76,7 @@ genres = ["Industrial & Gothic", "(Heavy) Metal", "Rock 'n' Roll", "Golden Age",
 
 Campaign.create(
   name: "Duclie plays Richmond Club Hotel",
-  address: Faker::Company.catch_phrase,
+  address: "London",
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
@@ -85,7 +85,7 @@ Campaign.create(
 
 Campaign.create(
   name: "Fergus James plays Blue Diamond",
-  address: Faker::Company.catch_phrase,
+  address: "Melbourne",
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
@@ -94,7 +94,7 @@ Campaign.create(
 
 Campaign.create(
   name: "Grace Turner plays Cloud 9",
-  address: Faker::Company.catch_phrase,
+  address: "London",
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
@@ -103,7 +103,7 @@ Campaign.create(
 
 Campaign.create(
   name: "Murmur plays Brown Alley",
-  address: Faker::Company.catch_phrase,
+  address: "Amsterdam",
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
@@ -112,7 +112,7 @@ Campaign.create(
 
 Campaign.create(
   name: "Nerve plays New Guernica",
-  address: Faker::Company.catch_phrase,
+  address: 'Lisbon',
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
@@ -121,7 +121,7 @@ Campaign.create(
 
 Campaign.create(
   name: "Ollie English plays the Espy",
-  address: Faker::Company.catch_phrase,
+  address: "Shanghai",
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
@@ -130,7 +130,7 @@ Campaign.create(
 
 Campaign.create(
   name: "Pridelands plays Section 8",
-  address: Faker::Company.catch_phrase,
+  address: Faker::Address.street_address,
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
@@ -139,7 +139,7 @@ Campaign.create(
 
 Campaign.create(
   name: "Redhook plays Cherry Bar",
-  address: Faker::Company.catch_phrase,
+  address: Faker::Address.street_address,
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
@@ -148,7 +148,7 @@ Campaign.create(
 
 Campaign.create(
   name: "Tobiahs plays Public House",
-  address: Faker::Company.catch_phrase,
+  address: Faker::Address.street_address,
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
@@ -157,7 +157,7 @@ Campaign.create(
 
 Campaign.create(
   name: "Will Clift plays Corner Hotel Richmond",
-  address: Faker::Company.catch_phrase,
+  address: Faker::Address.street_address,
   description: Faker::Lorem.paragraphs(3),
   date: Faker::Date.forward(23),
   user: User.all.sample,
