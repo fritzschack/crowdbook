@@ -6,6 +6,7 @@ gem "select2-rails"
 
 gem 'money-rails'
 gem 'stripe'
+gem "geocoder"
 
 gem 'bootsnap', require: false
 gem 'devise'

@@ -1,9 +1,15 @@
+import 'mapbox-gl/dist/mapbox-gl.css';
 import "bootstrap";
 import $ from 'jquery';
-import 'select2';
 import flatpickr from "flatpickr";
+import { initMapbox } from '../plugins/init_mapbox.js';
+import { autoScrollHome } from '../components/autoScroll.js';
+import 'select2';
 import "flatpickr/dist/flatpickr.min.css";
-import { autoScrollHome } from '../components/autoScroll';
+//maps///
+initMapbox();
+////////
+autoScrollHome();
 
 flatpickr("#datepicker", {});
 
@@ -21,4 +27,3 @@ $(function() {
   });
 });
 
-autoScrollHome();

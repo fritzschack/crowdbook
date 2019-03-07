@@ -1,9 +1,17 @@
 .card {
-  height: 300px;
-  width: 500px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  margin-bottom: 20px;
+  box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
+  padding: 15px;
+  text-decoration: none;
+  color: black;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.card-left {
   background-size: cover !important;
-  background-position: center;
-  color: white;
-  border-radius: 3%;
+  height: 200px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
 }
