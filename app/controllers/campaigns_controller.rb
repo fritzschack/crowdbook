@@ -33,7 +33,7 @@ class CampaignsController < ApplicationController
           performance_instance = @campaign.performances.new(musician: Musician.find(performance.to_i))
           instance_array << performance_instance
         elsif performance.length >= 1
-          @musician = Musician.new(name: performance, genre_id: 1)
+          @musician = Musician.new(name: performance)
           instance_array << @musician
           performance_instance = Performance.new(campaign: @campaign, musician: @musician)
           instance_array << performance_instance
