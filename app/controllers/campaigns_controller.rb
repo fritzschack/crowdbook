@@ -33,7 +33,6 @@ class CampaignsController < ApplicationController
       )
     end
 
-    render :index
 
     @markers = @campaigns.map do |campaign|
       {
@@ -41,6 +40,7 @@ class CampaignsController < ApplicationController
         lat: campaign.latitude
       }
     end
+    render :index
   end
 
   def show

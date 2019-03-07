@@ -21,3 +21,24 @@
     </div>
   </div>
 </div>
+
+<div class="container" id="campaign-cards" style="margin-top: 0;">
+  <center><h2 style="margin-bottom: 40px;">A Few Of Our Favourites</h2></center>
+  <div class="row">
+    <% @campaigns.each do |campaign| %>
+      <%= link_to campaign_path(campaign) do %>
+        <div class="col-sm-4">
+          <div class="card home-card">
+            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path campaign.photos.first.image_url, height: 200, width: 400, crop: :fill %>')">
+            </div>
+            <div class="card-bottom">
+              <h3><%= campaign.name %></h3>
+              <p><small><%= campaign.date.to_s.split('-').reverse.join('-') %> | <%= campaign.address %></small>
+              <p><%= campaign.description %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

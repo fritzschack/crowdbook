@@ -4,7 +4,7 @@ const autoScrollHome = () => {
       e.preventDefault();
 
       $('html, body').animate({
-        scrollTop: $('#about-cards').offset().top
+        scrollTop: $('#campaign-cards').offset().top
       }, 500);
     });
   });
