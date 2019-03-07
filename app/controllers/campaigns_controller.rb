@@ -20,6 +20,7 @@ class CampaignsController < ApplicationController
 
   def new
     @campaign = Campaign.new
+    @campaign_images = @campaign.photos.build
   end
 
   def create
@@ -34,7 +35,10 @@ class CampaignsController < ApplicationController
           quantity: ticket_category[:quantity]
         )
         instance_array << category
-      end
+        end
+        params[:campaign][:photos]['image_url'].each do |a|
+        @campaign_images = @campaign.photos.create!(image_url: a)
+        end
       params[:campaign][:performances].each do |performance|
         if performance.match(/^[0-9]+$/) && Musician.exists?(performance.to_i)
           performance_instance = @campaign.performances.new(musician: Musician.find(performance.to_i))
@@ -84,6 +88,6 @@ class CampaignsController < ApplicationController
   end
 
   def campaign_params
-    params.require(:campaign).permit(:name, :address, :description, :date, :url, :is_private?, :genre)
+    params.require(:campaign).permit(:name, :address, :description, :date, :url, :is_private?, :genre, photos_attributes: [:id, :user_id, :image_url])
   end
 end

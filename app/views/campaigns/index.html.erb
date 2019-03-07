@@ -8,8 +8,7 @@
           <%= link_to campaign_path(campaign) do %>
             <div class="card">
               <div class="row">
-                <div class="col-sm-4 card-left" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url('<%= cl_image_path campaign.photos.first.image_url, height: 300, width: 400, crop: :fill %>')"></div>
+                <div class="col-sm-4 card-left" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path campaign.photos.first.image_url, height: 300, width: 400, crop: :fill %>')"></div>
                 <div class="col-sm-8 card-right">
                   <div class="card-title">
                     <h4><%= campaign.name %></h4>
@@ -30,5 +29,4 @@
     <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 </div>
-
 
