@@ -1,11 +1,12 @@
 import 'mapbox-gl/dist/mapbox-gl.css';
+import { initMapbox } from '../plugins/init_mapbox.js';
 import "bootstrap";
 import $ from 'jquery';
 import flatpickr from "flatpickr";
-import { initMapbox } from '../plugins/init_mapbox.js';
 import { autoScrollHome } from '../components/autoScroll.js';
 import 'select2';
 import "flatpickr/dist/flatpickr.min.css";
+initMapbox();
 
 $(function() {
   $('.js-new-performance-form').select2({
@@ -31,7 +32,6 @@ $(function() {
   });
 });
 
-initMapbox();
 autoScrollHome();
 
 flatpickr("#datepicker", {});
