@@ -1,8 +1,35 @@
+<div class="container">
+  <div class="searchbar">
+    <%= form_tag campaigns_path, method: :get, class: "form-inline" do%>
+      <div class="col-xs-12 col-sm-3">
+        <%= text_field_tag :name_query,
+          params[:name_query],
+          class: "form-control input",
+          placeholder: "Find a space by name",
+          style: "width: 100%;"
+        %>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <% collection = Musician.all.collect { |p| [p.name, p.id] } %>
+        <% collection.unshift("All musicians") %>
+        <%= select_tag :musician_query, options_for_select(collection, params[:musician_query]), class: "js-genre-selection-search" %></div>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <% collection =  ["All genres", "Industrial & Gothic", "(Heavy) Metal", "Rock 'n' Roll", "Golden Age", "Punk (Rock) / (New) Wave", "Hardcore (Punk)", "Alternative / Indie (Rock)", "Contemporary (Rock)", "Pop (Music)", "Country", "Rhythm 'n' Blues (R&B)", "Gospel & Pioneers", "Blues", "Jazz", "Jamaican (Music) / Reggae", "Rap / Hip-hop Music", "Breakbeat", "Drum 'n' Bass / Jungle", "Hardcore (Techno)", "Techno", "House", "Trance", "Downtempo / Ambient"] %>
+        <%= select_tag :genre_query, options_for_select(collection, params[:genre_query]), class: "js-genre-selection-search" %>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <%= submit_tag 'Search', class: "btn btn-primary button" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <div class="row map-cards-container">
   <div class="col-sm-6">
     <div class="row">
       <% if @campaigns.size == 0 %>
-          <h3>No Campaigns Currently Available In That Area!</h3>
+        <h3>No Campaigns Currently Available In That Area!</h3>
       <% else %>
         <% @campaigns.each do |campaign| %>
           <%= link_to campaign_path(campaign) do %>
@@ -30,3 +57,24 @@
   </div>
 </div>
 
+<!-- <div> -->
+  <%#= text_field_tag :location_query,
+    params[:location_query],
+    class: "form-field",
+    placeholder: "Find a space by location"
+  %>
+<!-- </div> -->
+<!-- <div> -->
+  <%#= text_field_tag :min_price_query,
+    params[:min_price_query],
+    class: "form-field",
+    placeholder: "Select a minimum price"
+  %>
+<!-- </div> -->
+<!-- <div> -->
+  <%#= text_field_tag :max_price_query,
+    params[:max_price_query],
+    class: "form-field",
+    placeholder: "Select a maximum price"
+  %>
+<!-- </div> -->

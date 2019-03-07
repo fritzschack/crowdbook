@@ -10,6 +10,19 @@ puts "Creating Orders..."
   Order.create(user: User.all.sample)
 end
 
+puts "Creating Ticket Categories..."
+5.times do
+  TicketCategory.create(name: "Regular", campaign: Campaign.all.sample, quantity: rand(1..100), available_tickets: rand(1..50), description: Faker::Lorem.paragraphs(3))
+end
+
+5.times do
+  TicketCategory.create(name: "VIP", campaign: Campaign.all.sample, quantity: rand(1..100), available_tickets: rand(1..50), description: Faker::Lorem.paragraphs(3))
+end
+
+puts "Creating Tickets..."
+10.times do
+  Ticket.create(order: Order.all.sample, ticket_category: TicketCategory.all.sample)
+end
 
 puts "Creating Musicians..."
 
