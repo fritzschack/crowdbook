@@ -6,12 +6,6 @@ import { initMapbox } from '../plugins/init_mapbox.js';
 import { autoScrollHome } from '../components/autoScroll.js';
 import 'select2';
 import "flatpickr/dist/flatpickr.min.css";
-// //maps///
-initMapbox();
-// ////////
-autoScrollHome();
-
-flatpickr("#datepicker", {});
 
 $(function() {
   $('.js-new-performance-form').select2({
@@ -36,3 +30,8 @@ $(function() {
     placeholder: 'Search for a genre',
   });
 });
+
+initMapbox();
+autoScrollHome();
+
+flatpickr("#datepicker", {});
