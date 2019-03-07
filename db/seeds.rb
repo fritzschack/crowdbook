@@ -7,7 +7,7 @@ end
 
 puts "Creating Orders..."
 10.times do
-  Order.create(user: User.all.sample, status: 'Pending')
+  Order.create(user: User.all.sample)
 end
 
 puts "Creating Ticket Categories..."
@@ -265,5 +265,22 @@ Photo.create(
   campaign_id: 10,
   remote_image_url_url: "https://res.cloudinary.com/cjward/image/upload/v1551843074/band_7.jpg",
 )
+
+
+puts "Creating Ticket Categories..."
+5.times do
+  TicketCategory.create(name: "Regular", price_cents: 10000,  campaign: Campaign.all.sample, quantity: rand(1..100), available_tickets: rand(1..50), description: Faker::Lorem.paragraphs(3))
+end
+
+5.times do
+  TicketCategory.create(name: "VIP", price_cents: 30000, campaign: Campaign.all.sample, quantity: rand(1..100), available_tickets: rand(1..50), description: Faker::Lorem.paragraphs(3))
+end
+
+puts "Creating Tickets..."
+10.times do
+  Ticket.create(order: Order.all.sample, ticket_category: TicketCategory.all.sample)
+end
+
+puts "Done!"
 
 

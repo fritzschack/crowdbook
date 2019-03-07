@@ -2,7 +2,7 @@
   <h1>Order</h1>
   <ul>
     <li>Status: <%= @order.state %></li>
-    <li>Campaign: <%= @order.ticket_categories.first.campaign.name %></li>
+    <li>Item: <%= @order.ticket_category_sku %></li>
     <li>Amount: <%= humanized_money_with_symbol(@order.amount) %></li>
   <ul>
 </div>

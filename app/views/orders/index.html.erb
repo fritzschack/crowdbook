@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>My Orders</h1>
+  <% @orders.each do |order| %>
+    <ul>
+      <li>Status: <%= order.state %></li>
+      <li>Campaign: <%= order.ticket_categories.first.campaign.name %></li>
+      <li>Amount: <%= humanized_money_with_symbol(order.amount) %></li>
+    </ul>
+  <% end %>
+</div>
