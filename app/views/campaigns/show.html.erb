@@ -17,7 +17,10 @@
   <div class="row">
     <div class="col-sm-8">
       <div class="campaign-photos">
-        <img src="https://images.unsplash.com/photo-1508973379184-7517410fb0bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Image" class="img-responsive" >
+        <%# @campaign.photos.each do |photo| %>
+       <!--  change this to .each taking away @campaign.photos and replacing them with photo.image_url  -->
+        <%= cl_image_tag @campaign.photos.first.image_url, width: 600, height: 400, crop: :fill %>
+      <% #end %>
       </div>
       <div class="campaign-description">
         <%= @campaign.description %>
