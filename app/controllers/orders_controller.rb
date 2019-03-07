@@ -28,6 +28,7 @@ class OrdersController < ApplicationController
     else
       render 'campaigns/show'
     end
+    raise
   end
 
   def edit
