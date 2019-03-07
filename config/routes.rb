@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users
   root to: 'pages#home'
 
   resources :profiles, only: :show
@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   resources :campaigns
   get "/new_ticket_category", to: "campaigns#new_ticket_category", as: "new_ticket_category"
 
+  devise_for :users, controllers: { registrations: "registrations" }
+
   resources :orders, only: [:show, :new, :create, :edit, :update]
+
 end
