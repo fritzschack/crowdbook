@@ -1,13 +1,15 @@
 import "bootstrap";
 import $ from 'jquery';
 import 'select2';
-import { autoScrollHome } from '../components/autoScroll';
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
+import { autoScrollHome } from '../components/autoScroll';
+
+flatpickr("#datepicker", {});
 
 $(function() {
   $('.js-new-performance-form').select2({
-    // tags: true,
+    tags: true,
     theme: "bootstrap",
     width: '100%',
     placeholder: 'Enter performances for your campaign'
@@ -18,7 +20,5 @@ $(function() {
     placeholder: 'Select a genre for your campaign'
   });
 });
-
-flatpickr(".datepicker", {});
 
 autoScrollHome();
