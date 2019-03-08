@@ -34,7 +34,7 @@
             <div class="card-bottom">
               <h3><%= campaign.name %></h3>
               <p><small><%= campaign.date.to_s.split('-').reverse.join('-') %> | <%= campaign.address %></small>
-              <p><%= campaign.description[0..200] %></p>
+              <p><%= campaign.description[0..200] %>...</p>
             </div>
           </div>
         </div>
