@@ -1,6 +1,14 @@
+<%= render 'components/navbar' %>
+<div class="container">
+  <p><%= current_user.email %></p>
+  <p><%= current_user.first_name %></p>
+  <p><%= current_user.last_name %></p>
+  <p><%= current_user.description %></p>
+  <%= link_to "Edit Profile", edit_user_registration_path %>
+  <hr>
+</div>
 
 <div class="col-12"></div>
 <%= render "./components/banner_profile" %>
 <!-- <div class="container"> --
-
 
