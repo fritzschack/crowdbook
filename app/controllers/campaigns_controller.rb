@@ -63,13 +63,15 @@ class CampaignsController < ApplicationController
         category = @campaign.ticket_categories.new(
           name: ticket_category[:name],
           description: ticket_category[:description],
-          quantity: ticket_category[:quantity]
+          quantity: ticket_category[:quantity],
+          price: ticket_category[:price],
+          available_tickets: ticket_category[:quantity],
         )
         instance_array << category
-        end
-        params[:campaign][:photos]['image_url'].each do |a|
+      end
+      params[:campaign][:photos]['image_url'].each do |a|
         @campaign_images = @campaign.photos.create!(image_url: a)
-        end
+      end
       params[:campaign][:performances].each do |performance|
         if performance.match(/^[0-9]+$/) && Musician.exists?(performance.to_i)
           performance_instance = @campaign.performances.new(musician: Musician.find(performance.to_i))
@@ -83,6 +85,7 @@ class CampaignsController < ApplicationController
       end
       if instance_array.all?(&:valid?)
         instance_array.each(&:save!)
+        raise
         redirect_to campaign_path(@campaign)
       end
     else
@@ -119,6 +122,6 @@ class CampaignsController < ApplicationController
   end
 
   def campaign_params
-    params.require(:campaign).permit(:name, :address, :description, :date, :url, :is_private?, :genre, photos_attributes: [:id, :user_id, :image_url])
+    params.require(:campaign).permit(:name, :address, :description, :date, :url, :is_private?, :genre, :funding_goal, photos_attributes: [:id, :user_id, :image_url])
   end
 end
