@@ -13,11 +13,28 @@ class PaymentsController < ApplicationController
     charge = Stripe::Charge.create(
       customer:     customer.id,   # You should store this customer id and re-use it.
       amount:       @order.amount_cents,
-      description:  "Pledge for #{@order.ticket_category_sku} for order #{@order.id}",
+      description:  "Help A Campaign!",
       currency:     @order.amount.currency
     )
 
+    @categories_hash = @order.ticket_categories.group(:id).count
+    @categories_hash.each do |key, value|
+      @category = TicketCategory.find(key)
+      new_available_tickets = @category.available_tickets - value
+      @category.update(available_tickets: new_available_tickets)
+    end
+    @campaign = @order.ticket_categories.first.campaign
+
+    # @funding_array = @order.ticket_categories.map do |ticket_category|
+    #   (ticket_category.quantity - ticket_category.available_tickets) * ticket_category.price
+    # end
+    # @campaign.update(current_funding_amount: @funding_array.sum)
+    @funding_array = @campaign.ticket_categories.map do |ticket_category|
+      (ticket_category.quantity - ticket_category.available_tickets) * ticket_category.price
+    end
+    @campaign.update(current_funding_amount: @funding_array.sum)
     @order.update(payment: charge.to_json, state: 'paid')
+
     redirect_to order_path(@order)
 
   rescue Stripe::CardError => e

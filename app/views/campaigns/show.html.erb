@@ -28,8 +28,8 @@
     </div>
     <div class="row responsive">
       <div class="col-sm-3 ticket-category-boxes">
-        <h4>Amount Pledged</h4>
-        <h5># of People Backing Campaign</h5>
+        <h4>Amount Pledged: <%= humanized_money_with_symbol(@campaign.current_funding_amount) %></h4>
+        <h5><%= @campaign.tickets.count %> Pledges Made</h5>
       </div>
       <%= simple_form_for :order, url: orders_path do |f| %>
         <%= f.input :campaign_id, as: :hidden, :input_html => { :value => @campaign.id } %>
