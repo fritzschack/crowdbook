@@ -2,13 +2,16 @@
   color: white;
   text-align: center;
   height: calc(100vh - 70px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  label {
+    font-size: 14px;
+    color: black;
+    float: left;
+  }
 }
 .banner h1 {
   font-size: 50px;
@@ -24,30 +27,42 @@
 }
 
 .searchbar-banner {
-  margin-top: 20px;
-  height: 34px;
-  background: transparent;
-  border-radius: 50px;
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  height: auto;
+  background: white;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  border-radius: 6px;
+  padding: 20px;
+  h2 {
+    color: black;
+    text-align: left;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+}
+
+.selecttwo-box {
+  text-align: left;
 }
 
 .input-banner {
   height: 34px;
   font-size: 14px;
   text-align: left;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 3px;
 }
 
 .button-banner {
-  width: 100%;
+  width: 100px;
   height: 34px;
+  font-weight: bold;
   font-size: 14px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-radius: 50px;
+  float: right;
 }
 
 .flexbox-animation {
