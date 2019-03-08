@@ -40,7 +40,7 @@
                     <p><small><%= campaign.date.to_s.split('-').reverse.join('-') %> | <%= campaign.address %></small></p>
                   </div>
                   <div class="card-description">
-                    <p><%= campaign.description %></p>
+                    <p><%= campaign.description[0..200]%>...</p>
                   </div>
                 </div>
               </div>
