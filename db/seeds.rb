@@ -84,7 +84,8 @@ Campaign.create(
     Dulcie",
   date: Faker::Date.forward(23),
   user: User.all.sample,
-  genre: genres.sample
+  genre: genres.sample,
+  funding_goal: 10000
 )
 
 Campaign.create(
@@ -94,7 +95,8 @@ Campaign.create(
 Fergus James recently supported Ed Sheeran on the biggest stadium tour in Australian history having sold over one million tickets.",
   date: Faker::Date.forward(23),
   user: User.all.sample,
-  genre: genres.sample
+  genre: genres.sample,
+  funding_goal: 9000
 )
 
 Campaign.create(
@@ -103,7 +105,8 @@ Campaign.create(
   description: "Cloud 9 is teaming up with local Melbourne artist Grace Turner. To be there, there is one thing you have to do! BUY A TICKET! Grace Turner, a singer songwriter from the industrial town of Newcastle, Australia is renown for her emotionally-driven indie-folk songs, which are intensely personal. Turner has lived immersed with creative influences; her mother a visual artist and her father a poet. Falling somewhere between alt country and indie rock, Turner entices exciting possibility with her song writing and sound. ",
   date: Faker::Date.forward(23),
   user: User.all.sample,
-  genre: genres.sample
+  genre: genres.sample,
+  funding_goal: 1500
 )
 
 Campaign.create(
@@ -112,7 +115,8 @@ Campaign.create(
   description: "Be there or be square when Murmurmur take Brown Alley on a night of wild adventure. Only one thing needs to happen for this to take place, you pledge. Murmurmur (pronounced mer-mer-mer) was born in February 2017 when Will Fletcher stumbled across the idiosyncratic guitar riff that provides the defining moment in “I Can’t Stop Thinking About All The Time It's Taken From You”. Fletcher was soon joined by Alex Crosara (guitar), Fintan Bradley (synthesiser), Jack Davies (bass) and Luke Haaja (drums), who helped to bring his prog/psych-pop odysseys to life. Across the four songs that comprise murmurmur’s debut self-titled EP (produced by Oscar Dawson of Holy Holy), Fletcher’s haunting, emotive vocal blends with guitar hooks that sink into the recesses of your mind and stay there. There is an urgency to murmurmur’s soundscapes - they sound like a time and place you’re not aware of but which you’re desperate to find.",
   date: Faker::Date.forward(23),
   user: User.all.sample,
-  genre: genres.sample
+  genre: genres.sample,
+  funding_goal: 15000
 )
 
 Campaign.create(
@@ -144,7 +148,8 @@ With the Australian rap scene growing more and more each year, Nerve looks to cl
 ",
   date: Faker::Date.forward(23),
   user: User.all.sample,
-  genre: genres.sample
+  genre: genres.sample,
+  funding_goal: 5000
 )
 
 Campaign.create(
@@ -162,7 +167,8 @@ Well, if you back Ollie, you back us at the ESPY, there's only one option....buy
 ",
   date: Faker::Date.forward(23),
   user: User.all.sample,
-  genre: genres.sample
+  genre: genres.sample,
+  funding_goal: 900
 )
 
 Campaign.create(
@@ -172,7 +178,8 @@ Campaign.create(
 Now Pridelands are set to release their second EP 'Any Colour You Desire' on May 4th. ACYD sees the band with a new line up, a new lease of life, exploring on its sound and culminating in their strongest and most cohesive song-writing to date.",
   date: Faker::Date.forward(23),
   user: User.all.sample,
-  genre: genres.sample
+  genre: genres.sample,
+  funding_goal: 2000
 )
 
 Campaign.create(
@@ -189,7 +196,8 @@ Campaign.create(
 'RedHook will punch you right in the guts from the first listen.That's not only because the music possesses a relentless intensity but also thanks to the emotional depth that sticks with you.' - (Sam Murphy, Cool Accidents)",
   date: Faker::Date.forward(23),
   user: User.all.sample,
-  genre: genres.sample
+  genre: genres.sample,
+  funding_goal: 100
 )
 
 Campaign.create(
@@ -201,7 +209,8 @@ Having created music since the age of 15, Tobiahs has honed his skills and sound
 ",
   date: Faker::Date.forward(23),
   user: User.all.sample,
-  genre: genres.sample
+  genre: genres.sample,
+  funding_goal: 100000
 )
 
 Campaign.create(
@@ -225,7 +234,8 @@ There will be two versions of ‘For You’ out October 25th, along with an acou
 ",
   date: Faker::Date.forward(23),
   user: User.all.sample,
-  genre: genres.sample
+  genre: genres.sample,
+  funding_goal: 4567
 )
 
 puts "Creating Performances..."

@@ -1,12 +1,14 @@
-.navbar{
-  background: white;
+/* Main navbar */
+.navbar-homepage{
+  background: transparent;
   transition: all 0.3s ease;
   height: 12vh;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky !important;
+  position: absolute;
+  width:100%;
   top: 0;
   z-index: 5;
 }
@@ -16,7 +18,7 @@
   font-size: 45px;
 }
 
-.navbar-logo-text {
+.navbar-homepage-logo-text {
   position: absolute;
   top: 20px;
   left: 10px;
@@ -24,41 +26,41 @@
   font-size: 30px;
   letter-spacing: 1px;
   text-decoration: none;
-  color: black;
+  color: white;
   &:hover {
     text-decoration: none;
-    color: black;
+    color: white;
     opacity: 0.5;
   }
 }
 
-.navbar .avatar {
+.navbar-homepage .avatar {
   height: 35px;
   width: 35px;
   border-radius: 50%;
   margin-right: 20px;
 }
 
-.navbar-right {
+.navbar-homepage-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: absolute;
-  right: 44px;
-  top: 19px;
+  right: 30px;
+  top: 20px;
 }
 
-.navbar-item {
+.navbar-homepage-item {
   margin: 0;
 }
 
-.navbar-link {
+.navbar-homepage-link {
   font-size: 14px;
   margin: 8px;
-  color: black;
+  color: white;
   padding: 10px 15px;
 }
-.navbar-link:hover {
+.navbar-homepage-link:hover {
   opacity: 0.5;
   text-decoration: none;
 }
@@ -74,25 +76,25 @@
 }
 
 /* Dropdown menu */
-.navbar-dropdown-menu {
+.navbar-homepage-dropdown-menu {
   margin-top: 15px;
   margin-right: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
 }
-.navbar-dropdown-menu li > a {
+.navbar-homepage-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: black !important;
+  color: white !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
 }
-.navbar-dropdown-menu li > a:hover {
+.navbar-homepage-dropdown-menu li > a:hover {
   background: transparent !important;
-  color: black !important;
+  color: white !important;
 }
-.navbar-dropdown-menu:before {
+.navbar-homepage-dropdown-menu:before {
   content: ' ';
   height: 10px;
   width: 10px;
@@ -110,9 +112,3 @@
   position: absolute;
   top: 10px;
 }
-
-
-
-
-
-

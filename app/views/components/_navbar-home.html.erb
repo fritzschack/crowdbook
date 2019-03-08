@@ -1,0 +1,49 @@
+<div class="navbar-homepage">
+  <a href="/" class="navbar-homepage-logo-text">
+    <img src="https://res.cloudinary.com/cjward/image/upload/v1551941123/logo_copy.png" class="logo"> </i> Crowdbook
+  </a>
+
+  <div class="navbar-homepage-right hidden-xs hidden-sm">
+      <%= link_to "Browse Campaigns", campaigns_path, :class => 'btn navbar-homepage-link navbar-homepage-item' %>
+    <% if user_signed_in?  %>
+      <%= link_to "Create A Campaign", new_campaign_path, :class => 'btn navbar-homepage-link navbar-homepage-item' %>
+    <% end %>
+    <div class="navbar-homepage-item">
+      <div class="dropdown">
+          <% if user_signed_in? %>
+            <p class="avatar dropdown-toggle" id="navbar-homepage-menu" data-toggle="dropdown">
+              <%= cl_image_tag current_user.profile_picture_url, height: 40, width: 40, :style => 'border-radius:50%;' %>
+            </p>
+            <ul class="dropdown-menu dropdown-menu-right navbar-homepage-dropdown-menu">
+              <li><%= link_to "My Profile", my_profile_path %></li>
+              <li><%= link_to "My Previous Pledges", profile_orders_path(current_user) %></li>
+              <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          <% else %>
+            <%= link_to "Login", new_user_session_path, :class => "btn navbar-homepage-item navbar-homepage-link" %>
+            <%= link_to "Create Account", new_user_registration_path, :class => "btn navbar-homepage-item navbar-homepage-link" %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="navbar-homepage-item hidden-md hidden-lg" style="margin:0">
+    <div class="dropdown-small">
+      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button" style="color: black; align-self: right;"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-homepage-dropdown-menu">
+        <% if user_signed_in? %>
+          <li> <%= link_to "Find A Campaign", campaigns_path, :class => 'btn find-campaign-button' %></li>
+          <li><%= link_to "Create A Campaign", new_campaign_path, :class => 'btn create-campaign-button' %></li>
+          <li><%= link_to "My Profile", my_profile_path %></li>
+          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Login", new_user_session_path, :class => "navbar-homepage-home-item navbar-homepage-home-link" %></li>
+          <li><%= link_to "Create Account", new_user_registration_path, :class => "navbar-homepage-home-item navbar-homepage-home-link" %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
