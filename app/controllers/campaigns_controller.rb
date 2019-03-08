@@ -85,7 +85,6 @@ class CampaignsController < ApplicationController
       end
       if instance_array.all?(&:valid?)
         instance_array.each(&:save!)
-        raise
         redirect_to campaign_path(@campaign)
       end
     else
