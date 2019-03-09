@@ -1,13 +1,30 @@
-<div class="container">
-  <p><%= current_user.email %></p>
-  <p><%= current_user.first_name %></p>
-  <p><%= current_user.last_name %></p>
-  <p><%= current_user.description %></p>
-  <%= link_to "Edit Profile", edit_user_registration_path %>
-  <hr>
+<div class="profile">
+  <div class="profile-banner" style="background-image: url('https://images.unsplash.com/photo-1549321682-36e2f8000f4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80');">
+    <div class="row profile-grid">
+      <div class="col-sm-5">
+        <div class="profile-card">
+          <%= cl_image_tag current_user.profile_picture, class: 'profile-card-image' %>
+          <div class="profile-card-bottom">
+            <div class="profile-about">
+              <p><strong><small>About:</small></strong></p>
+              <p><small><%= current_user.description %></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-7 profile-right">
+        <div class="row">
+          <div class="col-sm-12">
+            <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+          </div>
+          <div class="col-sm-12 profile-spotify-api">
+            <h3>Spotify Implementation??</h3>
+          </div>
+          <div class="col-sm-12">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<div class="col-12"></div>
-<%= render "./components/banner_profile" %>
-<!-- <div class="container"> --
-

@@ -3,7 +3,7 @@
     <div class="col-sm-2">
       <div class="user-info">
         <%= link_to profile_path(@campaign.user_id) do %>
-          <p><%= cl_image_tag @campaign.user.profile_picture, height: 60, :style => 'border-radius:50%;' %></p>
+          <p><%= cl_image_tag @campaign.user.profile_picture, width: 100 %></p>
           <p><small>By <%= @campaign_creator.first_name %> <%= @campaign_creator.last_name %></small></p>
         <% end %>
       </div>
