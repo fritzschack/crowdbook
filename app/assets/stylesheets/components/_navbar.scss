@@ -1,7 +1,7 @@
 .navbar{
   background: white;
   transition: all 0.3s ease;
-  height: 12vh;
+  height: 70px;
   margin: 0;
   display: flex;
   align-items: center;
@@ -12,22 +12,12 @@
 }
 
 .logo {
-  height: 40px;
+  height: 50px;
   font-size: 45px;
-}
-
-.navbar-logo-text {
   position: absolute;
-  top: 20px;
-  left: 10px;
-  margin: 10px;
-  font-size: 30px;
-  letter-spacing: 1px;
-  text-decoration: none;
-  color: black;
+  top: 10px;
+  left: 30px;
   &:hover {
-    text-decoration: none;
-    color: black;
     opacity: 0.5;
   }
 }
@@ -45,11 +35,11 @@
   justify-content: space-between;
   position: absolute;
   right: 44px;
-  top: 19px;
+  top: -7px;
 }
 
 .navbar-item {
-  margin: 0;
+  margin-top: 0;
 }
 
 .navbar-link {
@@ -57,6 +47,7 @@
   margin: 8px;
   color: black;
   padding: 10px 15px;
+  margin-top: 22px;
 }
 .navbar-link:hover {
   opacity: 0.5;
@@ -65,17 +56,18 @@
 
 .dropdown-small {
   position: absolute;
-  top: 22px;
+  top: 10px;
   right: 30px;
 }
 
 .avatar.dropdown-toggle {
   cursor: pointer;
+  margin-top:12px;
 }
 
 /* Dropdown menu */
 .navbar-dropdown-menu {
-  margin-top: 15px;
+  margin-top: 30px;
   margin-right: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
@@ -84,13 +76,14 @@
   transition: color 0.3s ease;
   font-weight: lighter !important;
   color: black !important;
-  font-size: 15px !important;
+  font-size: 12px !important;
   line-height: 22px !important;
   padding: 10px 20px;
 }
 .navbar-dropdown-menu li > a:hover {
   background: transparent !important;
   color: black !important;
+  opacity: 0.5;
 }
 .navbar-dropdown-menu:before {
   content: ' ';

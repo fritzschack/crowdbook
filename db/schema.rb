@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_03_08_025233) do
     t.float "latitude"
     t.float "longitude"
     t.integer "funding_goal"
-    t.integer "current_funding_amount"
+    t.integer "current_funding_amount", default: 0
     t.index ["user_id"], name: "index_campaigns_on_user_id"
   end
 
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 2019_03_08_025233) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "profile_picture_url", default: "index"
+    t.string "profile_picture"
     t.string "first_name"
     t.string "last_name"
     t.text "description"
