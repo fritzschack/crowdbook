@@ -13,6 +13,12 @@ class CampaignsController < ApplicationController
       )
     end
 
+    if params[:location_query] == ''
+      @campaigns = @campaigns.where.not(latitude: nil, longitude: nil)
+    elsif params[:location_query]
+      @campaigns = @campaigns.near(params[:location_query], 20)
+    end
+
     # if params[:min_price_query].present?
     #   min_price = params[:min_price_query].to_i
     #   @campaigns = @campaigns.where("price_per_day > #{min_price}")

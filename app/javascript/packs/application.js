@@ -4,6 +4,7 @@ import "bootstrap";
 import $ from 'jquery';
 import flatpickr from "flatpickr";
 import { autoScrollHome } from '../components/autoScroll.js';
+import { initUpdateNavbarOnScroll } from '../components/navbar.js';
 import 'select2';
 import "flatpickr/dist/flatpickr.min.css";
 initMapbox();
@@ -33,5 +34,6 @@ $(function() {
 });
 
 autoScrollHome();
+initUpdateNavbarOnScroll();
 
 flatpickr("#datepicker", {});
