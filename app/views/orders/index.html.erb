@@ -1,10 +1,29 @@
 <div class="container">
-  <h1>My Orders</h1>
-  <% @orders.each do |order| %>
-    <ul>
-      <li>Status: <%= order.state %></li>
-      <li>Campaign: <%= order.ticket_categories.first.campaign.name %></li>
-      <li>Amount: <%= humanized_money_with_symbol(order.amount) %></li>
-    </ul>
-  <% end %>
+  <div class="row">
+    <h1>My Pledges</h1>
+    <% @orders.each do |order| %>
+      <div class="row">
+        <div class="col-sm-12 order-card">
+          <div class="col-6 col-md-4 order-card-left">
+            <%= cl_image_tag order.ticket_categories.first.campaign.photos.first.image_url, height: 150, crop: :fill, class: 'order-card-image' %>
+          </div>
+          <div class="col-8 col-md-6 order-card-middle">
+            <h4><strong><%= order.ticket_categories.first.campaign.name %></strong></h4>
+            <p><%= order.ticket_categories.first.campaign.date.to_s.split('-').reverse.join('-') %></p>
+            <p><%= order.ticket_categories.first.campaign.address %></p>
+            <p><%= humanized_money_with_symbol(order.ticket_categories.first.campaign.current_funding_amount) %> has been raised of a <%= humanized_money_with_symbol(order.ticket_categories.first.campaign.funding_goal) %> goal</p>
+          </div>
+          <div class="col-4 col-md-2 order-card-right">
+            <p>Pledge Total: <%= humanized_money_with_symbol(order.amount) %></p>
+            <% if order.ticket_categories.first.campaign.current_funding_amount > order.ticket_categories.first.campaign.funding_goal %>
+              <p style="color: #98FB98">Campaign Complete</p>
+              <button class="btn btn-primary">View Ticket(s) <i class="fas fa-arrow-right"></i></button>
+            <% else %>
+              <p style="color: #FF0000">Campaign Incomplete</p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

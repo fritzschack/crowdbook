@@ -1,0 +1,53 @@
+.profile {
+
+}
+
+.profile-banner {
+  height: 35vh;
+  background-position: bottom;
+  position: relative;
+}
+
+.profile-grid {
+  position:absolute;
+  top: 45%;
+  width: 100%;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.profile-card-image {
+  margin: 0 auto;
+  width: 300px;
+  box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
+}
+
+.profile-card-bottom {
+  box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
+  margin: 0 auto;
+  width: 300px;
+  padding: 20px;
+}
+.profile-about {
+  margin-top: 15px;
+  word-wrap: break-word;
+}
+
+.profile-right {
+  position: absolute;
+  top:15%;
+  right:0;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.profile-spotify-api {
+  color: black;
+  margin-top: 15px;
+}

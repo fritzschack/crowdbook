@@ -1,42 +1,30 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url('https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/3/2017/01/03145133/twenty20_ec812a3a-48ad-40af-983b-129484cf6086.jpg');">
-  <!-- <div class="banner-content"> -->
-    <!-- <div class="flexbox-animation">
-      <div class="animation-container flex-item-animation">
-        <ul class="animation-list">
-          <li class="animation-list-item">Fund</li>
-          <li class="animation-list-item">Plan</li>
-          <li class="animation-list-item">Create</li>
-          <li class="animation-list-item">Promote</li>
-        </ul>
-      </div>
-      <div class="flex-item-text" style="margin-bottom: 50px;">
-         Campaigns
-      </div>
-    </div> -->
-  <%= render 'components/navbar-home' %>
   <div class="row home-form">
+  <div class="banner-title-left">
+    <h1>Welcome To CrowdBook.</h1>
+  </div>
     <div class="col-xs-8 offset-xs-2 col-md-3 offset-md-7 searchbar-banner">
-      <h2>Find campaigns to help create the concert you always wished for.</h2>
+     <!--  <h2>Find campaigns to help create the concert you always wished for.</h2> -->
+        <h3>Search for Campaigns in: </h3>
       <%= form_tag campaigns_path, method: :get, class: "form-inline" do%>
         <!-- <div class="row"> -->
           <div style="padding: 5px 0;">
-            <%= label_tag :name_query, 'SEARCH' %>
             <%= text_field_tag :name_query,
               params[:name_query],
               class: "form-control input-banner",
-              placeholder: "Enter Your Search",
+              placeholder: "Location...",
               style: "width: 100%;"
             %>
           </div>
           <div class="selecttwo-box" style="padding: 5px 0;">
             <% collection = Musician.all.collect { |p| [p.name, p.id] } %>
             <% collection.unshift("All musicians") %>
-            <%= label_tag :musician_query, 'MUSICIAN' %>
+            <h3>with this Artist:</h3>
             <%= select_tag :musician_query, options_for_select(collection, params[:musician_query]), class: "js-selection-search-banner" %>
           </div>
           <div class="selecttwo-box" style="padding: 5px 0;">
             <% collection =  ["All genres", "Industrial & Gothic", "(Heavy) Metal", "Rock 'n' Roll", "Golden Age", "Punk (Rock) / (New) Wave", "Hardcore (Punk)", "Alternative / Indie (Rock)", "Contemporary (Rock)", "Pop (Music)", "Country", "Rhythm 'n' Blues (R&B)", "Gospel & Pioneers", "Blues", "Jazz", "Jamaican (Music) / Reggae", "Rap / Hip-hop Music", "Breakbeat", "Drum 'n' Bass / Jungle", "Hardcore (Techno)", "Techno", "House", "Trance", "Downtempo / Ambient"] %>
-            <%= label_tag :genre_query, 'GENRE' %>
+            <h3>and this Genre:</h3>
             <%= select_tag :genre_query, options_for_select(collection, params[:genre_query]), class: "js-selection-search-banner" %>
           </div>
           <div style="padding: 5px 0;">

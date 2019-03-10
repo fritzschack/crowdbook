@@ -1,10 +1,11 @@
-<%= render 'components/navbar' %>
 <div class="container">
   <div class="row">
     <div class="col-sm-2">
       <div class="user-info">
-        <p><%= cl_image_tag @campaign.user.profile_picture_url, height: 60, :style => 'border-radius:50%;' %></p>
-        <p><small>By <%= @campaign_creator.first_name %> <%= @campaign_creator.last_name %></small></p>
+        <%= link_to profile_path(@campaign.user_id) do %>
+          <p><%= cl_image_tag @campaign.user.profile_picture, width: 100 %></p>
+          <p><small>By <%= @campaign_creator.first_name %> <%= @campaign_creator.last_name %></small></p>
+        <% end %>
       </div>
     </div>
     <div class="col-sm-9">
