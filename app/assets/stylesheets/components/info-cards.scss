@@ -8,20 +8,10 @@
 }
 
 .info-text {
-  font-size: 20px;
-  font-weight: bold;
   text-decoration: none;
   color: black;
-}
-
-.explore-card {
-  font-size: 20px;
-  font-weight: bold;
-  text-decoration: none;
-  color: black;
-  &:hover {
-    text-decoration:none;
-    opacity: 0.5;
-    cursor: none;
+  h4 {
+    font-size: 20px;
+    font-weight: bold;
   }
 }
