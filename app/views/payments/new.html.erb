@@ -1,38 +1,40 @@
-<div class="container">
-  <h1>Pledge Towards: <%= @order.ticket_categories.first.campaign.name %></h1>
-  <%= form_tag order_payments_path(@order) do %>
-    <article>
-      <label class="amount">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Pledge Type</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Price per Pledge</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @order.tickets.group_by(&:ticket_category).each do |ticket_category, tickets| %>
+<div class="container payment-summary">
+  <div class="payment">
+    <h2><strong>Your Order Summary:</strong></h2>
+    <h3>Pledge Towards: <%= @order.ticket_categories.first.campaign.name %></h3>
+    <%= form_tag order_payments_path(@order) do %>
+      <article>
+        <label class="amount">
+          <table class="table">
+            <thead>
               <tr>
-                <td><%= ticket_category.name %></td>
-                <td><%= tickets.count %></td>
-                <td><%= ticket_category.price %></td>
+                <th scope="col">Pledge Type</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price per Pledge</th>
               </tr>
-            <% end %>
-          </tbody>
-          <td>Total Amount: <%= humanized_money_with_symbol(@order.amount) %></td>
-        </table>
-      </label>
-    </article>
+            </thead>
+            <tbody>
+              <% @order.tickets.group_by(&:ticket_category).each do |ticket_category, tickets| %>
+                <tr>
+                  <td><%= ticket_category.name %></td>
+                  <td><%= tickets.count %></td>
+                  <td><%= ticket_category.price %></td>
+                </tr>
+              <% end %>
+            </tbody>
+            <td>Total Amount: <%= humanized_money_with_symbol(@order.amount) %></td>
+          </table>
+        </label>
+      </article>
 
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-      data-name="My Pledge"
-      data-email="<%= current_user.email %>"
-      data-description="Pledge <%= @order.ticket_category_sku %>"
-      data-amount="<%= @order.amount_cents %>"
-      data-currency="<%= @order.amount.currency %>">
-    </script>
-
-  <% end %>
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-name="<%= current_user.first_name %>'s Pledge Towards:"
+        data-email="<%= current_user.email %>"
+        data-description="<%= @order.ticket_categories.first.campaign.name  %>"
+        data-amount="<%= @order.amount_cents %>"
+        data-currency="<%= @order.amount.currency %>">
+      </script>
+    <% end %>
+  </div>
 </div>

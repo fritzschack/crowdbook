@@ -51,3 +51,20 @@
   color: black;
   margin-top: 15px;
 }
+
+.edit-profile-button {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  border-radius: 10px;
+  box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
+  background-color: white;
+  border-color: white;
+  color: black;
+  &:hover {
+  background-color: black;
+  border-color: black;
+  color: white;
+
+  }
+}

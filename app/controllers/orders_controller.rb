@@ -1,11 +1,11 @@
 class OrdersController < ApplicationController
   def index
     @orders = current_user.orders.where(state: 'paid')
-
   end
 
   def show
     @order = current_user.orders.where(state: 'paid').find(params[:id])
+    @campaigns = Campaign.order("RANDOM()").limit(3)
   end
 
   def new

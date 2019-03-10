@@ -1,5 +1,5 @@
 .card {
-  height: 540px;
+  height: 400px;
   margin-bottom: 20px;
   box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
   text-decoration: none;
@@ -12,8 +12,9 @@
     transition: 0.3s;
   }
   .card-image {
-    height: 300px;
+    height: 200px;
     position: relative;
+    background-repeat: no-repeat;
     h3 {
       margin: 0px;
       padding: 10px;
@@ -21,6 +22,7 @@
       position: absolute;
       bottom: 0px;
       left: 0px;
+      font-size: 25px;
     }
     p {
       opacity: 0.8;

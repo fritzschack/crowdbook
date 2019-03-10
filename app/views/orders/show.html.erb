@@ -1,8 +1,62 @@
 <div class="container">
-  <h1>Order</h1>
-  <ul>
-    <li>Status: <%= @order.state %></li>
-    <li>Campaign: <%= @order.ticket_categories.first.campaign.name %></li>
-    <li>Amount: <%= humanized_money_with_symbol(@order.amount) %></li>
-  <ul>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="order-success">
+        <div class="order-success-title" >
+          <i class="far fa-check-circle order-tick"></i>
+          <h2><strong>Congratulations! Your Pledge has been a success!</strong></h2>
+        </div>
+        <div class="order-success-order-info">
+          <h3>You contributed <%= humanized_money_with_symbol(@order.amount) %> toward a goal of <%= humanized_money_with_symbol(@order.ticket_categories.first.campaign.funding_goal) %></h3>
+          <article>
+            <label class="amount">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Pledge Type</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price per Pledge</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @order.tickets.group_by(&:ticket_category).each do |ticket_category, tickets| %>
+                    <tr>
+                      <td><%= ticket_category.name %></td>
+                      <td><%= tickets.count %></td>
+                      <td><%= ticket_category.price %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+                <td>Total Amount: <%= humanized_money_with_symbol(@order.amount) %></td>
+              </table>
+            </label>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="other-campaigns-title">
+    <h3><strong>Other Campaigns You Might Be Interested In:</strong></h3>
+  </div>
+  <div class="row other-campaigns">
+    <% @campaigns.each do |campaign| %>
+      <%= link_to campaign_path(campaign) do %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card home-card">
+            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= cl_image_path campaign.photos.first.image_url, height: 200, width: 400, crop: :fill %>')">
+              <h3><%= campaign.name %></h3>
+              <p><small><%= campaign.genre.upcase %></small></p>
+            </div>
+            <div class="card-bottom">
+              <p><i class="far fa-calendar-check"></i> <%= campaign.date.to_s.split('-').reverse.join('-') %></p>
+              <p><i class="far fa-compass"></i> <%= campaign.address %></p>
+              <p><%= campaign.description[0..100] %>...</p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
