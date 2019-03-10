@@ -31,17 +31,19 @@
       <% else %>
         <% @campaigns.each do |campaign| %>
           <%= link_to campaign_path(campaign) do %>
-            <div class="card">
+            <div class="index-card">
               <div class="row">
-                <div class="col-sm-4 card-left" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path campaign.photos.first.image_url, height: 300, width: 400, crop: :fill %>')"></div>
+                <div class="col-sm-4 card-left" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path campaign.photos.first.image_url, height: 300, width: 400, crop: :fill %>')">
+                    <p><small><%= campaign.genre.upcase %></small></p>
+                </div>
                 <div class="col-sm-8 card-right">
                   <div class="card-title">
-                    <h4><%= campaign.name %></h4>
-                    <p><small><%= campaign.genre %></small></p>
-                    <p><small><%= campaign.date.to_s.split('-').reverse.join('-') %> | <%= campaign.address %></small></p>
+                    <h3><%= campaign.name %></h3>
+                    <p><i class="far fa-calendar-check"></i> <%= campaign.date.to_s.split('-').reverse.join('-') %></p>
+                    <p><i class="far fa-compass"></i> <%= campaign.address %></p>
                   </div>
                   <div class="card-description">
-                    <p style="font-style: italic;"><%= campaign.description[0..200]%>...</p>
+                    <p style="opacity: 0.6;"><%= campaign.description[0..100]%>...</p>
                   </div>
                 </div>
               </div>
