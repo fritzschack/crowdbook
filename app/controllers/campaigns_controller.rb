@@ -1,5 +1,7 @@
 class CampaignsController < ApplicationController
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
+  before_action :campaigns_backed, only: [:index, :show]
+
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -122,5 +124,9 @@ class CampaignsController < ApplicationController
 
   def campaign_params
     params.require(:campaign).permit(:name, :address, :description, :date, :url, :is_private?, :genre, :funding_goal, photos_attributes: [:id, :user_id, :image_url])
+  end
+
+  def campaigns_backed
+    @campaigns_backed = TicketCategory.joins(:orders).where({ orders: { user_id: current_user } }).map { |campaign| campaign.campaign_id }
   end
 end
