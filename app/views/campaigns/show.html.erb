@@ -1,4 +1,12 @@
 <div class="container">
+  <% if @campaigns_backed.include?(@campaign.id)%>
+  <div class="row">
+    <div class="col-sm-12" style="text-align:center;">
+       <h2 style="margin: 0 auto;font-weight: lighter;"><i class="far fa-check-circle"></i> Campaign Backed!</h2>
+       <hr>
+    </div>
+  </div>
+  <% end %>
   <div class="row">
     <div class="col-sm-2">
       <div class="user-info">

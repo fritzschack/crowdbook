@@ -42,9 +42,14 @@
             <div class="index-card">
               <div class="row">
                 <div class="col-sm-4 card-left" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path campaign.photos.first.image_url, height: 300, width: 400, crop: :fill %>')">
-                    <p><small><%= campaign.genre.upcase %></small></p>
+                  <p><small><%= campaign.genre.upcase %></small></p>
                 </div>
                 <div class="col-sm-8 card-right">
+                  <div class="campaign-backed">
+                    <% if @campaigns_backed.include?(campaign.id)%>
+                        <h4 style="font-weight: lighter;margin-bottom: 0;"><i class="far fa-check-circle"></i> Campaign Backed!</h4>
+                    <% end %>
+                  </div>
                   <div class="card-title">
                     <h3><%= campaign.name %></h3>
                     <p><i class="far fa-calendar-check"></i> <%= campaign.date.to_s.split('-').reverse.join('-') %></p>
