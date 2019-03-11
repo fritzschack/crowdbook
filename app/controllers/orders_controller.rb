@@ -7,13 +7,13 @@ class OrdersController < ApplicationController
     @order = current_user.orders.where(state: 'paid').find(params[:id])
     @campaigns = Campaign.order("RANDOM()").limit(3)
     @tickets = []
-    @order.tickets.each do
-      qrcode = RQRCode::QRCode.new("https://crowdbook.herokuapp.com/orders/params[:id]")
+    @order.tickets.each do |ticket|
+      qrcode = RQRCode::QRCode.new("http://localhost:3000/tickets/#{ticket[:id]}")
       svg = qrcode.as_svg(offset: 0, color: '000',
                     shape_rendering: 'crispEdges',
                     module_size: 11)
       @tickets << svg
-      end
+    end
     respond_to do |format|
       format.html
       format.pdf do
@@ -76,9 +76,5 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:campaign_id)
-  end
-
-  def address
-     params.require(:order[:id]).permit
   end
 end
