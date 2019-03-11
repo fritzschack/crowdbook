@@ -106,6 +106,8 @@ class CampaignsController < ApplicationController
       redirect_to root_path
       flash[:alert] = 'Not Gonna Happen'
     end
+    @campaign = Campaign.find(params[:id])
+
   end
 
   def update
@@ -129,7 +131,7 @@ class CampaignsController < ApplicationController
   end
 
   def campaign_params
-    params.require(:campaign).permit(:name, :address, :description, :date, :url, :is_private?, :genre, :funding_goal, photos_attributes: [:id, :user_id, :image_url])
+    params.require(:campaign).permit(:name, :address, :description, :date, :url, :is_private?, :genre, :funding_goal, :campaign_end_date, photos_attributes: [:id, :user_id, :image_url])
   end
 
   def campaigns_backed
