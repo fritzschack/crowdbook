@@ -25,12 +25,10 @@
 .profile-card-image {
   margin: 0 auto;
   width: 300px;
-  box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
-}
+  box-shadow: 0px 0px 10px 0px rgba(156,156,156,1);}
 
 .profile-card-bottom {
-  box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
-  margin: 0 auto;
+  box-shadow: 0px 0px 10px 0px rgba(156,156,156,1);  margin: 0 auto;
   width: 300px;
   padding: 20px;
 }
@@ -52,20 +50,39 @@
   margin-top: 15px;
 }
 
+.edit-profile {
+  margin-top: 15px;
+  height: auto;
+}
+
 .edit-profile-button {
   z-index: 2;
   position: absolute;
   right: 40px;
-  top: 45%;
+  top: 10%;
   border-radius: 10px;
-  box-shadow: 0 15px 35px rgba(126,87,88,.1), 0 5px 15px rgba(0,0,0,.07);
-  background-color: white;
-  border-color: white;
   color: black;
+  letter-spacing: 0;
   &:hover {
-  background-color: black;
-  border-color: black;
-  color: white;
+    box-shadow: 0px 0px 10px 0px rgba(156,156,156,1);  }
+}
+
+.my-campaigns-title {
+  text-align: center;
+  color: black;
+}
+
+.edit-campaign {
+  text-decoration: none;
+  color: black;
+  letter-spacing:0;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius:10px;
+  &:hover {
+    text-decoration: none;
+    color: black;
+    opacity: 0.5;
 
   }
 }
