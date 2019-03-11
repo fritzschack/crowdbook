@@ -1,0 +1,10 @@
+<h1>this is a ticket!</h1>
+<h1><%= @order.id %></h1>
+<%# raise %>
+<%#= raw @qrcode.as_html %>
+
+<ul class="tickets">
+  <% @tickets.each do |ticket| %>
+    <li><%= raw ticket %></li>
+  <% end %>
+</ul>

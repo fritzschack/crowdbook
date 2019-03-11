@@ -6,7 +6,36 @@ class OrdersController < ApplicationController
   def show
     @order = current_user.orders.where(state: 'paid').find(params[:id])
     @campaigns = Campaign.order("RANDOM()").limit(3)
+    @tickets = []
+    @order.tickets.each do
+      qrcode = RQRCode::QRCode.new("https://crowdbook.herokuapp.com/orders/params[:id]")
+      svg = qrcode.as_svg(offset: 0, color: '000',
+                    shape_rendering: 'crispEdges',
+                    module_size: 11)
+      @tickets << svg
+      end
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Your_filename",
+        template: "orders/ticket.html.erb",
+        layout: 'layouts/pdf.html.erb'
+        # @html = get_html
+        # @pdf = WickedPdf.new.pdf_from_string(@html)
+        # send_data(@pdf, :filename => 'Tickets', type: 'application/pdf')
+      end
+    end # Excluding ".pdf" extension.
   end
+
+  # def get_html
+  #   render_to_string(
+  #     template: "layouts/pdf.html.erb",
+  #     orientation: "Landscape",
+  #     page_size: "Letter",
+  #     background: true,
+  #     order: @order
+  #     )
+  # end
 
   def new
   end
@@ -47,5 +76,9 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:campaign_id)
+  end
+
+  def address
+     params.require(:order[:id]).permit
   end
 end

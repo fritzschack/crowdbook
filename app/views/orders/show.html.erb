@@ -29,6 +29,7 @@
                   <% end %>
                 </tbody>
                 <td>Total Amount: <%= humanized_money_with_symbol(@order.amount) %></td>
+                <td><%= link_to 'View Tickets', order_path(@order, :format => :pdf)%></td>
               </table>
             </label>
           </article>
