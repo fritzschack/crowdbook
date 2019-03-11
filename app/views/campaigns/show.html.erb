@@ -47,7 +47,7 @@
     </div>
     <div class="row responsive">
       <div class="col-sm-12">
-        <div class="ticket-category-boxes">
+        <div class="ticket-category-boxes" style="box-shadow: 0px 0px 10px 0px rgba(156,156,156,1); 0px 0px 2px 1px rgba(0,0,0,0.75); none;">
           <h4>Amount Pledged: <%= humanized_money_with_symbol(@campaign.current_funding_amount) %></h4>
           <h5><%= @campaign.tickets.count %> Pledges Made</h5>
           <h5>The Goal is <%= humanized_money_with_symbol(@campaign.funding_goal) %></h5>
