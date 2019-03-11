@@ -26,11 +26,6 @@
   margin-bottom: 30px;
 }
 
-.home-form {
-  // vertical-align: middle;
-  // min-height: 100vh;
-}
-
 .searchbar-banner {
   min-height: 60%;
   float: right;
@@ -41,7 +36,7 @@
   margin-right: 120px;
   width:auto;
   h3 {
-    color: black;
+    color: $dark-blue;
     text-align: left;
     font-weight: bold;
   }
@@ -59,6 +54,8 @@
 }
 
 .button-banner {
+  background-color: rgba(19,196,163,1);
+  border: none;
   width: 100px;
   height: 34px;
   font-weight: bold;
@@ -90,5 +87,3 @@
     vertical-align: middle;
   }
 }
-
-
