@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_03_11_013354) do
     t.integer "funding_goal"
     t.integer "current_funding_amount", default: 0
     t.string "password"
+    t.date "campaign_end_date"
     t.index ["user_id"], name: "index_campaigns_on_user_id"
   end
 

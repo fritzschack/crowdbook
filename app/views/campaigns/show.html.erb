@@ -1,5 +1,13 @@
 <%= render "components/banner_general" %>
 <div class="container">
+  <% if @campaign_active == false %>
+    <div class="row">
+      <div class="col-sm-12" style="text-align:center;">
+         <h2 style="margin: 0 auto;font-weight: lighter;">Sorry, this Campaign is no longer active!</h2>
+         <hr>
+      </div>
+    </div>
+  <% end %>
   <% if @campaigns_backed.include?(@campaign.id)%>
   <div class="row">
     <div class="col-sm-12" style="text-align:center;">
@@ -43,21 +51,24 @@
           <h4>Amount Pledged: <%= humanized_money_with_symbol(@campaign.current_funding_amount) %></h4>
           <h5><%= @campaign.tickets.count %> Pledges Made</h5>
           <h5>The Goal is <%= humanized_money_with_symbol(@campaign.funding_goal) %></h5>
+          <h4><strong><%= @campaign_days_left %></strong> <% if @campaign_days_left == 1 %> Day <% else %> Days <% end %> Left</h4>
         </div>
-        <%= simple_form_for :order, url: orders_path do |f| %>
-          <%= f.input :campaign_id, as: :hidden, :input_html => { :value => @campaign.id } %>
-            <%= simple_fields_for :categories do |c| %>
-              <% @campaign.ticket_categories.each do |category| %>
-                <div class="col-sm-3 ticket-category-boxes">
-                  <h4><%= category.name %> | <%= humanized_money_with_symbol(category.price) %></h4>
-                  <p><small><%= category.description %></small></p>
-                  <%= c.input "#{category.id}", collection: [1,2,3,4,5], label: "Quantity" %>
+        <% if @campaign_active == true %>
+          <%= simple_form_for :order, url: orders_path do |f| %>
+            <%= f.input :campaign_id, as: :hidden, :input_html => { :value => @campaign.id } %>
+              <%= simple_fields_for :categories do |c| %>
+                <% @campaign.ticket_categories.each do |category| %>
+                  <div class="col-sm-3 ticket-category-boxes">
+                    <h4><%= category.name %> | <%= humanized_money_with_symbol(category.price) %></h4>
+                    <p><small><%= category.description %></small></p>
+                    <%= c.input "#{category.id}", collection: [1,2,3,4,5], label: "Quantity" %>
+                  </div>
+                <% end %>
+                <div style="text-align: center;">
+                  <%= f.submit 'Purchase', class: 'btn btn-primary' %>
                 </div>
               <% end %>
-              <div style="text-align: center;">
-              <%= f.submit 'Purchase', class: 'btn btn-primary' %>
-              </div>
-            <% end %>
+          <% end %>
         <% end %>
       </div>
     </div>

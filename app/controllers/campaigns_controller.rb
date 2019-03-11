@@ -1,6 +1,7 @@
 class CampaignsController < ApplicationController
-  before_action :set_campaign, only: [:show, :edit, :update, :destroy, :verify_private_campaign, :check_codeword]
-  before_action :campaigns_backed, only: [:index, :show, :verify_private_campaign, :check_codeword]
+  before_action :set_campaign, only: [:show, :edit, :update, :destroy]
+  before_action :campaigns_backed, only: [:index, :show]
+  before_action :campaign_days_left, only: [:show]
 
   skip_before_action :authenticate_user!, only: [:index, :show]
 
@@ -55,7 +56,6 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.find(params[:id])
     @campaign_creator = User.find(@campaign.user_id)
   end
-
 
   def new
     @campaign = Campaign.new
@@ -151,5 +151,14 @@ class CampaignsController < ApplicationController
 
   def campaigns_backed
     @campaigns_backed = TicketCategory.joins(:orders).where({ orders: { user_id: current_user } }).map { |campaign| campaign.campaign_id }
+  end
+
+  def campaign_days_left
+    @campaign_days_left = (@campaign.campaign_end_date - DateTime.now + 1).to_i
+    if @campaign.campaign_end_date > DateTime.now
+      @campaign_active = true
+    else
+      @campaign_active = false
+    end
   end
 end

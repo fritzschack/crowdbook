@@ -51,6 +51,11 @@
                         <h4 style="font-weight: lighter;margin-bottom: 0;"><i class="far fa-check-circle"></i> Campaign Backed!</h4>
                     <% end %>
                   </div>
+                  <% if campaign.campaign_end_date == Date.tomorrow %>
+                    <div class="campaign-active" style="text-align: center;">
+                      <h4 style="font-weight: lighter;font-style: italic;">Hurry, Ending Soon!</h4>
+                    </div>
+                  <% end %>
                   <div class="card-title">
                     <h3><%= campaign.name %></h3>
                     <p><i class="far fa-calendar-check"></i> <%= campaign.date.to_s.split('-').reverse.join('-') %></p>
