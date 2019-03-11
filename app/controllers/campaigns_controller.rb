@@ -1,6 +1,6 @@
 class CampaignsController < ApplicationController
-  before_action :set_campaign, only: [:show, :edit, :update, :destroy]
-  before_action :campaigns_backed, only: [:index, :show]
+  before_action :set_campaign, only: [:show, :edit, :update, :destroy, :verify_private_campaign, :check_codeword]
+  before_action :campaigns_backed, only: [:index, :show, :verify_private_campaign, :check_codeword]
 
   skip_before_action :authenticate_user!, only: [:index, :show]
 
@@ -122,6 +122,23 @@ class CampaignsController < ApplicationController
     @musicians = Musician.all
   end
 
+  def verify_private_campaign
+    @campaign_creator = User.find(@campaign.user_id)
+
+    render :show if @campaign.is_private == false || current_user == @campaign_creator
+  end
+
+  def check_codeword
+    @campaign_creator = User.find(@campaign.user_id)
+
+    if params[:codeword][:input] == @campaign.password
+      render :show
+    else
+      redirect_to verify_private_campaign_path
+      flash[:alert] = 'Please enter the correct codeword.'
+    end
+  end
+
   private
 
   def set_campaign
@@ -129,7 +146,7 @@ class CampaignsController < ApplicationController
   end
 
   def campaign_params
-    params.require(:campaign).permit(:name, :address, :description, :date, :url, :is_private?, :genre, :funding_goal, photos_attributes: [:id, :user_id, :image_url])
+    params.require(:campaign).permit(:name, :address, :description, :date, :url, :is_private?, :genre, :funding_goal, :password, photos_attributes: [:id, :user_id, :image_url])
   end
 
   def campaigns_backed
