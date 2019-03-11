@@ -1,6 +1,7 @@
 class CampaignsController < ApplicationController
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
   before_action :campaigns_backed, only: [:index, :show]
+  before_action :campaign_days_left, only: [:show]
 
   skip_before_action :authenticate_user!, only: [:index, :show]
 
@@ -56,7 +57,6 @@ class CampaignsController < ApplicationController
     @campaign_creator = User.find(@campaign.user_id)
   end
 
-
   def new
     @campaign = Campaign.new
     @campaign_images = @campaign.photos.build
@@ -106,6 +106,8 @@ class CampaignsController < ApplicationController
       redirect_to root_path
       flash[:alert] = 'Not Gonna Happen'
     end
+    @campaign = Campaign.find(params[:id])
+
   end
 
   def update
@@ -122,6 +124,23 @@ class CampaignsController < ApplicationController
     @musicians = Musician.all
   end
 
+  def verify_private_campaign
+    @campaign_creator = User.find(@campaign.user_id)
+
+    render :show if @campaign.is_private == false || current_user == @campaign_creator
+  end
+
+  def check_codeword
+    @campaign_creator = User.find(@campaign.user_id)
+
+    if params[:codeword][:input] == @campaign.password
+      render :show
+    else
+      redirect_to verify_private_campaign_path
+      flash[:alert] = 'Please enter the correct codeword.'
+    end
+  end
+
   private
 
   def set_campaign
@@ -129,10 +148,19 @@ class CampaignsController < ApplicationController
   end
 
   def campaign_params
-    params.require(:campaign).permit(:name, :address, :description, :date, :url, :is_private?, :genre, :funding_goal, photos_attributes: [:id, :user_id, :image_url])
+    params.require(:campaign).permit(:name, :address, :description, :date, :url, :is_private?, :genre, :funding_goal, :campaign_end_date, :password, photos_attributes: [:id, :user_id, :image_url])
   end
 
   def campaigns_backed
     @campaigns_backed = TicketCategory.joins(:orders).where({ orders: { user_id: current_user } }).map { |campaign| campaign.campaign_id }
+  end
+
+  def campaign_days_left
+    @campaign_days_left = (@campaign.campaign_end_date - DateTime.now + 1).to_i
+    if @campaign.campaign_end_date > DateTime.now
+      @campaign_active = true
+    else
+      @campaign_active = false
+    end
   end
 end
