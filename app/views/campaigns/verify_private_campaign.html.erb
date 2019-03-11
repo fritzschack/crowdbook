@@ -1,0 +1,7 @@
+<%= render "components/banner_general" %>
+<div class="container">
+  <h1>Please enter the codeword.</h1>
+  <%= simple_form_for :codeword, url: check_codeword_path do |f| %>
+    <%= f.input :input %>
+  <% end %>
+</div>
