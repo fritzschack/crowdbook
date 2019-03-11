@@ -7,6 +7,10 @@ gem "select2-rails"
 gem 'money-rails'
 gem 'stripe'
 gem "geocoder"
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+gem 'rqrcode'# use one of these 2
+gem 'barby', require: %w(barby barby/barcode/code_128 barby/outputter/svg_outputter) # use one of these 2
 
 gem 'bootsnap', require: false
 gem 'devise'
