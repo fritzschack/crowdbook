@@ -1,9 +1,9 @@
 class CampaignsController < ApplicationController
-  before_action :set_campaign, only: [:show, :edit, :update, :destroy]
-  before_action :campaigns_backed, only: [:index, :show]
-  before_action :campaign_days_left, only: [:show]
+  before_action :set_campaign, only: [:show, :edit, :update, :destroy, :verify_private_campaign, :check_codeword]
+  before_action :campaigns_backed, only: [:index, :show, :verify_private_campaign, :check_codeword]
+  before_action :campaign_days_left, only: [:show, :verify_private_campaign, :check_codeword]
 
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :verify_private_campaign, :check_codeword]
 
   def index
     @campaigns = Campaign.all

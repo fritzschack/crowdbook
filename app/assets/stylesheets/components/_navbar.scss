@@ -11,21 +11,30 @@
   z-index: 5;
 }
 
-.navbar-white {
-  background: white;
-  .navbar-link {
-    color: black;
-    border: 1px solid black;
-  }
-}
-
-.logo {
-  height: 50px;
+.navbar-logo-text {
   position: absolute;
   top: 20px;
   left: 20px;
+  color: white;
+  text-decoration: none;
   &:hover {
-    opacity: 0.5;
+    text-decoration: none;
+    color: white;
+    opacity: 0.8;
+  }
+  img {
+    height: 50px;
+  }
+  p {
+    font-family: $logo-font;
+  }
+}
+
+.navbar-white {
+  background: rgba(27, 27, 58, 1);
+  .navbar-link {
+    color: white;
+    border: 1px solid white;
   }
 }
 

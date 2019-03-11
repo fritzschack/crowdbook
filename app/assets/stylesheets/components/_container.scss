@@ -1,3 +1,13 @@
-.container {
-  margin-top:70px;
+.wrapper-grey {
+  background-color: $dark-grey;
+  * {
+    color: $dark-blue;
+  }
+}
+
+.wrapper-dark-green {
+  background-color: $dark-green;
+  * {
+    color: white;
+  }
 }
