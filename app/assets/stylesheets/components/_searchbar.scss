@@ -1,3 +1,10 @@
 .searchbar {
   margin: 20px 0;
+  position: relative;
+}
+
+.view-description {
+  position: absolute;
+  right: 60px;
+  bottom: 0px;
 }
