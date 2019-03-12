@@ -4,10 +4,13 @@ text-align: center;
 }
 
 .order-tick {
+  padding-top: 20px;
   font-size: 120px;
+  color: $pastel-green;
 }
 .order-success-title {
-margin-bottom: 5px;
+  margin-bottom: 5px;
+  color: $pastel-green;
 }
 
 .order-success-order-info {
