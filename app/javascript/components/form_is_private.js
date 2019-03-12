@@ -9,7 +9,6 @@ const initEventListenerCheckbox = () => {
     } else {
       const password_div = document.getElementById("password_div")
       password_div.remove();
-
     }
   });
 }
