@@ -20,22 +20,12 @@ class CampaignsController < ApplicationController
       @campaigns = @campaigns.near(params[:location_query], 20)
     end
 
-    # if params[:min_price_query].present?
-    #   min_price = params[:min_price_query].to_i
-    #   @campaigns = @campaigns.where("price_per_day > #{min_price}")
-    # end
-
-    # if params[:max_price_query].present?
-    #   max_price = params[:max_price_query].to_i
-    #   @campaigns = @campaigns.where("price_per_day < #{max_price}")
-    # end
-
-    if params[:musician_query].present? && params[:musician_query] != "All musicians"
+    if params[:musician_query].present? && params[:musician_query] != "any musician"
       musician = Musician.find(params[:musician_query])
       @campaigns = @campaigns.joins(:performances).where({ performances: { musician: musician } })
     end
 
-    if params[:genre_query].present? && params[:genre_query] != "All genres"
+    if params[:genre_query].present? && params[:genre_query] != "all"
       @campaigns = @campaigns.where(
         "genre @@ :genre_query",
         genre_query: "%#{params[:genre_query]}%"

@@ -21,14 +21,22 @@
   padding: 30px 0;
 }
 
+.campaign-photos {
+  border-radius: 12px;
+}
+
 .gallery-image-parent {
   border-radius: 12px;
-  height: 450px;
-  width: 900px;
+  height: 400px;
+  width: 100%;
   background-size: cover;
   * {
     border-radius: 12px;
   }
+}
+
+.carousel-control-areas {
+  border-radius: 12px;
 }
 
 .user-info p {

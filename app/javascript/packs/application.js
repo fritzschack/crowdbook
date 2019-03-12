@@ -9,7 +9,16 @@ import { initUpdateNavbarOnScroll } from '../components/navbar.js';
 import { initEventListenerCheckbox } from '../components/form_is_private.js'
 import 'select2';
 import "flatpickr/dist/flatpickr.min.css";
+import autoSizeInput from 'autosize-input';
 
+const initAutoSizeInputs = () => {
+  const inputs = document.querySelectorAll('.js-auto-size-input');
+  inputs.forEach((input) => {
+    autoSizeInput(input);
+  });
+}
+
+initAutoSizeInputs();
 
 // campaignView();
 
@@ -20,20 +29,20 @@ $(function() {
     tags: true,
     theme: "bootstrap",
     width: '100%',
-    placeholder: 'Enter performances for your campaign'
+    placeholder: 'Enter performances for your campaign',
   });
   $('.js-genre-selection-form').select2({
     theme: "bootstrap",
-    width: '100%',
-    placeholder: 'Select a genre for your campaign'
+    placeholder: 'Select a genre for your campaign',
+    width: '100%'
   });
   $('.js-genre-selection-search').select2({
-    width: '100%',
+    width: 200,
     theme: "bootstrap",
     placeholder: 'Search for a genre'
   });
   $('.js-selection-search-banner').select2({
-    width: '100%',
+    width: 200,
     theme: "bootstrap",
     placeholder: 'Search for a genre',
   });
