@@ -19,5 +19,5 @@ Rails.application.routes.draw do
     resources :payments, only: [:new, :create]
   end
 
-  resources :tickets, only: [:show]
+  resources :tickets, only: [:show, :update, :edit]
 end

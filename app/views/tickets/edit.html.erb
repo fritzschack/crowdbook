@@ -1,0 +1,12 @@
+<%= render "components/banner_general" %>
+<div class="container">
+  <div class="form-inputs">
+    <div class="row">
+      <h1>Update tickets for your event</h1>
+      <%= simple_form_for @ticket do |f| %>
+      <%= f.input :ticket_used, label: "Select if you want to use your ticket",label_html: { class: "label-checkbox" }  %>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
