@@ -39,13 +39,6 @@
   background-position: bottom;
   text-align: center;
   }
-
-  footer {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 85px;
-  text-align:center;
-  padding-top:150px;
-  }
 </style>
 </head>
 <body>
@@ -55,9 +48,9 @@
   <h2>This is a ticket</h2>
   </div>
     <h3>
-      <ul><%=@ticket.ticket_category.campaign.name %></ul>
-      <ul><%=@ticket.ticket_category.campaign.address %></ul>
-      <ul><%=@ticket.ticket_category.campaign.date.strftime('%d/%m/%Y')%></ul>
+      <ul>Location:<%@order.ticket_categories.campaign.address %></ul>
+      <ul>Date:<%@order.ticket_categories.campaign.date %></ul>
+      <ul>Venue:<%#@order. %></ul>
     </h3>
   <div>
   </div>

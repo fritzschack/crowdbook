@@ -6,25 +6,6 @@ class OrdersController < ApplicationController
   def show
     @order = current_user.orders.where(state: 'paid').find(params[:id])
     @campaigns = Campaign.order("RANDOM()").limit(3)
-    @tickets = []
-    @order.tickets.each do |ticket|
-      qrcode = RQRCode::QRCode.new("http://localhost:3000/tickets/#{ticket[:id]}")
-      svg = qrcode.as_svg(offset: 0, color: '000',
-                    shape_rendering: 'crispEdges',
-                    module_size: 11)
-      @tickets << svg
-    end
-    respond_to do |format|
-      format.html
-      format.pdf do
-        render pdf: "Your_filename",
-        template: "orders/ticket.html.erb",
-        layout: 'layouts/pdf.html.erb'
-        # @html = get_html
-        # @pdf = WickedPdf.new.pdf_from_string(@html)
-        # send_data(@pdf, :filename => 'Tickets', type: 'application/pdf')
-      end
-    end # Excluding ".pdf" extension.
   end
 
   # def get_html
@@ -70,6 +51,7 @@ class OrdersController < ApplicationController
   end
 
   private
+
   def category_params
     params.require(:categories).permit!
   end
