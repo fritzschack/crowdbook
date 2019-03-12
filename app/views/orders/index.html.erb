@@ -28,8 +28,7 @@
                   <div class="list-card-pledge-tickets">
                     Pledge Amount: <%= humanized_money_with_symbol(order.amount) %>
                     <% if order.ticket_categories.first.campaign.current_funding_amount > order.ticket_categories.first.campaign.funding_goal %>
-                    <button>View Ticket(s)</button>
-
+                    <button class="btn green-button">View</button>
                     <% end %>
                   </div>
                 </div>
