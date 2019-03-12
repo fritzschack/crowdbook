@@ -5,37 +5,35 @@
       <h1>My Pledges</h1>
       <div class="row">
         <% if @orders.size == 0 %>
-          <h3>No Orders Made!</h3>
+          <h3>No Pledges Made!</h3>
         <% else %>
           <% @orders.each do |order| %>
-            <div class="index-card">
-              <div class="row">
-                <div class="col-sm-4 card-left" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path order.ticket_categories.first.campaign.photos.first.image_url, height: 300, width: 400, crop: :fill %>')">
-                    <p><small><%= order.ticket_categories.first.campaign.genre.upcase %></small></p>
-                </div>
-                <div class="col-sm-5 card-right">
-                  <div class="card-title">
-                    <%= link_to campaign_path(order.ticket_categories.first.campaign) do %>
-                      <h3><%= order.ticket_categories.first.campaign.name %></h3>
+            <div class="col-sm-12">
+              <%= link_to campaign_path(order.ticket_categories.first.campaign), class: "list-card-link" do %>
+                <div class="list-card">
+                  <div class="list-card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= cl_image_path order.ticket_categories.first.campaign.photos.first.image_url, height: 200, width: 400, crop: :fill %>')">
+                    <div class="list-card-date">
+                      <p><%= order.ticket_categories.first.campaign.date.strftime("%^b") %></p>
+                      <h3><%= order.ticket_categories.first.campaign.date.strftime("%e") %></h3>
+                    </div>
+                  </div>
+                  <div class="list-card-text">
+                    <h4><%= order.ticket_categories.first.campaign.name %></h4>
+                    <p><%= order.ticket_categories.first.campaign.genre %> | <%= order.ticket_categories.first.campaign.address %></p>
+                  </div>
+                  <div class="list-card-status">
+                    <div class="progress-circle" data-progress="<%= (order.ticket_categories.first.campaign.current_funding_amount / order.ticket_categories.first.campaign.funding_goal) * 100 %>">
+                    </div>
+                  </div>
+                  <div class="list-card-pledge-tickets">
+                    Pledge Amount: <%= humanized_money_with_symbol(order.amount) %>
+                    <% if order.ticket_categories.first.campaign.current_funding_amount > order.ticket_categories.first.campaign.funding_goal %>
+                    <button>View Ticket(s)</button>
+
                     <% end %>
-                    <p><i class="far fa-calendar-check"></i> <%= order.ticket_categories.first.campaign.date.to_s.split('-').reverse.join('-') %></p>
-                    <p><i class="far fa-compass"></i> <%= order.ticket_categories.first.campaign.address %></p>
-                  </div>
-                  <div class="card-description">
-                    <p style="opacity: 0.6;"><%= order.ticket_categories.first.campaign.description[0..100]%>...</p>
                   </div>
                 </div>
-                <div class="order-card-right">
-                  <p>Pledge Total: <%= humanized_money_with_symbol(order.amount) %></p>
-                  <%= link_to "View Order", order_path(order), class: 'btn btn-primary' %>
-                  <% if order.ticket_categories.first.campaign.current_funding_amount > order.ticket_categories.first.campaign.funding_goal %>
-                    <p style="color: #98FB98">Campaign Complete</p>
-                    <button class="btn btn-primary">View Ticket(s) <i class="fas fa-arrow-right"></i></button>
-                  <% else %>
-                    <p style="color: #FF0000">Campaign Incomplete</p>
-                  <% end %>
-                </div>
-              </div>
+              <% end %>
             </div>
           <% end %>
         <% end %>
@@ -43,3 +41,7 @@
     </div>
   </div>
 </div>
+
+
+
+
