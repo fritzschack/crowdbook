@@ -24,7 +24,7 @@
 
 <div class="wrapper-light-grey">
   <div class="container" id="home-cards" style="margin-top: 0;">
-    <center><h2 class="header-homecards">A Few Of Our Favourites</h2></center>
+    <center><h2 class="header-homecards">Upcoming Campaigns</h2></center>
       <% @campaigns.each do |campaign| %>
         <%= link_to campaign_path(campaign), class: "list-card-link" do %>
           <div class="list-card">
@@ -40,11 +40,11 @@
             </div>
             <div class="list-card-status">
               <!-- .progress-circle(data-progress = <%#= (campaign.current_funding_amount / campaign.funding_goal) * 100 %>) -->
-              <div class="progress-circle" data-progress="<%= (campaign.current_funding_amount / campaign.funding_goal) * 100 %>"></div>
+              <div class="progress-circle" data-progress="<%= (campaign.current_funding_amount / campaign.funding_goal) * 100 %>">
+              </div>
             </div>
           </div>
         <% end %>
-      <% end %>
       <% end %>
     </div>
   </div>

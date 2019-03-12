@@ -4,8 +4,8 @@
   <div class="signup-form-container">
     <center><h3 style="margin-bottom: 20px;">Update Campaign <%= @campaign.name %></h3></center>
       <%= simple_form_for @campaign do |f| %>
-        <%= f.input :address, as: :text %>
-        <%= f.input :description %>
+        <%= f.input :address%>
+        <%= f.input :description, as: :text %>
         <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>
   </div>

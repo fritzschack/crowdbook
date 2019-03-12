@@ -25,28 +25,7 @@
              <h3>My Campaigns</h3>
              <hr>
             </div>
-            <% @campaigns.each do |campaign| %>
-              <div class="index-card">
-                <div class="row">
-                  <div class="col-sm-4 card-left" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path campaign.photos.first.image_url %>')">
-                    <p><small><%= campaign.genre.upcase %></small></p>
-                  </div>
-                  <div class="col-sm-8 card-right">
-                    <div class="card-title">
-                      <%= link_to campaign_path(campaign) do %>
-                        <h3><%= campaign.name %></h3>
-                      <% end %>
-                      <p><i class="far fa-calendar-check"></i> <%= campaign.date.to_s.split('-').reverse.join('-') %></p>
-                      <p><i class="far fa-compass"></i> <%= campaign.address %></p>
-                    </div>
-                    <div class="card-description">
-                      <p style="opacity: 0.6;"><%= campaign.description[0..100]%>...</p>
-                      <%= link_to "Edit Campaign", edit_campaign_path(campaign), class: 'edit-campaign' %>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <% end %>
+              <%= render "components/home_cards" %>
           </div>
         </div>
       </div>

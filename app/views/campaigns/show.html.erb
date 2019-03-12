@@ -3,17 +3,15 @@
   <div class="container">
     <% if @campaign_active == false %>
       <div class="row">
-        <div class="col-sm-12" style="text-align:center;">
-           <h2 style="margin: 0 auto;font-weight: lighter;">Sorry, this Campaign is no longer active!</h2>
-           <hr>
+        <div class="col-sm-12 campaign-show-ended">
+           <h2>Sorry, this Campaign is no longer active!</h2>
         </div>
       </div>
     <% end %>
     <% if @campaigns_backed.include?(@campaign.id)%>
     <div class="row">
-      <div class="col-sm-12" style="text-align:center;">
-         <h2 style="margin: 0 auto;font-weight: lighter;"><i class="far fa-check-circle"></i> Campaign Backed!</h2>
-         <hr>
+      <div class="col-sm-12 campaign-show-backed">
+         <h2><i class="far fa-check-circle"></i> Campaign Backed!</h2>
       </div>
     </div>
     <% end %>

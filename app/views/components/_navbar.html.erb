@@ -1,6 +1,6 @@
 <div class="navbar">
   <a href="/" class="navbar-logo-text">
-    <img src="https://res.cloudinary.com/dsfmdlng2/image/upload/v1552103196/grey_to_white_logo.png" class="logo"></i>
+    <img src="https://res.cloudinary.com/dsfmdlng2/image/upload/v1552372241/alternate_crowdbook_logo.png" class="logo"></i>
     <!-- <p>crowdbook</p> -->
   </a>
 
@@ -13,7 +13,7 @@
       <div class="dropdown">
           <% if user_signed_in? %>
             <p class="avatar dropdown-toggle" id="navbar-menu" data-toggle="dropdown">
-              <%= cl_image_tag current_user.profile_picture, height: 50, width: 50, :style => 'border-radius:50%;' %>
+              <%= cl_image_tag current_user.profile_picture, height: 50, width: 50, :style => 'border-radius:50%;background-size:cover;' %>
             </p>
             <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
               <li><%= link_to "My Profile", my_profile_path %></li>

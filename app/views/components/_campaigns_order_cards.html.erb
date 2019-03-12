@@ -19,21 +19,6 @@
                     <p><%= campaign.description[0..100] %></p>
                   </div>
                 </div>
-                <% if campaign.campaign_end_date == Date.tomorrow %>
-                  <div class="campaign-card-ending-soon">
-                    <h5>Ending Soon!</h5>
-                  </div>
-                <% end %>
-                <% if campaign.campaign_end_date < DateTime.now%>
-                  <div class="campaign-card-ended">
-                    <h5>Campaign Ended!</h5>
-                  </div>
-                <% end %>
-                <% if @campaigns_backed.include?(campaign.id)%>
-                  <div class="campaign-card-backed" style="text-align: center;">
-                      <i class="far fa-check-circle"></i>
-                  </div>
-                <% end %>
               </div>
             </div>
           <% end %>

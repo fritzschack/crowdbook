@@ -21,6 +21,7 @@
 }
 
 .campaign-card-date {
+  width: 60px;
   text-align: center;
   position: absolute;
   right: 20px;
@@ -50,17 +51,33 @@
 }
 
 .campaign-card-backed {
-
+  width: 60px;
+  text-align: center;
+  position: absolute;
+  right: 20px;
+  top: 15%;
+  background-color: $pastel-green;
+  padding: 5px 10px;
+  font-size: 30px;
+  color: white;
 }
 
 .campaign-card-ending-soon {
   position: absolute;
-  top: 40px;
+  top: 5%;
   left: 0;
-  margin: 0;
-  color: white;
-  font-size: 25px;
-  font-weight: lighter;
-  background-color: $pastel-green;
-  padding: 5px 15px;
+  color: black;
+  font-size: 20px;
+  background-color: $light-grey;
+  padding: 0 20px;
+}
+
+.campaign-card-ended {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  color: black;
+  font-size: 20px;
+  background-color: $light-grey;
+  padding: 0 20px;
 }
