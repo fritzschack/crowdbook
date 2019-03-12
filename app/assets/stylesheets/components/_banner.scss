@@ -7,6 +7,10 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 90px;
   label {
     font-size: 14px;
     color: black;
@@ -51,17 +55,6 @@
   font-size: 14px;
   text-align: left;
   border-radius: 3px;
-}
-
-.button-banner {
-  background-color: rgba(19,196,163,1);
-  border: none;
-  width: 100px;
-  height: 34px;
-  font-weight: bold;
-  font-size: 14px;
-  border-radius: 50px;
-  float: right;
 }
 
 .flexbox-animation {

@@ -1,3 +1,7 @@
+.campaign-head {
+  padding: 30px 0;
+}
+
 .user-info {
   text-align: center;
   text-decoration: none;
@@ -7,6 +11,32 @@
     opacity: 0.5;
     color: black;
   }
+  .avatar {
+    border-radius: 50%;
+    margin-bottom: 1px;
+  }
+}
+
+.campaign-body {
+  padding: 30px 0;
+}
+
+.campaign-photos {
+  border-radius: 12px;
+}
+
+.gallery-image-parent {
+  border-radius: 12px;
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  * {
+    border-radius: 12px;
+  }
+}
+
+.carousel-control-areas {
+  border-radius: 12px;
 }
 
 .user-info p {
@@ -20,14 +50,18 @@
 }
 
 .ticket-category-boxes {
+  border-radius: 12px;
+  background: white;
   padding: 30px;
   margin: 0 15px;
   margin-bottom: 10px;
-  box-shadow: 0px 0px 10px 0px rgba(156,156,156,1);
   width: 100%;
 }
 
 .campaign-description {
+  border-radius: 12px;
+  width: 100%;
+  background: white;
   margin: 15px 0;
   padding: 20px;
 }
@@ -40,4 +74,22 @@
 .row {
   margin-left: 0;
   margin-right: 0;
+}
+
+.campaign-show-backed {
+  padding-top:25px;
+  text-align:center;
+  h2 {
+    margin: 0 auto;
+    font-weight: lighter;
+  }
+}
+
+.campaign-show-ended {
+  padding-top:25px;
+  text-align:center;
+  h2 {
+    margin: 0 auto;
+    font-weight: lighter;
+  }
 }

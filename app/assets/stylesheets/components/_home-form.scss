@@ -1,0 +1,45 @@
+.search-flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-form {
+  text-align: center;
+  padding-top: 100px;
+
+  &__title {
+    font-size: 20px;
+  }
+  &__input,
+  .select2-container--bootstrap .select2-selection {
+    height: 36px;
+    min-width: 140px;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid rgba(255,255,255,0.5);
+    box-shadow: none;
+    font-size: inherit;
+    padding: 0px 8px;
+    padding-right: 8px;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.3);
+    padding-right: 32px;
+    &:focus {
+      border-color: $pastel-green;
+    }
+  }
+
+  .select2-container--bootstrap .select2-selection--single .select2-selection__rendered {
+    color: white;
+    text-align: left;
+    margin-top: -2px;
+  }
+  &__fields {
+    text-align: left;
+  }
+  .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b {
+    border-color: white transparent transparent transparent;
+  }
+}

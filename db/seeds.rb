@@ -86,7 +86,8 @@ Campaign.create(
   user: User.all.sample,
   genre: genres.sample,
   funding_goal: 10000,
-  campaign_end_date: DateTime.now + rand(10..20).days
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
 )
 
 Campaign.create(
@@ -98,7 +99,8 @@ Fergus James recently supported Ed Sheeran on the biggest stadium tour in Austra
   user: User.all.sample,
   genre: genres.sample,
   funding_goal: 9000,
-  campaign_end_date: DateTime.now + rand(10..20).days
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
 )
 
 Campaign.create(
@@ -109,7 +111,8 @@ Campaign.create(
   user: User.all.sample,
   genre: genres.sample,
   funding_goal: 1500,
-  campaign_end_date: DateTime.now + rand(10..20).days
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
 )
 
 Campaign.create(
@@ -120,7 +123,8 @@ Campaign.create(
   user: User.all.sample,
   genre: genres.sample,
   funding_goal: 15000,
-  campaign_end_date: DateTime.now + rand(10..20).days
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
 )
 
 Campaign.create(
@@ -154,7 +158,8 @@ With the Australian rap scene growing more and more each year, Nerve looks to cl
   user: User.all.sample,
   genre: genres.sample,
   funding_goal: 5000,
-  campaign_end_date: DateTime.now + rand(10..20).days
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
 )
 
 Campaign.create(
@@ -174,7 +179,8 @@ Well, if you back Ollie, you back us at the ESPY, there's only one option....buy
   user: User.all.sample,
   genre: genres.sample,
   funding_goal: 900,
-  campaign_end_date: DateTime.now + rand(10..20).days
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
 )
 
 Campaign.create(
@@ -186,7 +192,8 @@ Now Pridelands are set to release their second EP 'Any Colour You Desire' on May
   user: User.all.sample,
   genre: genres.sample,
   funding_goal: 2000,
-  campaign_end_date: DateTime.now + rand(10..20).days
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 10)
 )
 
 Campaign.create(
@@ -205,7 +212,8 @@ Campaign.create(
   user: User.all.sample,
   genre: genres.sample,
   funding_goal: 100,
-  campaign_end_date: DateTime.now + rand(10..20).days
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
 )
 
 Campaign.create(
@@ -219,7 +227,8 @@ Having created music since the age of 15, Tobiahs has honed his skills and sound
   user: User.all.sample,
   genre: genres.sample,
   funding_goal: 100000,
-  campaign_end_date: DateTime.now + rand(10..20).days
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
 )
 
 Campaign.create(
@@ -245,7 +254,8 @@ There will be two versions of ‘For You’ out October 25th, along with an acou
   user: User.all.sample,
   genre: genres.sample,
   funding_goal: 4567,
-  campaign_end_date: DateTime.now + rand(10..20).days
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 10)
 )
 
 puts "Creating Performances..."

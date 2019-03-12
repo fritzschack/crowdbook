@@ -1,101 +1,49 @@
 <%= render "components/banner_general" %>
-<div class="searchbar">
-  <%= form_tag campaigns_path, method: :get, class: "form-inline" do%>
-    <div class="col-xs-12 col-sm-4">
-      <%= text_field_tag :name_query,
-        params[:name_query],
-        class: "form-control input",
-        placeholder: "Find a campaign by name",
-        style: "width: 100%;"
-      %>
-    </div>
-    <div class="col-xs-12 col-sm-2">
-      <%= text_field_tag :location_query,
-        params[:location_query],
-        class: "form-control input",
-        placeholder: "Find a campaign by location",
-        style: "width: 100%;"
-      %>
-    </div>
-    <div class="col-xs-12 col-sm-2">
-      <% collection = Musician.all.collect { |p| [p.name, p.id] } %>
-      <% collection.unshift("All musicians") %>
-      <%= select_tag :musician_query, options_for_select(collection, params[:musician_query]), class: "js-genre-selection-search" %></div>
-    </div>
-    <div class="col-xs-12 col-sm-2">
-      <% collection =  ["All genres", "Industrial & Gothic", "(Heavy) Metal", "Rock 'n' Roll", "Golden Age", "Punk (Rock) / (New) Wave", "Hardcore (Punk)", "Alternative / Indie (Rock)", "Contemporary (Rock)", "Pop (Music)", "Country", "Rhythm 'n' Blues (R&B)", "Gospel & Pioneers", "Blues", "Jazz", "Jamaican (Music) / Reggae", "Rap / Hip-hop Music", "Breakbeat", "Drum 'n' Bass / Jungle", "Hardcore (Techno)", "Techno", "House", "Trance", "Downtempo / Ambient"] %>
-      <%= select_tag :genre_query, options_for_select(collection, params[:genre_query]), class: "js-genre-selection-search" %>
-    </div>
-    <div class="col-xs-12 col-sm-2">
-      <%= submit_tag 'Search', class: "btn btn-primary button" %>
-    </div>
-  <% end %>
-</div>
-
-<div class="row map-cards-container">
-  <div class="col-sm-6">
-    <div class="row">
-      <% if @campaigns.size == 0 %>
-        <h3>No Campaigns Currently Available In That Area!</h3>
-      <% else %>
-        <% @campaigns.each do |campaign| %>
-          <%= link_to campaign_path(campaign) do %>
-            <div class="index-card" style="color: black;text-decoration: none;">
-              <div class="row">
-                <div class="col-sm-4 card-left" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path campaign.photos.first.image_url %>')">
-                  <p><small><%= campaign.genre.upcase %></small></p>
-                </div>
-                <div class="col-sm-8 card-right">
-                  <div class="campaign-backed" style="text-align: center;">
-                    <% if @campaigns_backed.include?(campaign.id)%>
-                        <h5 style="font-weight: lighter;margin-bottom: 0;"><i class="far fa-check-circle"></i> Campaign Backed!</h5>
-                        <hr>
-                    <% end %>
-                  </div>
-                  <% if campaign.campaign_end_date == Date.tomorrow %>
-                    <div class="campaign-active" style="text-align: center;">
-                      <h5 style="font-weight: lighter;font-style: italic;">Hurry, Ending Soon!</h5>
-                    </div>
-                  <% end %>
-                  <div class="card-title">
-                    <h3><%= campaign.name %></h3>
-                    <p><%= campaign.date.to_s.split('-').reverse.join('-') %></p>
-                    <p><i class="far fa-compass"></i> <%= campaign.address %></p>
-                  </div>
-                  <div class="card-description">
-                    <p style="opacity: 0.6;"><%= campaign.description[0..100]%>...</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div class="row">
+  <div class="searchbar">
+    <%= form_tag campaigns_path, method: :get, class: "form-inline" do %>
+      <div class="col-xs-12 col-sm-2">
+        <%= text_field_tag :name_query,
+          params[:name_query],
+          class: "form-control input",
+          placeholder: "Find a campaign by name",
+          style: "width: 100%;"
+        %>
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        <%= text_field_tag :location_query,
+          params[:location_query],
+          class: "form-control input",
+          placeholder: "Find a campaign by location",
+          style: "width: 100%;"
+        %>
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        <% collection = Musician.all.collect { |p| [p.name, p.id] } %>
+        <% collection.unshift("All musicians") %>
+        <%= select_tag :musician_query, options_for_select(collection, params[:musician_query]), class: "js-genre-selection-search" %>
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        <% collection =  ["All genres", "Industrial & Gothic", "(Heavy) Metal", "Rock 'n' Roll", "Golden Age", "Punk (Rock) / (New) Wave", "Hardcore (Punk)", "Alternative / Indie (Rock)", "Contemporary (Rock)", "Pop (Music)", "Country", "Rhythm 'n' Blues (R&B)", "Gospel & Pioneers", "Blues", "Jazz", "Jamaican (Music) / Reggae", "Rap / Hip-hop Music", "Breakbeat", "Drum 'n' Bass / Jungle", "Hardcore (Techno)", "Techno", "House", "Trance", "Downtempo / Ambient"] %>
+        <%= select_tag :genre_query, options_for_select(collection, params[:genre_query]), class: "js-genre-selection-search" %>
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        <%= submit_tag 'Search', class: "green-button" %>
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        <%= link_to "Cards", "#", :id => "toggleCards", :class => "cards-button active-toggle", remote: true %><%= link_to "Map", "#", :id => "toggleMap", :class => "map-button", remote: true %>
+      </div>
+    <% end %>
   </div>
 </div>
 
-<!-- <div> -->
-  <%#= text_field_tag :location_query,
-    params[:location_query],
-    class: "form-field",
-    placeholder: "Find a space by location"
-  %>
-<!-- </div> -->
-<!-- <div> -->
-  <%#= text_field_tag :min_price_query,
-    params[:min_price_query],
-    class: "form-field",
-    placeholder: "Select a minimum price"
-  %>
-<!-- </div> -->
-<!-- <div> -->
-  <%#= text_field_tag :max_price_query,
-    params[:max_price_query],
-    class: "form-field",
-    placeholder: "Select a maximum price"
-  %>
-<!-- </div> -->
+<div id="campaignCards" class="container">
+  <%= render "components/campaigns_index_cards" %>
+</div>
+<div id="campaignMap" class="container">
+  <%= render "components/campaign_map" %>
+</div>
+
+
+
+

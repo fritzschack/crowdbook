@@ -1,8 +1,5 @@
 .wrapper-grey {
   background-color: $dark-grey;
-  * {
-    color: $dark-blue;
-  }
 }
 
 .wrapper-dark-green {
@@ -10,4 +7,15 @@
   * {
     color: white;
   }
+}
+
+.wrapper-dark-blue {
+  background-color: $dark-blue;
+  * {
+    color: white;
+  }
+}
+
+.wrapper-light-grey {
+  background-color: $light-grey;
 }

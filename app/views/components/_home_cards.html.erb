@@ -1,0 +1,21 @@
+<% @campaigns.each do |campaign| %>
+  <%= link_to campaign_path(campaign), class: "list-card-link" do %>
+    <div class="list-card">
+      <div class="list-card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= cl_image_path campaign.photos.first.image_url, height: 200, width: 400, crop: :fill %>')">
+        <div class="list-card-date">
+          <p><%= campaign.date.strftime("%^b") %></p>
+          <h3><%= campaign.date.strftime("%e") %></h3>
+        </div>
+      </div>
+      <div class="list-card-text">
+        <h4><%= campaign.name %></h4>
+        <p><%= campaign.genre %> | <%= campaign.address %></p>
+      </div>
+      <div class="list-card-status">
+        <!-- .progress-circle(data-progress = <%#= (campaign.current_funding_amount / campaign.funding_goal) * 100 %>) -->
+        <div class="progress-circle" data-progress="<%= (campaign.current_funding_amount / campaign.funding_goal) * 100 %>">
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
