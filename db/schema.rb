@@ -101,9 +101,9 @@ ActiveRecord::Schema.define(version: 2019_03_12_000409) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "profile_picture", default: "gnmq7m4ityvcjdmw2jrx.jpg"
-    t.string "first_name"
-    t.string "last_name"
-    t.text "description"
+    t.string "first_name", default: "First Name"
+    t.string "last_name", default: "Last Name"
+    t.text "description", default: ""
     t.boolean "is_creator", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
