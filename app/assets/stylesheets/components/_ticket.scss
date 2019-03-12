@@ -1,3 +1,8 @@
 .ticket-number {
   display:inline-block
 }
+
+.ticket-number-vertical {
+  display:inline-block;
+  align-content: left;
+}
