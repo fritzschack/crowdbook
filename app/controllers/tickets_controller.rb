@@ -1,7 +1,7 @@
 class TicketsController < ApplicationController
   def show
     @ticket = Ticket.find(params[:id])
-    qrcode = RQRCode::QRCode.new("http://localhost:3000/tickets/#{@ticket.id}/edit")
+    qrcode = RQRCode::QRCode.new("https://crowdbook.herokuapp.com/tickets/#{@ticket.id}/edit")
     @svg = qrcode.as_svg(offset: 0, color: '000', shape_rendering: 'crispEdges', module_size: 11)
     respond_to do |format|
       format.html
