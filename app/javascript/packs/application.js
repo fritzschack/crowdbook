@@ -7,22 +7,10 @@ import { autoScrollHome } from '../components/autoScroll.js';
 import { initUpdateNavbarOnScroll } from '../components/navbar.js';
 // import { campaignView } from '../components/campaignViewSwitch.js';
 import { initEventListenerCheckbox } from '../components/form_is_private.js'
+import { initToggleIndex } from '../components/index_toggle.js'
 import 'select2';
 import "flatpickr/dist/flatpickr.min.css";
 import autoSizeInput from 'autosize-input';
-
-const initAutoSizeInputs = () => {
-  const inputs = document.querySelectorAll('.js-auto-size-input');
-  inputs.forEach((input) => {
-    autoSizeInput(input);
-  });
-}
-
-initAutoSizeInputs();
-
-// campaignView();
-
-initMapbox();
 
 $(function() {
   $('.js-new-performance-form').select2({
@@ -48,8 +36,17 @@ $(function() {
   });
 });
 
-autoScrollHome();
-initUpdateNavbarOnScroll();
-initEventListenerCheckbox();
+const initAutoSizeInputs = () => {
+  const inputs = document.querySelectorAll('.js-auto-size-input');
+  inputs.forEach((input) => {
+    autoSizeInput(input, { minWidth: 120 });
+  });
+}
 
+initUpdateNavbarOnScroll();
+initToggleIndex();
+initAutoSizeInputs();
+initMapbox();
+autoScrollHome();
+initEventListenerCheckbox();
 flatpickr("#datepicker", {});

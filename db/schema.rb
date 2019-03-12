@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_11_013354) do
+ActiveRecord::Schema.define(version: 2019_03_12_000409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 2019_03_11_013354) do
     t.bigint "ticket_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "ticket_used", default: false
     t.index ["order_id"], name: "index_tickets_on_order_id"
     t.index ["ticket_category_id"], name: "index_tickets_on_ticket_category_id"
   end
@@ -100,9 +101,9 @@ ActiveRecord::Schema.define(version: 2019_03_11_013354) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "profile_picture", default: "gnmq7m4ityvcjdmw2jrx.jpg"
-    t.string "first_name"
-    t.string "last_name"
-    t.text "description"
+    t.string "first_name", default: "First Name"
+    t.string "last_name", default: "Last Name"
+    t.text "description", default: ""
     t.boolean "is_creator", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -28,7 +28,15 @@
                   <div class="list-card-pledge-tickets" style="color: black;">
                     Pledge Amount: <%= humanized_money_with_symbol(order.amount) %>
                     <% if order.ticket_categories.first.campaign.current_funding_amount > order.ticket_categories.first.campaign.funding_goal %>
-                    <button class="btn green-button">View</button>
+                      <div>
+                        <% counter = 1 %>
+                        <% order.tickets.each do |ticket| %>
+                          <div class="ticket-number-vertical" style="margin:5px;">
+                            <%= link_to "Ticket #{counter}", ticket_path(ticket.id, :format => :pdf), class: "btn green-button" %>
+                          </div>
+                          <% counter += 1 %>
+                        <% end %>
+                      </div>
                     <% end %>
                   </div>
                 </div>

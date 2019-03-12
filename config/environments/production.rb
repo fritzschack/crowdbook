@@ -96,5 +96,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #wicked_pdf helper need to add this line when publishing
-  #config.assets.precompile += ['your-stylesheet.css.scss', 'your-javascript-library.js']
+  config.assets.precompile += ['ticket.scss']
 end

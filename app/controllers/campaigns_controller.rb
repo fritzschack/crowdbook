@@ -20,12 +20,12 @@ class CampaignsController < ApplicationController
       @campaigns = @campaigns.near(params[:location_query], 20)
     end
 
-    if params[:musician_query].present? && params[:musician_query] != "any musician"
+    if params[:musician_query].present? && params[:musician_query] != "any musician" && params[:musician_query] != "All musicians"
       musician = Musician.find(params[:musician_query])
       @campaigns = @campaigns.joins(:performances).where({ performances: { musician: musician } })
     end
 
-    if params[:genre_query].present? && params[:genre_query] != "all"
+    if params[:genre_query].present? && params[:genre_query] != "all" && params[:genre_query] != "All genres"
       @campaigns = @campaigns.where(
         "genre @@ :genre_query",
         genre_query: "%#{params[:genre_query]}%"
