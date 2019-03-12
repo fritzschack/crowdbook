@@ -11,3 +11,17 @@
     color: white;
   }
 }
+
+.wrapper-dark-blue {
+  background-color: $dark-blue;
+  * {
+    color: white;
+  }
+}
+
+.wrapper-light-grey {
+  background-color: $light-grey;
+  * {
+    color: $dark-blue;
+  }
+}
