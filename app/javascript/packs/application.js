@@ -5,9 +5,13 @@ import $ from 'jquery';
 import flatpickr from "flatpickr";
 import { autoScrollHome } from '../components/autoScroll.js';
 import { initUpdateNavbarOnScroll } from '../components/navbar.js';
+// import { campaignView } from '../components/campaignViewSwitch.js';
 import { initEventListenerCheckbox } from '../components/form_is_private.js'
 import 'select2';
 import "flatpickr/dist/flatpickr.min.css";
+
+
+// campaignView();
 
 initMapbox();
 
