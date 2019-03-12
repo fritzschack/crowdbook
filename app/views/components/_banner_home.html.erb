@@ -11,7 +11,7 @@
             <%= text_field_tag :location_query,
               params[:location_query],
               class: "home-form__input js-auto-size-input",
-              placeholder: "location"
+              placeholder: "any location"
             %>
             where
             <% collection = Musician.all.collect { |p| [p.name, p.id] } %>
