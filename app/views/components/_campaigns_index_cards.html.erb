@@ -1,0 +1,39 @@
+<div class="col-sm-12">
+  <div class="row">
+    <% if @campaigns.size == 0 %>
+      <h3>No Campaigns Currently Available In That Area!</h3>
+    <% else %>
+      <% @campaigns.each do |campaign| %>
+        <div class="col-sm-4">
+          <%= link_to campaign_path(campaign) do %>
+            <div class="campaign-card">
+              <div class="campaign-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path campaign.photos.first.image_url %>')">
+                <div class="campaign-card-date">
+                  <p><%= campaign.date.strftime("%^b") %></p>
+                  <h3><%= campaign.date.strftime("%e") %></h3>
+                </div>
+                <div class="campaign-card-text">
+                  <h4><%= campaign.name %></h4>
+                  <div class="campaign-card-description">
+                    <p><%= campaign.description[0..100] %></p>
+                  </div>
+                </div>
+                <% if campaign.campaign_end_date == Date.tomorrow %>
+                  <div class="campaign-card-ending-soon">
+                    <p>Ending Soon!</p>
+                  </div>
+                <% end %>
+                <div class="campaign-card-backed" style="text-align: center;">
+                  <% if @campaigns_backed.include?(campaign.id)%>
+                      <h5 style="font-weight: lighter;margin-bottom: 0;"><i class="far fa-check-circle"></i> Campaign Backed!</h5>
+                      <hr>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
