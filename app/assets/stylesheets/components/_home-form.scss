@@ -14,7 +14,6 @@
   &__input,
   .select2-container--bootstrap .select2-selection {
     height: 36px;
-    min-width: 140px;
     background: none;
     border: none;
     outline: none;
@@ -22,13 +21,16 @@
     box-shadow: none;
     font-size: inherit;
     padding: 0px 8px;
-    padding-right: 8px;
     border-radius: 3px;
     background: rgba(255,255,255,0.3);
     padding-right: 32px;
     &:focus {
       border-color: $pastel-green;
     }
+  }
+
+  &__input {
+    padding: 0 8px;
   }
 
   .select2-container--bootstrap .select2-selection--single .select2-selection__rendered {
