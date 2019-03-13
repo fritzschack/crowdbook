@@ -5,6 +5,302 @@ puts "Adding Users..."
   User.create(email: Faker::Internet.email, password: '123456', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Lorem.paragraphs(1))
 end
 
+User.create(
+  email: "fritz@crowdbook.xyz",
+  password: "123456",
+  first_name: "Fritz",
+  last_name: "Schack",
+  description: "Deustchland is my one true love, but music comes a pretty close second. ",
+  profile_picture: "",
+)
+
+User.create(
+  email: "chris@crowdbook.xyz",
+  password: "123456",
+  first_name: "Chris",
+  last_name: "Ward",
+  description: "Freeedom... Now we've got that out the way I'm a lover of sports and drinking, if it isn't Scottish Gin or brew dog, don't serve it to me",
+  profile_picture: "",
+)
+
+User.create(
+  email: "rutger@crowdbook.xyz",
+  password: "123456",
+  first_name: "Rutger",
+  last_name: "Swirski",
+  description: "England is my city, coding is my passion. ",
+  profile_picture: "",
+)
+
+User.create(
+  email: Faker::Internet.email,
+  password: "123456",
+  first_name: "Eric",
+  last_name: 'Weber',
+  description: "Traveller, adventurer, music lover",
+  profile_picture: "",
+)
+
+User.create(
+  email: Faker::Internet.email,
+  password: "123456",
+  first_name: 'Awar',
+  last_name: 'Jahfar',
+  description: "",
+  profile_picture: "",
+)
+
+User.create(
+  email: Faker::Internet.email,
+  password: "123456",
+  first_name: 'Frankie',
+  last_name: 'Cordoba',
+  description: "If it ain't vegan... You know what they say",
+  profile_picture: "",
+)
+
+User.create(
+  email: Faker::Internet.email,
+  password: "123456",
+  first_name: 'Hannes',
+  last_name: 'Wolf',
+  description: "",
+  profile_picture: "",
+)
+
+User.create(
+  email: Faker::Internet.email,
+  password: "123456",
+  first_name: 'Hunter',
+  last_name: 'Bryant',
+  description: "",
+  profile_picture: "",
+)
+
+User.create(
+  email: Faker::Internet.email,
+  password: "123456",
+  first_name: 'James',
+  last_name: 'Garcia',
+  description: "",
+  profile_picture: "",
+)
+
+User.create(
+  email: Faker::Internet.email,
+  password: "123456",
+  first_name: 'Jordan',
+  last_name: 'Whitefield',
+  description: "",
+  profile_picture: "",
+)
+
+User.create(
+  email: Faker::Internet.email,
+  password: "123456",
+  first_name: 'Kal',
+  last_name: 'Visuals',
+  description: "",
+  profile_picture: "",
+)
+
+User.create(
+  email: Faker::Internet.email,
+  password: "123456",
+  first_name: 'Stefan',
+  last_name: 'Stefancik',
+  description: "",
+  profile_picture: "",
+)
+
+User.create(
+  email: Faker::Internet.email,
+  password: "123456",
+  first_name: 'Steven',
+  last_name: 'Kim',
+  description: "",
+  profile_picture: "",
+)
+
+User.create(
+  email: Faker::Internet.email,
+  password: "123456",
+  first_name: 'Yoann',
+  last_name: 'Boyer',
+  description: "Wannabe web developer, food enthusiast, HTML extraordinaire.",
+  profile_picture: "",
+)
+
+User.create(
+  email: 'winson@crowdbook.xyz',
+  password: "123456",
+  first_name: 'Winson',
+  last_name: 'Tan',
+  description: "After working in corporate for 4 years, I got bored and dived into my passion - coding for startups! 👌",
+  profile_picture: "",
+)
+
+User.create(
+  email: 'adora@crowdbook.xyz',
+  password: "123456",
+  first_name: 'Adora',
+  last_name: 'Goh',
+  description: "Wannabe web developer, food enthusiast, HTML extraordinaire.",
+  profile_picture: "",
+)
+
+User.create(
+  email: 'alex@crowdbook.xyz',
+  password: "123456",
+  first_name: 'Alex',
+  last_name: 'Vassiliou',
+  description: "",
+  profile_picture: "",
+)
+
+User.create(
+  email: 'ben@crowdbook.xyz',
+  password: "123456",
+  first_name: 'Ben',
+  last_name: 'Linder',
+  description: "Benno is THE developer on the rise. ***Buy stocks now.",
+  profile_picture: "",
+)
+
+User.create(
+  email: 'jessie@crowdbook.xyz',
+  password: "123456",
+  first_name: 'Jessie',
+  last_name: 'Baxter',
+  description: "",
+  profile_picture: "",
+)
+
+User.create(
+  email: 'jonas@crowdbook.xyz',
+  password: "123456",
+  first_name: 'Jonas',
+  last_name: 'Japing',
+  description: "",
+  profile_picture: "",
+)
+
+User.create(
+  email: 'joy@crowdbook.xyz',
+  password: "123456",
+  first_name: 'Joy',
+  last_name: 'Seng',
+  description: "Hello I’m Joy 👋 
+
+After years of being in the tech start-up scene, I decided to take on a new challenge as co-director at Le Wagon; blending my passions for coding, marketing & start-ups.
+",
+  profile_picture: "",
+)
+
+User.create(
+  email: 'juliette@crowdbook.xyz',
+  password: "123456",
+  first_name: 'Juliette',
+  last_name: 'Chevalier',
+  description: "Curious, empathetic, and open-minded, I am the writer-programmer type who loves following conventions and researching through documentations. I use my strategic, creative mindset to empower others, debug, and make sure the code is scalable, testable, an as user-friendly as possible.
+
+Passionate about making the world a better place and optimistic that we can. My interests include learning languages [programming & human], fighting the impacts of environmental degradation, and the infinite possibilities of technology in making public services more efficient and transparent.",
+  profile_picture: "",
+)
+
+User.create(
+  email: 'marty@crowdbook.xyz',
+  password: "123456",
+  first_name: 'Marty',
+  last_name: 'B',
+  description: "I'm a software developer specialising in UX working in Melbourne with a strong international portfolio. I've contracted in Australia and the UK (London) on projects big and small for various clients during the past 5 years and thrive in fresh, challenging and changing environments.
+
+You can see work that I've done and some industry opinions I have about UX in the travel industry at http://usabletravel.com.
+
+Previously as an active member of the Drupal.org community, I've contributed patches to various contributed projects including Acquia Commons. I also frequent Drupal issue queues posting bug-reports, work-arounds and replies.",
+  profile_picture: "",
+)
+
+User.create(
+  email: 'paal@crowdbook.xyz',
+  password: "123456",
+  first_name: 'Paal',
+  last_name: 'Ringstaad',
+  description: "After 3 years of engaging challenges and building projects, I decided to take coding Bootcamps in le Wagon and the Ecole 42 (both in Paris). Now I am undertaking a new challenge: to transfer Le Wagon in Melbourne, Australia.
+
+Passionate about education and building projects, I launched Le Wagon Coding Bootcamp in Australia.
+",
+  profile_picture: "",
+)
+
+User.create(
+  email: 'dale@crowdbook.xyz',
+  password: "123456",
+  first_name: 'Dale',
+  last_name: 'Hindle',
+  description: "Canadian trying to immigrate to Australia so that I can support my wife who is attending medical school on the Gold Coast and ultimately stay. I love self-improvement and listening to people tell me about their stories. Programming is fun because it makes me happy when it my program does something useful.
+
+",
+  profile_picture: "",
+)
+
+User.create(
+  email: 'damon@crowdbook.xyz',
+  password: "123456",
+  first_name: 'Damon',
+  last_name: 'Ross',
+  description: "Tech, Economics, Making stuff, and General Discouse",
+  profile_picture: "",
+)
+
+User.create(
+  email: 'daniel@crowdbook.xyz',
+  password: "123456",
+  first_name: 'Daniel',
+  last_name: 'Gordon',
+  description: "I believe that building a sustainable future is achieved by creating new innovative businesses, and innovating existing businesses towards more open and fluid mindsets.
+
+Following the intensive training course by LeWagon provided me with the building blocks and tools to develop a deeper understanding of the way in which I can add my own contribution to the improvement of society. I want to be able to make my mark and help people, learning how to code has allowed me to bring my ideas and those of others to reality in a faster, brighter and better way, without being dependent on others.",
+  profile_picture: "",
+)
+
+User.create(
+  email:'giulia@crowdbook.xyz',
+  password: "123456",
+  first_name: 'Giulia',
+  last_name: 'Goe',
+  description: "",
+  profile_picture: "",
+)
+
+User.create(
+  email: 'juan@crowdbook.xyz',
+  password: "123456",
+  first_name: 'Juan',
+  last_name: 'Cardenas',
+  description: "IT Engineer with 5 years of experience. Getting new programing skills at Le Wagon to be able to convert an idea into a real app.",
+  profile_picture: "",
+)
+
+User.create(
+  email: 'richa@crowdbook.xyz',
+  password: "123456",
+  first_name: 'Richa',
+  last_name: 'Dudhani',
+  description: "Pharmacy and Business Student who is now Coding!",
+  profile_picture: "",
+)
+
+
+User.create(
+  email: 'valerie@crowdbook.xyz',
+  password: "123456",
+  first_name: 'Valerie',
+  last_name: 'Schraauwers',
+  description: "I wanted to learn a skill which would give me more freedom and the chance to use my creativity. Le Wagon is also located in Amsterdam, but why do it there if you can also do it in Bali? :)",
+  profile_picture: "",
+)
+
 puts "Creating Orders..."
 10.times do
   Order.create(user: User.all.sample)
@@ -15,6 +311,15 @@ puts "Creating Ticket Categories..."
   TicketCategory.create(name: "Regular", campaign: Campaign.all.sample, quantity: rand(1..100), available_tickets: rand(1..50), description: "Grants Entry")
 end
 
+TicketCategory.create(
+  name: "General Admission",
+  campaign: Campaign.all.sample,
+  quantity: 5,
+  available_tickets: 100,
+  description: ""
+)
+
+
 5.times do
   TicketCategory.create(name: "VIP", campaign: Campaign.all.sample, quantity: rand(1..100), available_tickets: rand(1..50), description: "Premium Package including table, drinks and table service")
 end
@@ -24,50 +329,65 @@ puts "Creating Tickets..."
   Ticket.create(order: Order.all.sample, ticket_category: TicketCategory.all.sample)
 end
 
+Ticket.create(
+  order: Order.all.sample,
+  ticket_category: TicketCategory.all.sample ,
+)
 puts "Creating Musicians..."
 
 Musician.create(
-  name: "Dulcie"
+  name: "Dulcie",
+  description: "",
 )
 
 Musician.create(
-  name: "Fergus James"
+  name: "Fergus James",
+  description: "",
 )
 
 Musician.create(
-  name: "Grace Turner"
+  name: "Grace Turner",
+  description: "",
 )
 
 Musician.create(
-  name: "Murmur"
+  name: "Murmur",
+  description: "",
 )
 
 Musician.create(
-  name: "Nerve"
+  name: "Nerve",
+  description: "",
 )
 
 Musician.create(
-  name: "Ollie English"
+  name: "Ollie English",
+  description: "",
 )
 
 Musician.create(
-  name: "Pridelands"
+  name: "Pridelands",
+  description: "",
 )
 
 Musician.create(
-  name: "Redhook"
+  name: "Redhook",
+  description: "",
 )
 
 Musician.create(
-  name: "Tobiahs"
+  name: "Tobiahs",
+  description: "",
 )
 
 Musician.create(
-  name: "Will Clift"
+  name: "Will Clift",
+  description: "",
 )
 
 Musician.create(
-  name: "Yours Truly"
+  name: "Yours Truly",
+  description: "",
 )
 
 puts "Adding Campaigns..."
@@ -377,4 +697,6 @@ end
 
 puts "Done!"
 
-
+puts "#{Campaign.all.sample}"
+puts "#{Order.all.sample}"
+puts "#{TicketCategory.all.sample}"

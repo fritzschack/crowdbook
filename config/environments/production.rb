@@ -96,7 +96,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #wicked_pdf helper need to add this line when publishing
-  config.assets.precompile += ['ticket.scss', 'pdf.scss']
+  #config.assets.precompile += ['ticket.scss']
 
   #WickedPdf.config = {
   #exe_path: (Rails.env.production? ? '/path/to/bin/wkhtmltopdf' : '/usr/local/bin/wkhtmltopdf'
