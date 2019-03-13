@@ -19,6 +19,10 @@
                     <p><%= campaign.description[0..100] %></p>
                   </div>
                 </div>
+                <div class="campaign-card-progress">
+                  <div class="progress-circle" data-progress="<%= (((campaign.current_funding_amount).to_f / (campaign.funding_goal).to_f) * 100).round %>">
+                  </div>
+                </div>
               </div>
             </div>
           <% end %>
