@@ -26,13 +26,13 @@
   <div class="container" id="home-cards" style="margin-top: 0;">
     <center><h2 class="header-homecards">Upcoming Campaigns</h2></center>
       <% @campaigns.each do |campaign| %>
-        <%= link_to campaign_path(campaign), class: "list-card-link" do %>
-          <div class="list-card">
-            <div class="list-card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= cl_image_path campaign.photos.first.image_url, height: 200, width: 400, crop: :fill %>')">
-              <div class="list-card-date">
-                <p><%= campaign.date.strftime("%^b") %></p>
-                <h3><%= campaign.date.strftime("%e") %></h3>
-              </div>
+        <div class="list-card">
+          <%= link_to campaign_path(campaign), class: "list-card-link" do %>
+          <% end %>
+          <div class="list-card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= cl_image_path campaign.photos.first.image_url, height: 200, width: 400, crop: :fill %>')">
+            <div class="list-card-date">
+              <p><%= campaign.date.strftime("%^b") %></p>
+              <h3><%= campaign.date.strftime("%e") %></h3>
             </div>
             <div class="list-card-text">
               <h4><%= campaign.name %></h4>
@@ -44,7 +44,7 @@
               </div>
             </div>
           </div>
-        <% end %>
+        </div>
       <% end %>
     </div>
   </div>

@@ -5,6 +5,7 @@ import $ from 'jquery';
 import flatpickr from "flatpickr";
 import { autoScrollHome } from '../components/autoScroll.js';
 import { initUpdateNavbarOnScroll } from '../components/navbar.js';
+import { initUpdateSearchbarOnScroll } from '../components/searchbar.js';
 // import { campaignView } from '../components/campaignViewSwitch.js';
 import { initEventListenerCheckbox } from '../components/form_is_private.js'
 import { initToggleIndex } from '../components/index_toggle.js'
@@ -44,6 +45,7 @@ const initAutoSizeInputs = () => {
 }
 
 initUpdateNavbarOnScroll();
+initUpdateSearchbarOnScroll();
 initToggleIndex();
 initAutoSizeInputs();
 initMapbox();
