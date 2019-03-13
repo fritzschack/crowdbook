@@ -32,11 +32,11 @@ class CampaignsController < ApplicationController
       )
     end
 
-
     @markers = @campaigns.map do |campaign|
       {
         lng: campaign.longitude,
-        lat: campaign.latitude
+        lat: campaign.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { campaign: campaign })
       }
     end
     render :index
