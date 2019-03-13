@@ -1,47 +1,44 @@
-<%= render "components/banner_general" %>
-<div class="row">
-  <div class="searchbar">
-    <%= form_tag campaigns_path, method: :get, class: "form-inline" do %>
-      <div class="col-xs-12 col-sm-2">
-        <%= text_field_tag :name_query,
-          params[:name_query],
-          class: "form-control input",
-          placeholder: "Find a campaign by name",
-          style: "width: 100%;"
-        %>
-      </div>
-      <div class="col-xs-12 col-sm-2">
-        <%= text_field_tag :location_query,
-          params[:location_query],
-          class: "form-control input",
-          placeholder: "Find a campaign by location",
-          style: "width: 100%;"
-        %>
-      </div>
-      <div class="col-xs-12 col-sm-2">
-        <% collection = Musician.all.collect { |p| [p.name, p.id] } %>
-        <% collection.unshift("All musicians") %>
-        <%= select_tag :musician_query, options_for_select(collection, params[:musician_query]), class: "js-genre-selection-search" %>
-      </div>
-      <div class="col-xs-12 col-sm-2">
-        <% collection =  ["All genres", "Industrial & Gothic", "(Heavy) Metal", "Rock 'n' Roll", "Golden Age", "Punk (Rock) / (New) Wave", "Hardcore (Punk)", "Alternative / Indie (Rock)", "Contemporary (Rock)", "Pop (Music)", "Country", "Rhythm 'n' Blues (R&B)", "Gospel & Pioneers", "Blues", "Jazz", "Jamaican (Music) / Reggae", "Rap / Hip-hop Music", "Breakbeat", "Drum 'n' Bass / Jungle", "Hardcore (Techno)", "Techno", "House", "Trance", "Downtempo / Ambient"] %>
-        <%= select_tag :genre_query, options_for_select(collection, params[:genre_query]), class: "js-genre-selection-search" %>
-      </div>
-      <div class="col-xs-12 col-sm-2">
-        <%= submit_tag 'Search', class: "green-button" %>
-      </div>
-      <div class="col-xs-12 col-sm-2">
-        <%= link_to "Cards", "#", :id => "toggleCards", :class => "cards-button active-toggle", remote: true %><%= link_to "Map", "#", :id => "toggleMap", :class => "map-button", remote: true %>
-      </div>
-    <% end %>
-  </div>
+<div class="row searchbar">
+  <%= form_tag campaigns_path, method: :get, class: "form-inline" do %>
+    <div class="col-xs-12 col-sm-2">
+      <%= text_field_tag :name_query,
+        params[:name_query],
+        class: "form-control input",
+        placeholder: "Find a campaign by name",
+        style: "width: 100%;"
+      %>
+    </div>
+    <div class="col-xs-12 col-sm-2">
+      <%= text_field_tag :location_query,
+        params[:location_query],
+        class: "form-control input",
+        placeholder: "Find a campaign by location",
+        style: "width: 100%;"
+      %>
+    </div>
+    <div class="col-xs-12 col-sm-2">
+      <% collection = Musician.all.collect { |p| [p.name, p.id] } %>
+      <% collection.unshift("All musicians") %>
+      <%= select_tag :musician_query, options_for_select(collection, params[:musician_query]), class: "js-genre-selection-search" %>
+    </div>
+    <div class="col-xs-12 col-sm-2">
+      <% collection =  ["All genres", "Industrial & Gothic", "(Heavy) Metal", "Rock 'n' Roll", "Golden Age", "Punk (Rock) / (New) Wave", "Hardcore (Punk)", "Alternative / Indie (Rock)", "Contemporary (Rock)", "Pop (Music)", "Country", "Rhythm 'n' Blues (R&B)", "Gospel & Pioneers", "Blues", "Jazz", "Jamaican (Music) / Reggae", "Rap / Hip-hop Music", "Breakbeat", "Drum 'n' Bass / Jungle", "Hardcore (Techno)", "Techno", "House", "Trance", "Downtempo / Ambient"] %>
+      <%= select_tag :genre_query, options_for_select(collection, params[:genre_query]), class: "js-genre-selection-search" %>
+    </div>
+    <div class="col-xs-12 col-sm-2">
+      <%= submit_tag 'Search', class: "green-button" %>
+    </div>
+    <div class="col-xs-12 col-sm-2">
+      <%= link_to "Cards", "#", :id => "toggleCards", :class => "cards-button active-toggle" %><%= link_to "Map", "#", :id => "toggleMap", :class => "map-button js-should-refresh-map" %>
+    </div>
+  <% end %>
 </div>
 
-<div id="campaignCards" class="container index_content active">
+<div id="campaignCards" class="container container-index index_content active">
   <%= render "components/campaigns_index_cards" %>
 </div>
-<div id="campaignMap" class="container index_content">
-  <%= render "components/campaign_map" %>
+<div id="campaignMap" class="container container-index index_content">
+  <div class="map-div"><%= render "components/campaign_map" %></div>
 </div>
 
 

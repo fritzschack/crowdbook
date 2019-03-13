@@ -47,7 +47,7 @@
   font-size: 14px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
-  background-color: $dark-grey;
+  background-color: $grey;
   color: white;
   &:hover {
     color: white;
@@ -61,7 +61,7 @@
   font-size: 14px;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
-  background-color: $dark-grey;
+  background-color: $grey;
   color: white;
   &:hover {
     color: white;
@@ -71,4 +71,10 @@
 
 .active-toggle {
   background-color: $pastel-green;
+  text-decoration: none;
+  color: white;
+  &:hover, :focus {
+    color: white;
+    text-decoration: none;
+  }
 }

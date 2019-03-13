@@ -1,50 +1,50 @@
-<%= render "components/banner_general" %>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <h1>My Pledges</h1>
-      <div class="row">
-        <% if @orders.size == 0 %>
-          <h3>No Pledges Made!</h3>
-        <% else %>
-          <% @orders.each do |order| %>
-            <div class="col-sm-12">
+<div class="wrapper-light-grey">
+  <div class="container container-top" style="padding-bottom: 100px;">
+    <h1>My Pledges</h1>
+    <div class="row">
+      <% if @orders.size == 0 %>
+        <h3>No Pledges Made!</h3>
+      <% else %>
+        <% @orders.each do |order| %>
+          <div class="col-sm-12">
+            <div class="list-card">
               <%= link_to campaign_path(order.ticket_categories.first.campaign), class: "list-card-link" do %>
-                <div class="list-card">
-                  <div class="list-card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= cl_image_path order.ticket_categories.first.campaign.photos.first.image_url, height: 200, width: 400, crop: :fill %>')">
-                    <div class="list-card-date">
-                      <p><%= order.ticket_categories.first.campaign.date.strftime("%^b") %></p>
-                      <h3><%= order.ticket_categories.first.campaign.date.strftime("%e") %></h3>
-                    </div>
-                  </div>
-                  <div class="list-card-text">
-                    <h4><%= order.ticket_categories.first.campaign.name %></h4>
-                    <p><%= order.ticket_categories.first.campaign.genre %> | <%= order.ticket_categories.first.campaign.address %></p>
-                  </div>
-                  <div class="list-card-status">
-                    <div class="progress-circle" data-progress="<%= (order.ticket_categories.first.campaign.current_funding_amount / order.ticket_categories.first.campaign.funding_goal) * 100 %>">
-                    </div>
-                  </div>
-                  <div class="list-card-pledge-tickets" style="color: black;">
-                    Pledge Amount: <%= humanized_money_with_symbol(order.amount) %>
-                    <% if order.ticket_categories.first.campaign.current_funding_amount > order.ticket_categories.first.campaign.funding_goal %>
-                      <div>
+              <% end %>
+              <div class="list-card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= cl_image_path order.ticket_categories.first.campaign.photos.first.image_url, height: 200, width: 400, crop: :fill %>')">
+                <div class="list-card-date">
+                  <p><%= order.ticket_categories.first.campaign.date.strftime("%^b") %></p>
+                  <h3><%= order.ticket_categories.first.campaign.date.strftime("%e") %></h3>
+                </div>
+              </div>
+              <div class="list-card-text">
+                <h4><%= order.ticket_categories.first.campaign.name %></h4>
+                <p><%= order.ticket_categories.first.campaign.genre %> | <%= order.ticket_categories.first.campaign.address %></p>
+                <div style="color: black;">
+                  Pledge Amount: <%= humanized_money_with_symbol(order.amount) %>
+                  <% if order.ticket_categories.first.campaign.current_funding_amount > order.ticket_categories.first.campaign.funding_goal %>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Tickets <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu">
                         <% counter = 1 %>
                         <% order.tickets.each do |ticket| %>
-                          <div class="ticket-number-vertical" style="margin:5px;">
-                            <%= link_to "Ticket #{counter}", ticket_path(ticket.id, :format => :pdf), class: "btn green-button" %>
-                          </div>
+                          <li><%= link_to "Ticket #{counter}", ticket_path(ticket.id, :format => :pdf) %></li>
                           <% counter += 1 %>
                         <% end %>
-                      </div>
-                    <% end %>
-                  </div>
+                      </ul>
+                    </div>
+                  <% end %>
                 </div>
-              <% end %>
+              </div>
+              <div class="list-card-status">
+                <div class="progress-circle" data-progress="<%= (order.ticket_categories.first.campaign.current_funding_amount / order.ticket_categories.first.campaign.funding_goal) * 100 %>">
+                </div>
+              </div>
             </div>
-          <% end %>
+          </div>
         <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
