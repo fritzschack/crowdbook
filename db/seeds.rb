@@ -132,7 +132,7 @@ User.create(
 )
 
 User.create(
-  email: winson@crowdbook.xyz,
+  email: 'winson@crowdbook.xyz',
   password: "123456",
   first_name: 'Winson',
   last_name: 'Tan',
@@ -141,7 +141,7 @@ User.create(
 )
 
 User.create(
-  email: adora@crowdbook.xyz,
+  email: 'adora@crowdbook.xyz',
   password: "123456",
   first_name: 'Adora',
   last_name: 'Goh',
@@ -150,7 +150,7 @@ User.create(
 )
 
 User.create(
-  email: alex@crowdbook.xyz,
+  email: 'alex@crowdbook.xyz',
   password: "123456",
   first_name: 'Alex',
   last_name: 'Vassiliou',
@@ -159,7 +159,7 @@ User.create(
 )
 
 User.create(
-  email: ben@crowdbook.xyz,
+  email: 'ben@crowdbook.xyz',
   password: "123456",
   first_name: 'Ben',
   last_name: 'Linder',
@@ -168,7 +168,7 @@ User.create(
 )
 
 User.create(
-  email: jessie@crowdbook.xyz
+  email: 'jessie@crowdbook.xyz',
   password: "123456",
   first_name: 'Jessie',
   last_name: 'Baxter',
