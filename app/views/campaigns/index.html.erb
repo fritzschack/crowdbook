@@ -22,7 +22,7 @@
       <%= select_tag :musician_query, options_for_select(collection, params[:musician_query]), class: "js-genre-selection-search" %>
     </div>
     <div class="col-xs-12 col-sm-2">
-      <% collection =  ["All genres", "Industrial & Gothic", "(Heavy) Metal", "Rock 'n' Roll", "Golden Age", "Punk (Rock) / (New) Wave", "Hardcore (Punk)", "Alternative / Indie (Rock)", "Contemporary (Rock)", "Pop (Music)", "Country", "Rhythm 'n' Blues (R&B)", "Gospel & Pioneers", "Blues", "Jazz", "Jamaican (Music) / Reggae", "Rap / Hip-hop Music", "Breakbeat", "Drum 'n' Bass / Jungle", "Hardcore (Techno)", "Techno", "House", "Trance", "Downtempo / Ambient"] %>
+      <% collection =  ["All genres", "Pop", "Rock 'n' Roll", "Rap / Hip-hop Music", "Techno", "House", "Alternative / Indie (Rock)", "Trance", "Downtempo / Ambient", "Electronic", "Industrial & Gothic", "(Heavy) Metal", "Golden Age", "Punk (Rock) / (New) Wave", "Hardcore (Punk)", "Contemporary (Rock)", "Country", "Rhythm 'n' Blues (R&B)", "Gospel & Pioneers", "Blues", "Jazz", "Jamaican (Music) / Reggae", "Breakbeat", "Drum 'n' Bass / Jungle", "Hardcore (Techno)"] %>
       <%= select_tag :genre_query, options_for_select(collection, params[:genre_query]), class: "js-genre-selection-search" %>
     </div>
     <div class="col-xs-12 col-sm-2">

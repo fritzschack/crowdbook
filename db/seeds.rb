@@ -366,7 +366,7 @@ yours_truly = Musician.create(
 
 puts "Adding Campaigns..."
 
-genres = ["Pop", "Rap / Hip-hop Music", "Rock 'n' Roll", "R&B", "Alternative / Indie (Rock)", "Breakbeat", "Drum 'n' Bass / Jungle", "Hardcore (Techno)", "Techno", "House", "Trance", "Downtempo / Ambient", "Industrial & Gothic", "(Heavy) Metal", "Golden Age", "Punk (Rock) / (New) Wave", "Hardcore (Punk)", "Contemporary (Rock)", "Country", "Gospel & Pioneers", "Blues", "Jazz", "Jamaican (Music) / Reggae", "Electronic"]
+genres = ["Pop", "Rock 'n' Roll", "Rap / Hip-hop Music", "Techno", "House", "Alternative / Indie (Rock)", "Trance", "Downtempo / Ambient", "Electronic", "Industrial & Gothic", "(Heavy) Metal", "Golden Age", "Punk (Rock) / (New) Wave", "Hardcore (Punk)", "Contemporary (Rock)", "Country", "Rhythm 'n' Blues (R&B)", "Gospel & Pioneers", "Blues", "Jazz", "Jamaican (Music) / Reggae", "Breakbeat", "Drum 'n' Bass / Jungle", "Hardcore (Techno)"]
 
 dulcie_c = Campaign.create(
   name: "Duclie plays Richmond Club Hotel",
@@ -376,11 +376,11 @@ dulcie_c = Campaign.create(
     Let's get it! 
     Love,
     Dulcie",
-  date: Faker::Date.forward(23),
+  date: DateTime.now + rand(16..70).days,
   user: ew,
   genre: "Alternative / Indie (Rock)",
   funding_goal: 2000,
-  campaign_end_date: DateTime.now + rand(10..20).days,
+  campaign_end_date: DateTime.now + rand(5..15).days,
   current_funding_amount: 1000,
 )
 
@@ -389,11 +389,11 @@ fergus_c = Campaign.create(
   address: "123 Queen St, Melbourne VIC 3000",
   description: "Blue Diamond is ready to present Fergus James, one of the hottest up and commers in Melbourne. All you have to do? Pledge, Back, Donate, Buy A Ticket to one of the hottest events of the Melbourne Calendar this year! Most recently teenage troubadour Fergus James revealed his electrifying new single ‘What Are We Waiting For’, added in to HIGH rotation on Triple J. ‘What Are Waiting For’ is the follow up to his debut single ’Golden Age’, which has amassed over 5,000,000 plays on Spotify & Apple Music. After the release of ‘Golden Age’ the young artist’s triple j unearthed profile become the second most viewed profile on the platform in the first half of 2018, only behind G-Flip.
 Fergus James recently supported Ed Sheeran on the biggest stadium tour in Australian history having sold over one million tickets.",
-  date: Faker::Date.forward(23),
+  date: DateTime.now + rand(16..70).days,
   user: aj,
   genre: "Rap / Hip-hop Music",
   funding_goal: 3000,
-  campaign_end_date: DateTime.now + rand(10..20).days,
+  campaign_end_date: DateTime.now + rand(5..15).days,
   current_funding_amount: 2000,
 )
 
@@ -401,11 +401,11 @@ grace_c = Campaign.create(
   name: "Grace Turner plays Cloud 9",
   address: "60 King St, Melbourne VIC 3000",
   description: "Cloud 9 is teaming up with local Melbourne artist Grace Turner. To be there, there is one thing you have to do! BUY A TICKET! Grace Turner, a singer songwriter from the industrial town of Newcastle, Australia is renown for her emotionally-driven indie-folk songs, which are intensely personal. Turner has lived immersed with creative influences; her mother a visual artist and her father a poet. Falling somewhere between alt country and indie rock, Turner entices exciting possibility with her song writing and sound. ",
-  date: Faker::Date.forward(23),
+  date: DateTime.now + rand(16..70).days,
   user: fc,
   genre: "Pop",
   funding_goal: 1500,
-  campaign_end_date: DateTime.now + rand(10..20).days,
+  campaign_end_date: DateTime.now + rand(5..15).days,
   current_funding_amount: 1000
 )
 
@@ -413,11 +413,11 @@ murmurmur_c = Campaign.create(
   name: "Murmurmur plays Brown Alley",
   address: "585 Lonsdale St, Melbourne VIC 3000",
   description: "Be there or be square when Murmurmur take Brown Alley on a night of wild adventure. Only one thing needs to happen for this to take place, you pledge. Murmurmur (pronounced mer-mer-mer) was born in February 2017 when Will Fletcher stumbled across the idiosyncratic guitar riff that provides the defining moment in “I Can’t Stop Thinking About All The Time It's Taken From You”. Fletcher was soon joined by Alex Crosara (guitar), Fintan Bradley (synthesiser), Jack Davies (bass) and Luke Haaja (drums), who helped to bring his prog/psych-pop odysseys to life. Across the four songs that comprise murmurmur’s debut self-titled EP (produced by Oscar Dawson of Holy Holy), Fletcher’s haunting, emotive vocal blends with guitar hooks that sink into the recesses of your mind and stay there. There is an urgency to murmurmur’s soundscapes - they sound like a time and place you’re not aware of but which you’re desperate to find.",
-  date: Faker::Date.forward(23),
+  date: DateTime.now + rand(16..70).days,
   user: hw,
   genre: "Rock 'n' Roll",
   funding_goal: 4000,
-  campaign_end_date: DateTime.now + rand(10..20).days,
+  campaign_end_date: DateTime.now + rand(5..15).days,
   current_funding_amount: 2500
 )
 
@@ -448,11 +448,11 @@ Nerves most recent support show was with close friends and triple j locals “Tr
 
 With the Australian rap scene growing more and more each year, Nerve looks to climb his way to the top, be on the look out, Nerve is coming up.
 ",
-  date: Faker::Date.forward(23),
+  date: DateTime.now + rand(16..70).days,
   user: hb,
   genre: "Rap / Hip-hop Music",
   funding_goal: 5000,
-  campaign_end_date: DateTime.now + rand(10..20).days,
+  campaign_end_date: DateTime.now + rand(5..15).days,
   current_funding_amount: 2500
 )
 
@@ -469,11 +469,11 @@ Sold yet?
 
 Well, if you back Ollie, you back us at the ESPY, there's only one option....buy your ticket, so this event can become a reality!
 ",
-  date: Faker::Date.forward(23),
+  date: DateTime.now + rand(16..70).days,
   user: jc,
   genre: "Blues",
   funding_goal: 900,
-  campaign_end_date: DateTime.now + rand(10..20).days,
+  campaign_end_date: DateTime.now + rand(5..15).days,
   current_funding_amount: 250
 )
 
@@ -482,11 +482,11 @@ pridelands_c = Campaign.create(
   address: "27-29 Tattersalls Ln, Melbourne VIC 3000",
   description: "Originally from Mount Gambier in South Australia, Pridelands relocated to Melbourne in 2014. Since then the band has shared the stage with local heavyweights the likes of Northlane, Dead Letter Circus & Hellions, released their debut EP 'Natives' in 2015, while 2016 saw them drop two singles 'Coalesce' and 'Battery City'.
 Now Pridelands are set to release their second EP 'Any Colour You Desire' on May 4th. ACYD sees the band with a new line up, a new lease of life, exploring on its sound and culminating in their strongest and most cohesive song-writing to date.",
-  date: Faker::Date.forward(23),
+  date: DateTime.now + rand(16..70).days,
   user: jw,
   genre: "(Heavy) Metal",
   funding_goal: 2000,
-  campaign_end_date: DateTime.now + rand(10..20).days,
+  campaign_end_date: DateTime.now + rand(5..15).days,
   current_funding_amount: 900
 )
 
@@ -502,11 +502,11 @@ redhook_c = Campaign.create(
 'Juicy As fuck. RedHook effortlessly combine pop-sensibility with modern rock and a touch of post-hardcore. Flawlessly catchy, modern and mosh-inducing.' – (Monica Strut, Heavy Mag)
 
 'RedHook will punch you right in the guts from the first listen.That's not only because the music possesses a relentless intensity but also thanks to the emotional depth that sticks with you.' - (Sam Murphy, Cool Accidents)",
-  date: Faker::Date.forward(23),
+  date: DateTime.now + rand(16..70).days,
   user: kv,
   genre: "Punk (Rock) / (New) Wave",
   funding_goal: 2000,
-  campaign_end_date: DateTime.now + rand(10..20).days,
+  campaign_end_date: DateTime.now + rand(5..15).days,
   current_funding_amount: 500
 )
 
@@ -517,11 +517,11 @@ tobiahs_c = Campaign.create(
 
 Having created music since the age of 15, Tobiahs has honed his skills and sound, initially garnering attention from a series of remixes shared online. His debut single Through To You, a garage-inspired story of troubled relationships, was released in 2017 and has since amassed over one million streams on Spotify and Apple Music.
 ",
-  date: Faker::Date.forward(23),
+  date: DateTime.now + rand(16..70).days,
   user: ss,
   genre: "Electronic",
   funding_goal: 10000,
-  campaign_end_date: DateTime.now + rand(10..20).days,
+  campaign_end_date: DateTime.now + rand(5..15).days,
   current_funding_amount: 2000
 )
 
@@ -544,11 +544,11 @@ With his inspirations from the likes of D’Angelo and Tom Misch, Will is creati
 
 There will be two versions of ‘For You’ out October 25th, along with an acoustic session video, filmed live from his Brunswick backyard with the company of a few good mates.
 ",
-  date: Faker::Date.forward(23),
+  date: DateTime.now + rand(16..70).days,
   user: sk,
   genre: "Alternative / Indie (Rock)",
   funding_goal: 2000,
-  campaign_end_date: DateTime.now + rand(10..20).days,
+  campaign_end_date: DateTime.now + rand(5..15).days,
   current_funding_amount: 1000
 )
 
@@ -1053,6 +1053,3 @@ Ticket.create(
 
 puts "Done!"
 
-puts "#{Campaign.all.sample}"
-puts "#{Order.all.sample}"
-puts "#{TicketCategory.all.sample}"
