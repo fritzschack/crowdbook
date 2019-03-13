@@ -1,0 +1,13 @@
+<div class="mapboxgl-popup">
+  <div class="mapboxgl-popup-content">
+    <%= cl_image_tag campaign.photos.first.image_url, width: 200, crop: :fill %>
+    <h5><%= campaign.name %></h5>
+    <p>
+      <%= campaign.genre %> |
+      <%= campaign.address %> |
+      <%= campaign.date.strftime("%e-%m-%y") %>
+    </p>
+    <%= link_to "Pledge!", campaign_path(campaign), class: 'btn green-button'  %>
+  </div>
+</div>
+
