@@ -25,6 +25,13 @@ const initMapbox = () => {
         .addTo(map);
     });
     fitMapToMarkers(map, markers);
+
+    const mapLink = document.querySelector(".js-should-refresh-map");
+    if (mapLink) {
+      mapLink.addEventListener("click", (event) => {
+        map.resize();
+      });
+    };
   }
 };
 
