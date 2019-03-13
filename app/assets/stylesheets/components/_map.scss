@@ -1,10 +1,22 @@
 #map {
-  height: 50vh;
-  width: auto;
-  position: sticky !important;
-  top: 90px;
-  right: 0;
-  border-radius: 6px;
+  height: 70vh;
 }
 
+.mapboxgl-popup {
+  width: auto;
+}
 
+.mapboxgl-popup-content {
+  text-align: center;
+  h5 {
+    font-size: 15px;
+  }
+}
+
+.popup-image {
+  position: relative;
+}
+
+.popup-title {
+  // color: white;
+}
