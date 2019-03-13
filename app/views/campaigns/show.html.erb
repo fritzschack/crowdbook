@@ -18,7 +18,7 @@
       <div class="col-sm-2">
         <div class="user-info">
           <%= link_to profile_path(@campaign.user_id) do %>
-            <p><%= cl_image_tag @campaign.user.profile_picture, width: 100, class: "avatar" %></p>
+            <p><%= cl_image_tag @campaign.user.profile_picture, width: 50, height: 50, class: "avatar" %></p>
             <h5>By <%= @campaign_creator.first_name %> <%= @campaign_creator.last_name %></h5>
           <% end %>
         </div>
@@ -38,9 +38,6 @@
     <div class="row campaign-body">
       <div class="col-sm-8">
         <div class="campaign-photos">
-          <%# @campaign.photos.each do |photo| %>
-            <%#= cl_image_tag photo.image_url, class: 'img-responsive'%>
-          <%# end %>
           <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -82,10 +79,12 @@
       </div>
       <div class="row responsive">
         <div class="col-sm-12">
-          <div class="ticket-category-boxes">
+          <div class="ticket-category-boxes" style="text-align: center;">
+            <div class="progress-circle" data-progress="<%= (((@campaign.current_funding_amount).to_f / (@campaign.funding_goal).to_f) * 100).round %>">
+            </div>
             <h4>Amount Pledged: <%= humanized_money_with_symbol(@campaign.current_funding_amount) %></h4>
-            <h5><%= @campaign.tickets.count %> Pledges Made</h5>
             <h5>The Goal is <%= humanized_money_with_symbol(@campaign.funding_goal) %></h5>
+            <h5><%= @campaign.tickets.count %> Pledges Made</h5>
             <h4><strong><%= @campaign_days_left %></strong> <% if @campaign_days_left == 1 %> Day <% else %> Days <% end %> Left</h4>
           </div>
           <% if @campaign_active == true %>
