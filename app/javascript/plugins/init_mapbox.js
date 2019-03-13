@@ -1,5 +1,6 @@
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');

@@ -1,5 +1,4 @@
-<%= render "components/banner_general" %>
-<div class="container">
+<div class="container" style="margin-top: 90px;">
   <h1>Create a new campaign to fund your event!</h1>
   <%= simple_form_for @campaign do |f| %>
     <div class="form-row">
@@ -41,7 +40,7 @@
       </div>
       <div id="checkbox_div" class="form-group col-xs-12 col-sm-4">
         <p style="font-size: 18px; font-weight: 700;">Private campaign</p>
-        <%= f.input :is_private, label: "Select if you want your campaign to be private", label_html: { class: "label-checkbox" } %>
+        <%= f.input :is_private, id: "campaign_is_private", label: "Select if you want your campaign to be private", label_html: { class: "label-checkbox" }, as: :boolean %>
       </div>
     </div>
     <% musicians = Musician.all.collect { |p| [p.name, p.id] } %>
@@ -59,3 +58,20 @@
     </div>
   <% end %>
 </div>
+
+<!-- <script>
+
+const checkbox = document.getElementById("campaign_is_private");
+  const checkbox_div = document.getElementById("checkbox_div");
+
+  checkbox_div.addEventListener('change', e => {
+    if(e.target.checked) {
+      console.log("checked");
+      checkbox_div.insertAdjacentHTML('afterend', '<div id="password_div" class="form-group col-xs-12 col-sm-4"><div class="form-group string required campaign_password"><label class="form-control-label string" for="campaign_address">Password</label><input class="form-control string input" placeholder="Please enter the password for your private event." type="text" name="campaign[password]" id="campaign_password"></div></div>');
+    } else {
+      console.log("unchecked");
+      const password_div = document.getElementById("password_div")
+      password_div.remove();
+    }
+  });
+</script> -->

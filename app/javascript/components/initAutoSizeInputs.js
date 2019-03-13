@@ -1,3 +1,5 @@
+import autoSizeInput from 'autosize-input';
+
 const initAutoSizeInputs = () => {
   const inputs = document.querySelectorAll('.js-auto-size-input');
   inputs.forEach((input) => {
@@ -5,4 +7,4 @@ const initAutoSizeInputs = () => {
   });
 }
 
-export { initAutoSizeInputs }
+export { initAutoSizeInputs };

@@ -1,3 +1,5 @@
+import 'select2';
+import $ from 'jquery';
 const selectTwo = () => {
   $(function() {
     $('.js-new-performance-form').select2({
@@ -25,4 +27,4 @@ const selectTwo = () => {
 }
 
 
-export { selectTwo }
+export { selectTwo };
