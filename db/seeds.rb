@@ -695,8 +695,4 @@ puts "Creating Tickets..."
   Ticket.create(order: Order.all.sample, ticket_category: TicketCategory.all.sample)
 end
 
-puts "Done!"
-
-puts "#{Campaign.all.sample}"
-puts "#{Order.all.sample}"
-puts "#{TicketCategory.all.sample}"
+puts "Done!
