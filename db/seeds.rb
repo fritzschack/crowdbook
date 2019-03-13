@@ -1051,8 +1051,4 @@ Ticket.create(
 
 
 
-puts "Done!"
-
-puts "#{Campaign.all.sample}"
-puts "#{Order.all.sample}"
-puts "#{TicketCategory.all.sample}"
+puts "Done!
