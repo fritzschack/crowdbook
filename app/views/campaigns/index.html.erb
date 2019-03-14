@@ -1,6 +1,6 @@
 <div class="row searchbar">
   <%= form_tag campaigns_path, method: :get, class: "form-inline" do %>
-    <div class="col-xs-12 col-sm-2">
+    <div class="col-xs-12 col-sm-3">
       <%= text_field_tag :name_query,
         params[:name_query],
         class: "form-control input",
@@ -25,10 +25,10 @@
       <% collection =  ["All genres", "Industrial & Gothic", "(Heavy) Metal", "Rock 'n' Roll", "Golden Age", "Punk (Rock) / (New) Wave", "Hardcore (Punk)", "Alternative / Indie (Rock)", "Contemporary (Rock)", "Pop (Music)", "Country", "Rhythm 'n' Blues (R&B)", "Gospel & Pioneers", "Blues", "Jazz", "Jamaican (Music) / Reggae", "Rap / Hip-hop Music", "Breakbeat", "Drum 'n' Bass / Jungle", "Hardcore (Techno)", "Techno", "House", "Trance", "Downtempo / Ambient"] %>
       <%= select_tag :genre_query, options_for_select(collection, params[:genre_query]), class: "js-genre-selection-search" %>
     </div>
-    <div class="col-xs-12 col-sm-2">
-      <%= submit_tag 'Search', class: "green-button" %>
+    <div class="col-xs-12 col-sm-1 search-button-wrapper">
+      <%= submit_tag 'Search', class: "green-button search-button" %>
     </div>
-    <div class="col-xs-12 col-sm-2">
+    <div class="col-xs-12 col-sm-2 switch-buttons">
       <%= link_to "Cards", "#", :id => "toggleCards", :class => "cards-button active-toggle" %><%= link_to "Map", "#", :id => "toggleMap", :class => "map-button js-should-refresh-map" %>
     </div>
   <% end %>
