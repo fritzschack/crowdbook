@@ -512,7 +512,7 @@ redhook_c = Campaign.create(
 
 tobiahs_c = Campaign.create(
   name: "Tobiahs plays Public House",
-  address: "Church St, Richmond VIC 3121",
+  address: "433-435 Church St, Richmond VIC 3121",
   description: "Melbourne based producer Tobiahs, 20, combines elements of house, pop and garage to deliver his unique vision of lyric driven dance music.
 
 Having created music since the age of 15, Tobiahs has honed his skills and sound, initially garnering attention from a series of remixes shared online. His debut single Through To You, a garage-inspired story of troubled relationships, was released in 2017 and has since amassed over one million streams on Spotify and Apple Music.
