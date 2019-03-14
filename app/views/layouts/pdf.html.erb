@@ -55,6 +55,7 @@
   </div>
     <h3>
       <ul>Ticket No. <%= @ticket.id %></ul>
+      <ul><%=@ticket.ticket_category.name %> Ticket </ul>
       <ul><%=@ticket.ticket_category.campaign.name %></ul>
       <ul><%=@ticket.ticket_category.campaign.address %></ul>
       <ul><%=@ticket.ticket_category.campaign.date.strftime('%d/%m/%Y')%></ul>
@@ -65,7 +66,6 @@
     <%= yield %>
   </div>
 </body>
-<footer>Terms and conditions apply, for more information please visit crowdbook.xyz/termsandconditions</footer>
 </html>
 
 

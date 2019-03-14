@@ -1,9 +1,6 @@
 <div class="form-row category-field">
-  <div class="form-group col-xs-10">
+  <div class="form-group col-xs-12">
     <p style="font-size: 18px; font-weight: 700;">Fill out the form below to create a ticket category for your campaign</p>
-  </div>
-  <div class="form-group col-xs-2" style="text-align: right;">
-    <%= link_to "Delete category", "#", :class => "btn btn-danger btn-xs", remote: true %>
   </div>
 
   <%= simple_fields_for ticket_category do |tc| %>
