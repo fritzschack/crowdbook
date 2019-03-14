@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   resources :campaigns, except: [:show]
   get "campaigns/:id", to: "campaigns#verify_private_campaign", as: "verify_private_campaign"
   post "campaigns/:id", to: "campaigns#check_codeword", as: "check_codeword"
-  get "/new_ticket_category", to: "campaigns#new_ticket_category", as: "new_ticket_category"
+  get "new_ticket_category", to: "campaigns#new_ticket_category", as: "new_ticket_category"
+  get "delete_ticket_category", to: "campaigns#delete_ticket_category", as: "delete_ticket_category"
 
   devise_for :users, controllers: { registrations: "registrations" }
 

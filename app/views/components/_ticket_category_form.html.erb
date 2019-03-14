@@ -1,0 +1,23 @@
+<div class="form-row category-field">
+  <div class="form-group col-xs-10">
+    <p style="font-size: 18px; font-weight: 700;">Fill out the form below to create a ticket category for your campaign</p>
+  </div>
+  <div class="form-group col-xs-2" style="text-align: right;">
+    <%= link_to "Delete category", "#", :class => "btn btn-danger btn-xs", remote: true %>
+  </div>
+
+  <%= simple_fields_for ticket_category do |tc| %>
+    <div class="form-group col-xs-12">
+      <%= tc.input :name, placeholder: "Name", input_html: { name: "ticket_categories[][name]" } %>
+    </div>
+    <div class="form-group col-xs-12">
+      <%= tc.input :description, placeholder: "Description", input_html: { name: "ticket_categories[][description]" } %>
+    </div>
+    <div class="form-group col-xs-6">
+      <%= tc.input :quantity, placeholder: "Quantity of tickets of this category", input_html: { name: "ticket_categories[][quantity]" } %>
+    </div>
+    <div class="form-group col-xs-6">
+      <%= tc.input :price, placeholder: "Price for one ticket of this category", input_html: { name: "ticket_categories[][price]" } %>
+    </div>
+  <% end %>
+</div>

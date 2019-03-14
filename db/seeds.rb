@@ -696,7 +696,3 @@ puts "Creating Tickets..."
 end
 
 puts "Done!"
-
-puts "#{Campaign.all.sample}"
-puts "#{Order.all.sample}"
-puts "#{TicketCategory.all.sample}"
