@@ -107,9 +107,9 @@
                       <h4><%= category.name %> | <%= humanized_money_with_symbol(category.price) %></h4>
                       <p><small><%= category.description %></small></p>
                       <% if category.available_tickets > 1 %>
-                        <%= c.input "#{category.id}", collection: [1,2,3,4,5], label: "Quantity" %>
+                        <%= c.input "#{category.id}", collection: ((1..category.available_tickets).first(5)), label: "Quantity" %>
                       <% else %>
-                        <%= c.input "#{category.id}", collection: [1,2,3,4,5], label: "Quantity", :disabled => true %>
+                        <%= c.input "#{category.id}", label: "Quantity", :disabled => true %>
                       <% end %>
                     </div>
                   <% end %>
@@ -126,6 +126,5 @@
         </div>
       </div>
     </div>
-    <div class="space" style="height: 500px;"></div>
   </div>
 </div>
