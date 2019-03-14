@@ -6,7 +6,7 @@ fritz = User.create(
   password: "123456",
   first_name: "Fritz",
   last_name: "Schack",
-  description: "Deustchland is my one true love, but music comes a pretty close second.",
+  description: "Deutschland is my one true love, but music comes a pretty close second.",
   remote_profile_picture_url: "https://avatars0.githubusercontent.com/u/46619577?v=4",
 )
 
@@ -845,9 +845,6 @@ will_tv = TicketCategory.create(
 
 puts "Creating Orders..."
 
-chris_o = Order.create(
-  user: chris
-  )
 
 adora_o = Order.create(
   user: adora
@@ -859,14 +856,6 @@ paal_o = Order.create(
 
 alex_o = Order.create(
   user: alex
-  )
-
-rutger_o = Order.create(
-  user: rutger
-  )
-
-fritz_o = Order.create(
-  user: fritz
   )
 
 dale_o = Order.create(
@@ -945,7 +934,7 @@ puts "Creating Tickets..."
 
 7.times do
   Ticket.create(
-    order: chris_o,
+    order: yb_o,
     ticket_category: dulcie_tv,
   )
 end
@@ -987,14 +976,14 @@ end
 
 5.times do
   Ticket.create(
-    order: fritz_o,
+    order: yb_o,
     ticket_category: pridelands_tv,
   )
 end
 
 6.times do
   Ticket.create(
-    order: rutger_o,
+    order: ew_o,
     ticket_category: redhook_tv,
   )
 end
