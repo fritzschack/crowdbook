@@ -50,29 +50,32 @@ class CampaignsController < ApplicationController
   def new
     @campaign = Campaign.new
     @campaign_images = @campaign.photos.build
+    @ticket_categories = params[:ticket_categories].nil? ? [TicketCategory.new] : params[:ticket_categories]
   end
 
   def create
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
     instance_array = []
-    if @campaign.password != nil
+    if @campaign.codeword != nil
       @campaign.is_private = true
     end
-    if @campaign.save
-      params[:campaign][:categories].each do |ticket_category|
+    if @campaign.save && params[:ticket_categories].count.positive? && params[:campaign][:performances].count > 1 && params[:campaign][:photos]['image_url']
+      params[:ticket_categories].each do |ticket_category|
         category = @campaign.ticket_categories.new(
           name: ticket_category[:name],
           description: ticket_category[:description],
           quantity: ticket_category[:quantity],
           price: ticket_category[:price],
-          available_tickets: ticket_category[:quantity],
+          available_tickets: ticket_category[:quantity]
         )
         instance_array << category
       end
-      params[:campaign][:photos]['image_url'].each do |a|
-        @campaign_images = @campaign.photos.create!(image_url: a)
+
+      params[:campaign][:photos]['image_url'].each do |cloudinary_url|
+        @campaign.photos.create(image_url: cloudinary_url)
       end
+
       params[:campaign][:performances].each do |performance|
         if performance.match(/^[0-9]+$/) && Musician.exists?(performance.to_i)
           performance_instance = @campaign.performances.new(musician: Musician.find(performance.to_i))
@@ -84,12 +87,23 @@ class CampaignsController < ApplicationController
           instance_array << performance_instance
         end
       end
+
       if instance_array.all?(&:valid?)
         instance_array.each(&:save!)
         redirect_to campaign_path(@campaign)
       end
     else
       # Send a variable to the new action that contains the amount of simplefields partials we need to render.
+      @params = params[:ticket_categories].map do |ticket_category|
+        TicketCategory.new(
+          name: ticket_category[:name],
+          description: ticket_category[:description],
+          quantity: ticket_category[:quantity],
+          price: ticket_category[:price],
+          available_tickets: ticket_category[:quantity]
+        )
+      end
+      @ticket_categories = params[:ticket_categories].nil? ? [TicketCategory.new] : @params
       render :new
     end
   end
@@ -114,7 +128,10 @@ class CampaignsController < ApplicationController
   end
 
   def new_ticket_category
-    @musicians = Musician.all
+    @ticket_category = TicketCategory.new
+  end
+
+  def delete_ticket_category
   end
 
   def verify_private_campaign
@@ -126,7 +143,7 @@ class CampaignsController < ApplicationController
   def check_codeword
     @campaign_creator = User.find(@campaign.user_id)
 
-    if params[:codeword][:input] == @campaign.password
+    if params[:codeword][:input] == @campaign.codeword
       render :show
     else
       redirect_to verify_private_campaign_path
@@ -141,7 +158,7 @@ class CampaignsController < ApplicationController
   end
 
   def campaign_params
-    params.require(:campaign).permit(:name, :address, :description, :date, :url, :is_private?, :genre, :funding_goal, :campaign_end_date, :password, photos_attributes: [:id, :user_id, :image_url])
+    params.require(:campaign).permit(:name, :address, :description, :date, :url, :is_private?, :genre, :funding_goal, :campaign_end_date, :codeword)
   end
 
   def campaigns_backed
