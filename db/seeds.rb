@@ -381,7 +381,7 @@ dulcie_c = Campaign.create(
   genre: "Alternative / Indie (Rock)",
   funding_goal: 2000,
   campaign_end_date: DateTime.now + rand(5..15).days,
-  current_funding_amount: 0,
+  current_funding_amount: 1700,
 )
 
 fergus_c = Campaign.create(
@@ -394,7 +394,7 @@ Fergus James recently supported Ed Sheeran on the biggest stadium tour in Austra
   genre: "Rap / Hip-hop Music",
   funding_goal: 3000,
   campaign_end_date: DateTime.now + rand(5..15).days,
-  current_funding_amount: 0,
+  current_funding_amount: 4450,
 )
 
 grace_c = Campaign.create(
@@ -406,7 +406,7 @@ grace_c = Campaign.create(
   genre: "Pop",
   funding_goal: 1500,
   campaign_end_date: DateTime.now + rand(5..15).days,
-  current_funding_amount: 0,
+  current_funding_amount: 1750,
 )
 
 murmurmur_c = Campaign.create(
@@ -418,7 +418,7 @@ murmurmur_c = Campaign.create(
   genre: "Rock 'n' Roll",
   funding_goal: 4000,
   campaign_end_date: DateTime.now + rand(5..15).days,
-  current_funding_amount: 0,
+  current_funding_amount: 4100,
 )
 
 nerve_c = Campaign.create(
@@ -453,7 +453,7 @@ With the Australian rap scene growing more and more each year, Nerve looks to cl
   genre: "Rap / Hip-hop Music",
   funding_goal: 5000,
   campaign_end_date: DateTime.now + rand(5..15).days,
-  current_funding_amount: 0
+  current_funding_amount: 3650
 )
 
 ollie_c = Campaign.create(
@@ -474,7 +474,7 @@ Well, if you back Ollie, you back us at the ESPY, there's only one option....buy
   genre: "Blues",
   funding_goal: 900,
   campaign_end_date: DateTime.now + rand(5..15).days,
-  current_funding_amount: 0
+  current_funding_amount: 400
 )
 
 pridelands_c = Campaign.create(
@@ -487,7 +487,7 @@ Now Pridelands are set to release their second EP 'Any Colour You Desire' on May
   genre: "(Heavy) Metal",
   funding_goal: 2000,
   campaign_end_date: DateTime.now + rand(5..15).days,
-  current_funding_amount: 0
+  current_funding_amount: 1350
 )
 
 redhook_c = Campaign.create(
@@ -507,7 +507,7 @@ redhook_c = Campaign.create(
   genre: "Punk (Rock) / (New) Wave",
   funding_goal: 2000,
   campaign_end_date: DateTime.now + rand(5..15).days,
-  current_funding_amount: 0
+  current_funding_amount: 1200
 )
 
 tobiahs_c = Campaign.create(
@@ -522,7 +522,7 @@ Having created music since the age of 15, Tobiahs has honed his skills and sound
   genre: "Electronic",
   funding_goal: 7000,
   campaign_end_date: DateTime.now + rand(5..15).days,
-  current_funding_amount: 0
+  current_funding_amount: 7000
 )
 
 will_c = Campaign.create(
@@ -549,7 +549,7 @@ There will be two versions of ‘For You’ out October 25th, along with an acou
   genre: "Alternative / Indie (Rock)",
   funding_goal: 2000,
   campaign_end_date: DateTime.now + rand(5..15).days,
-  current_funding_amount: 0
+  current_funding_amount: 1700
 )
 
 puts "Creating Performances..."
@@ -666,7 +666,7 @@ dulcie_tg = TicketCategory.create(
   name: "General Admission",
   campaign: dulcie_c ,
   quantity: 100,
-  available_tickets: 100,
+  available_tickets: 80,
   description: "Grants Entry",
   price_cents: 2000
 )
@@ -675,7 +675,7 @@ fergus_tg = TicketCategory.create(
   name: "General Admission",
   campaign: fergus_c,
   quantity: 100,
-  available_tickets: 100,
+  available_tickets: 85,
   description: "Grants Entry",
   price_cents: 4000
 )
@@ -684,7 +684,7 @@ grace_tg = TicketCategory.create(
   name: "General Admission",
   campaign: grace_c ,
   quantity: 100,
-  available_tickets: 100,
+  available_tickets: 75,
   description: "Grants Entry",
   price_cents: 4000
 )
@@ -693,7 +693,7 @@ murmurmur_tg = TicketCategory.create(
   name: "General Admission",
   campaign: murmurmur_c ,
   quantity: 100,
-  available_tickets: 100,
+  available_tickets: 85,
   description: "Grants Entry",
   price_cents: 4000
 )
@@ -702,7 +702,7 @@ nerve_tg = TicketCategory.create(
   name: "General Admission",
   campaign: nerve_c ,
   quantity: 100,
-  available_tickets: 100,
+  available_tickets: 75,
   description: "Grants Entry",
   price_cents: 5000
 )
@@ -720,7 +720,7 @@ pridelands_tg = TicketCategory.create(
   name: "General Admission",
   campaign: pridelands_c ,
   quantity: 100,
-  available_tickets: 100,
+  available_tickets: 80,
   description: "Grants Entry",
   price_cents: 3000
 )
@@ -729,7 +729,7 @@ redhook_tg = TicketCategory.create(
   name: "General Admission",
   campaign: redhook_c ,
   quantity: 100,
-  available_tickets: 100,
+  available_tickets: 70,
   description: "Grants Entry",
   price_cents: 2000
 )
@@ -738,7 +738,7 @@ tobiahs_tg = TicketCategory.create(
   name: "General Admission",
   campaign: tobiahs_c ,
   quantity: 100,
-  available_tickets: 100,
+  available_tickets: 50,
   description: "Grants Entry",
   price_cents: 5000
 )
@@ -747,7 +747,7 @@ will_tg = TicketCategory.create(
   name: "General Admission",
   campaign: will_c ,
   quantity: 100,
-  available_tickets: 100,
+  available_tickets: 70,
   description: "Grants Entry",
   price_cents: 2000
 )
@@ -756,7 +756,7 @@ dulcie_tv = TicketCategory.create(
   name: "VIP",
   campaign: dulcie_c ,
   quantity: 20,
-  available_tickets:20,
+  available_tickets:13,
   description: "Premium Package including table, drinks and table service",
   price_cents: 10000
 )
@@ -765,7 +765,7 @@ fergus_tv = TicketCategory.create(
   name: "VIP",
   campaign: fergus_c ,
   quantity: 20,
-  available_tickets:20,
+  available_tickets:9,
   description: "We put the 'V' in V.I.P, you'll get the full red carpet treatment, even your own paparazzi if you're up for a photoshoot, drinks, a table and cloaking included",
   price_cents: 35000
 )
@@ -774,7 +774,7 @@ grace_tv = TicketCategory.create(
   name: "VIP",
   campaign: grace_c ,
   quantity: 20,
-  available_tickets: 20,
+  available_tickets: 15,
   description: "Grace invites you to a private performance after the show, it doesn't get any better than this",
   price_cents: 15000
 )
@@ -783,7 +783,7 @@ murmurmur_tv = TicketCategory.create(
   name: "VIP",
   campaign: murmurmur_c ,
   quantity: 20,
-  available_tickets:20,
+  available_tickets:6,
   description: "Do you hear that? That's right, we're back, get the best tickets, for the best band around Melbourne right now. No queue time, drinks included and a night you'll definitely forget👌",
   price_cents: 25000
 )
@@ -792,7 +792,7 @@ nerve_tv = TicketCategory.create(
   name: "VIP",
   campaign: nerve_c ,
   quantity: 20,
-  available_tickets: 20,
+  available_tickets: 8,
   description: "Do you have the nerve, didn't think so, support us and we'll support you more than you'll ever know",
   price_cents: 20000
 )
@@ -801,7 +801,7 @@ ollie_tv = TicketCategory.create(
   name: "VIP",
   campaign: ollie_c ,
   quantity: 20,
-  available_tickets: 20,
+  available_tickets: 16,
   description: "Support a local artist with the best value for your money you're ever going to get. 2 bottles of spirits a table and cloaking",
   price_cents: 10000
 )
@@ -810,7 +810,7 @@ pridelands_tv = TicketCategory.create(
   name: "VIP",
   campaign: pridelands_c ,
   quantity: 20,
-  available_tickets: 20,
+  available_tickets: 15,
   description: "The best seats in the house, with the hottest band in Oz right now",
   price_cents: 15000
 )
@@ -819,7 +819,7 @@ redhook_tv = TicketCategory.create(
   name: "VIP",
   campaign: redhook_c ,
   quantity: 20,
-  available_tickets: 20,
+  available_tickets:14,
   description: "You get what you pay for, you'll find out on the night",
   price_cents: 10000
 )
@@ -828,7 +828,7 @@ tobiahs_tv = TicketCategory.create(
   name: "VIP",
   campaign: tobiahs_c ,
   quantity: 20,
-  available_tickets: 20,
+  available_tickets: 11,
   description: "Prepare yourselves for a night of quality music, a table, 2 bottles and table service",
   price_cents: 50000
 )
@@ -837,226 +837,233 @@ will_tv = TicketCategory.create(
   name: "VIP",
   campaign: will_c ,
   quantity: 20,
-  available_tickets: 20,
+  available_tickets: 9,
   description: "A luxurious evening of cocktails, champagne and good tunes",
   price_cents: 10000
 )
 
 
-# puts "Creating Orders..."
+puts "Creating Orders..."
 
 
-# adora_o = Order.create(
-#   user: adora
-#   )
+adora_o = Order.create(
+  user: adora
+  )
 
-# paal_o = Order.create(
-#   user: paal
-#   )
+paal_o = Order.create(
+  user: paal
+  )
 
-# alex_o = Order.create(
-#   user: alex
-#   )
+alex_o = Order.create(
+  user: alex
+  )
 
-# dale_o = Order.create(
-#   user: dale
-#   )
+dale_o = Order.create(
+  user: dale
+  )
 
-# jessie_o = Order.create(
-#   user: jessie
-#   )
+jessie_o = Order.create(
+  user: jessie
+  )
 
-# marty_o = Order.create(
-#   user: marty
-#   )
+marty_o = Order.create(
+  user: marty
+  )
 
-# daniel_o = Order.create(
-#   user: daniel
-#   )
+daniel_o = Order.create(
+  user: daniel
+  )
 
-# paal_o = Order.create(
-#   user: paal
-#   )
+paal_o = Order.create(
+  user: paal
+  )
 
-# jonas_o = Order.create(
-#   user: jonas
-#   )
+jonas_o = Order.create(
+  user: jonas
+  )
 
-# richa_o = Order.create(
-#   user: richa
-#   )
+richa_o = Order.create(
+  user: richa
+  )
 
-# ew_o = Order.create(
-#   user: ew
-#   )
+ew_o = Order.create(
+  user: ew
+  )
 
-# aj_o = Order.create(
-#   user: aj
-#   )
+aj_o = Order.create(
+  user: aj
+  )
 
-# fc_o = Order.create(
-#   user: fc
-#   )
+fc_o = Order.create(
+  user: fc
+  )
 
-# hw_o = Order.create(
-#   user: hw
-#   )
+hw_o = Order.create(
+  user: hw
+  )
 
-# hb_o = Order.create(
-#   user: hb
-#   )
+hb_o = Order.create(
+  user: hb
+  )
 
-# jc_o = Order.create(
-#   user: jc
-#   )
+jc_o = Order.create(
+  user: jc
+  )
 
-# jw_o = Order.create(
-#   user: jw
-#   )
+jw_o = Order.create(
+  user: jw
+  )
 
-# kv_o = Order.create(
-#   user: kv
-#   )
+kv_o = Order.create(
+  user: kv
+  )
 
-# ss_o = Order.create(
-#   user: ss
-#   )
+ss_o = Order.create(
+  user: ss
+  )
 
-# sk_o = Order.create(
-#   user: sk
-#   )
+sk_o = Order.create(
+  user: sk
+  )
 
-# yb_o = Order.create(
-#   user: yb
-#   )
+yb_o = Order.create(
+  user: yb
+  )
 
-# puts "Creating Tickets..."
+puts "Creating Tickets..."
 
-# 7.times do
-#   Ticket.create(
-#     order: yb_o,
-#     ticket_category: dulcie_tv,
-#   )
-# end
+7.times do
+  Ticket.create(
+    order: yb_o,
+    ticket_category: dulcie_tv,
+  )
+end
 
-# 11.times do
-#   Ticket.create(
-#     order: adora_o,
-#     ticket_category: fergus_tv,
-#   )
-# end
+11.times do
+  Ticket.create(
+    order: adora_o,
+    ticket_category: fergus_tv,
+  )
+end
 
-# 5.times do
-#   Ticket.create(
-#     order: paal_o,
-#     ticket_category: grace_tv,
-#   )
-# end
+5.times do
+  Ticket.create(
+    order: paal_o,
+    ticket_category: grace_tv,
+  )
+end
 
-# 14.times do
-#   Ticket.create(
-#     order: alex_o,
-#     ticket_category: murmurmur_tv,
-#   )
-# end
+14.times do
+  Ticket.create(
+    order: alex_o,
+    ticket_category: murmurmur_tv,
+  )
+end
 
-# 12.times do
-#   Ticket.create(
-#     order: daniel_o,
-#     ticket_category: nerve_tv,
-#   )
-# end
+12.times do
+  Ticket.create(
+    order: daniel_o,
+    ticket_category: nerve_tv,
+  )
+end
 
-# 4.times do
-#   Ticket.create(
-#     order: jessie_o,
-#     ticket_category: ollie_tv,
-#   )
-# end
+4.times do
+  Ticket.create(
+    order: jessie_o,
+    ticket_category: ollie_tv,
+  )
+end
 
-# 5.times do
-#   Ticket.create(
-#     order: yb_o,
-#     ticket_category: pridelands_tv,
-#   )
-# end
+5.times do
+  Ticket.create(
+    order: yb_o,
+    ticket_category: pridelands_tv,
+  )
+end
 
-# 6.times do
-#   Ticket.create(
-#     order: ew_o,
-#     ticket_category: redhook_tv,
-#   )
-# end
+6.times do
+  Ticket.create(
+    order: ew_o,
+    ticket_category: redhook_tv,
+  )
+end
 
-# 9.times do
-#   Ticket.create(
-#     order: jonas_o,
-#     ticket_category: tobiahs_tv,
-#   )
-# end
+9.times do
+  Ticket.create(
+    order: jonas_o,
+    ticket_category: tobiahs_tv,
+  )
+end
 
-# 11.times do
-#   Ticket.create(
-#     order: richa_o,
-#     ticket_category: will_tv,
-#   )
-# end
+11.times do
+  Ticket.create(
+    order: richa_o,
+    ticket_category: will_tv,
+  )
+end
 
-# Ticket.create(
-#   order: ew_o,
-#   ticket_category: dulcie_tg,
-# )
+20.times do
+Ticket.create(
+  order: ew_o,
+  ticket_category: dulcie_tg,
+)
+end
 
-# Ticket.create(
-#   order: aj_o,
-#   ticket_category: fergus_tv,
-# )
+15.times do
+Ticket.create(
+  order: aj_o,
+  ticket_category: fergus_tv,
+)
+end
 
-# Ticket.create(
-#   order: fc_o,
-#   ticket_category: grace_tg,
-# )
+25.times do
+Ticket.create(
+  order: fc_o,
+  ticket_category: grace_tg,
+)
+end
 
-# Ticket.create(
-#   order: hw_o,
-#   ticket_category: murmurmur_tg,
-# )
+15.times do
+Ticket.create(
+  order: hw_o,
+  ticket_category: murmurmur_tg,
+)
+end
 
-# Ticket.create(
-#   order: hb_o,
-#   ticket_category: nerve_tg,
-# )
+25.times do
+Ticket.create(
+  order: hb_o,
+  ticket_category: nerve_tg,
+)
+end
 
-# Ticket.create(
-#   order: jc_o,
-#   ticket_category: pridelands_tg,
-# )
+20.times do
+Ticket.create(
+  order: jc_o,
+  ticket_category: pridelands_tg,
+)
+end
 
-# Ticket.create(
-#   order: jw_o,
-#   ticket_category: redhook_tg,
-# )
+30.times do
+Ticket.create(
+  order: jw_o,
+  ticket_category: redhook_tg,
+)
+end
 
-# Ticket.create(
-#   order: kv_o,
-#   ticket_category: tobiahs_tg,
-# )
+50.times do
+Ticket.create(
+  order: kv_o,
+  ticket_category: tobiahs_tg,
+)
+end
 
-# Ticket.create(
-#   order: ss_o,
-#   ticket_category: will_tg,
-# )
-
-# Ticket.create(
-#   order: sk_o,
-#   ticket_category: dulcie_tg,
-# )
-
-# Ticket.create(
-#   order: yb_o,
-#   ticket_category: will_tg,
-# )
-
+30.times do
+Ticket.create(
+  order: ss_o,
+  ticket_category: will_tg,
+)
+end
 
 
 
