@@ -20,7 +20,7 @@
               <p><%= order.ticket_categories.first.campaign.genre %> | <%= order.ticket_categories.first.campaign.address %></p>
               <div style="color: black;">
                 Pledge Amount: <%= humanized_money_with_symbol(order.amount) %>
-                <% if order.ticket_categories.first.campaign.current_funding_amount > order.ticket_categories.first.campaign.funding_goal %>
+                <% if order.ticket_categories.first.campaign.current_funding_amount >= order.ticket_categories.first.campaign.funding_goal %>
                   <div class="btn-group">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Tickets <span class="caret"></span>

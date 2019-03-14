@@ -32,7 +32,9 @@
             </label>
           </article>
         </div>
-
+        <%= link_to profile_orders_path(current_user) do %>
+          <p class="btn btn-success">Track My Pledges <i class="fas fa-arrow-right"></i></p>
+        <% end %>
       </div>
     </div>
   </div>
