@@ -17,6 +17,7 @@
       <div class="form-group col-xs-12 col-sm-12">
         <%= f.input :description, placeholder: "Please describe your campaign.", input_html: {class: "input"} %>
       </div>
+    </div>
     <div class="row">
       <div class="form-group col-xs-12 col-sm-4">
         <%= f.input :address, placeholder: "Please enter the address of the venue for the event.", input_html: {class: "input"} %>
@@ -30,7 +31,7 @@
     </div>
     <div class="row">
       <div class="form-group col-xs-12 col-sm-4">
-        <% collection =  ["Industrial & Gothic", "(Heavy) Metal", "Rock 'n' Roll", "Golden Age", "Punk (Rock) / (New) Wave", "Hardcore (Punk)", "Alternative / Indie (Rock)", "Contemporary (Rock)", "Pop (Music)", "Country", "Rhythm 'n' Blues (R&B)", "Gospel & Pioneers", "Blues", "Jazz", "Jamaican (Music) / Reggae", "Rap / Hip-hop Music", "Breakbeat", "Drum 'n' Bass / Jungle", "Hardcore (Techno)", "Techno", "House", "Trance", "Downtempo / Ambient"] %>
+        <% collection =  ["Pop", "Rock 'n' Roll", "Rap / Hip-hop Music", "Techno", "House", "Alternative / Indie (Rock)", "Trance", "Downtempo / Ambient", "Electronic", "Industrial & Gothic", "(Heavy) Metal", "Golden Age", "Punk (Rock) / (New) Wave", "Hardcore (Punk)", "Contemporary (Rock)", "Country", "Rhythm 'n' Blues (R&B)", "Gospel & Pioneers", "Blues", "Jazz", "Jamaican (Music) / Reggae", "Breakbeat", "Drum 'n' Bass / Jungle", "Hardcore (Techno)"] %>
         <p style="font-size: 18px; font-weight: 700;">Genre</p>
         <%= f.select :genre, collection, {}, :class => 'js-genre-selection-form', required: true %>
       </div>
@@ -51,11 +52,13 @@
       </div>
     </div>
     <div class="form-row">
+      <% @ticket_categories.each do |ticket_category| %>
+        <%= render 'components/ticket_category_form', ticket_category: ticket_category %>
+      <% end %>
       <div id="addTicketCategory" class="form-group col-xs-12" style="margin-top: 20px;">
         <%= link_to "Add new ticket category", new_ticket_category_path, :class => "btn btn-success button", remote: true %>
-        <%= f.button :submit, class: "btn btn-primary button" %>
+        <%= f.button :submit, class: "btn btn-primary button", data: { disable_with: false } %>
       </div>
     </div>
   <% end %>
-</div>
 </div>
