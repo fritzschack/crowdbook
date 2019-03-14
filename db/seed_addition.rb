@@ -48,5 +48,38 @@ badloves_c = Campaign.create(
   current_funding_amount: 0,
 )
 
+kodie_shane_c = Campaign.create(
+  name: "Kodie Shane plays Provincial Hotel",
+  address: "299 Brunswick Street Fitzroy VIC 3065",
+  description: "Despite the playful bubblegum bounce of her breakout hit “Drip on My Walk,” Kodie Shane, the first lady (or is that matey?) of Lil Yachty’s Sailing Team, has a very cool head. Part of that can be attributed to the 19-year-old’s early exposure to the music industry — her father sang background vocals for her aunt Cherrelle of “Saturday Love” fame and a sister was in girl group Blaque — but mostly, she’s just serious about her craft. While her peers were flirting, her natural talent for melody and cadence was being primed by long days in an Atlanta studio. Those gifts, coupled with her ability to write both candy-sweet singsong rap and deeper, more emotionally sensitive songs like “Sad” are what set her apart from the swarm of new young rappers. Not to mention her confidence. “Imma knock it out the park when I hit it, Lord,” she boasts on recent standout “Start a Riot.” It’s well earned — she hasn’t struck out yet.",
+  date: DateTime.now + rand(16..70).days,
+  user: ew,
+  genre: "Rap / Hip-hop Music",
+  funding_goal: 5000,
+  campaign_end_date: DateTime.now + rand(5..15).days,
+  current_funding_amount: 0,
+)
 
+brockhampton_c = Campaign.create(
+  name: "BROCKHAMPTON plays Fitzroy Social",
+  address: "222 Brunswick Street Fitzroy VIC 3065",
+  description: "BROCKHAMPTON has no patience for subtly. Their name, their song titles and their album titles — each is written in caps. Founded in the early-aughts via a rap message board, the once geographically separated, 14-member posse are both a boyband and an endlessly creative collective, featuring non-rapping members who handle art, photography and music videos. In addition to landing a reality show on Viceland, they spent 2017 sprinting the path blazed by forebears Odd Future, releasing their SATURATION trilogy and a barrage of music videos in just six months. Fronted by the charismatic Kevin Abstract, BROCKHAMPTON packs each record with clever, aggressive and sometimes nihilistic bars over beats built to soundtrack fervent mosh pits. To temper their more bellicose material, BROCKHAMPTON include softer, more vulnerable songs like “FACE” and “SUMMER,” which challenge rote rap parameters. With their fourth album, “TEAM EFFORT,” slated for release this year, they seem poised to capitalize on their ceaseless momentum.",
+  date: DateTime.now + rand(16..70).days,
+  user: ew,
+  genre: "Rap / Hip-hop Music",
+  funding_goal: 2000,
+  campaign_end_date: DateTime.now + rand(5..15).days,
+  current_funding_amount: 0,
+)
 
+ravyn_lenae_c = Campaign.create(
+  name: "Ravyn Lenae plays Naked for Satan",
+  address: "289 Brunswick Street Fitzroy VIC 3065",
+  description: "Ravyn Lenae was a sophomore in high school when she made “Greetings,” an atmospheric R&B track that would later become part of her much-celebrated debut EP “Moon Shoes.” She recorded it with $300 she scraped together for studio time. By the time she was a high school senior, Lenae was signed to Atlantic Records — which reissued the album — and working with fellow Chicago peers Mick Jenkins and Noname. With her soulful 2017 follow-up, “Midnight Moonlight,” the cosmos-obsessed artist established herself as a dynamic musical force, debuting a new collection of dreamy, electronic tracks that compelled comparisons to Kelela and Erykah Badu. An Aquarian, Lenae will be celebrating her birthday month with a new album, “Crush,” produced by hip-hop producer (and Kendrick Lamar collaborator) Steve Lacy — and she hasn’t yet left her teen years behind.",
+  date: DateTime.now + rand(16..70).days,
+  user: ew,
+  genre: "Rhythm 'n' Blues (R&B)",
+  funding_goal: 3000,
+  campaign_end_date: DateTime.now + rand(5..15).days,
+  current_funding_amount: 0,
+)
