@@ -766,7 +766,7 @@ fergus_tv = TicketCategory.create(
   campaign: fergus_c ,
   quantity: 100,
   available_tickets: 50,
-  description: "We put the V, in V.I.P, you'll get the full red carpet treatment, even your own papparazzi if you're up for a photoshoot, drinks, a table and cloaking included",
+  description: "We put the 'V' in V.I.P, you'll get the full red carpet treatment, even your own papparazzi if you're up for a photoshoot, drinks, a table and cloaking included",
   price_cents: 35000
 )
 
@@ -943,55 +943,74 @@ yb_o = Order.create(
 
 puts "Creating Tickets..."
 
-Ticket.create(
-  order: chris_o,
-  ticket_category: dulcie_tv,
-)
+5 times do
+  Ticket.create(
+    order: chris_o,
+    ticket_category: dulcie_tv,
+  )
+end
+9 times do
+  Ticket.create(
+    order: adora_o,
+    ticket_category: fergus_tv,
+  )
+end
 
-Ticket.create(
-  order: adora_o,
-  ticket_category: fergus_tv,
-)
+14 times do
+  Ticket.create(
+    order: paal_o,
+    ticket_category: grace_tv,
+  )
+end
 
-Ticket.create(
-  order: paal_o,
-  ticket_category: grace_tv,
-)
+11 times do
+  Ticket.create(
+    order: alex_o,
+    ticket_category: murmurmur_tv,
+  )
+end
 
-Ticket.create(
-  order: alex_o,
-  ticket_category: murmurmur_tv,
-)
+15 times do
+  Ticket.create(
+    order: daniel_o,
+    ticket_category: nerve_tv,
+  )
+end
 
-Ticket.create(
-  order: daniel_o,
-  ticket_category: nerve_tv,
-)
+4 times do
+  Ticket.create(
+    order: jessie_o,
+    ticket_category: ollie_tv,
+  )
+end
 
-Ticket.create(
-  order: jessie_o,
-  ticket_category: ollie_tv,
-)
+7 times do
+  Ticket.create(
+    order: fritz_o,
+    ticket_category: pridelands_tv,
+  )
+end
 
-Ticket.create(
-  order: fritz_o,
-  ticket_category: pridelands_tv,
-)
+5 times do
+  Ticket.create(
+    order: rutger_o,
+    ticket_category: redhook_tv,
+  )
+end
 
-Ticket.create(
-  order: rutger_o,
-  ticket_category: redhook_tv,
-)
+7 times do
+  Ticket.create(
+    order: jonas_o,
+    ticket_category: tobiahs_tv,
+  )
+end
 
-Ticket.create(
-  order: jonas_o,
-  ticket_category: tobiahs_tv,
-)
-
-Ticket.create(
-  order: richa_o,
-  ticket_category: will_tv,
-)
+11 times do
+  Ticket.create(
+    order: richa_o,
+    ticket_category: will_tv,
+  )
+end
 
 Ticket.create(
   order: ew_o,
