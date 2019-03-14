@@ -12,13 +12,11 @@
     color: black;
   }
   .avatar {
-    height: 90px;
-    width: 90px;
+    height: 65px;
+    width: 65px;
     border-radius: 50%;
-    margin-bottom: 1px;
-    position: center;
-    repeat: no-repeat;
-    size: cover;
+    background-size: cover;
+    margin: 0 auto;
   }
 }
 
@@ -61,6 +59,7 @@
   margin: 0 15px;
   margin-bottom: 10px;
   width: 100%;
+  text-align: center;
 }
 
 .campaign-description {
@@ -98,12 +97,6 @@
     font-weight: lighter;
   }
 }
-
-.tickets-left {
-  position: absolute;
-  right: 20px;
-}
-
 .campaign-show-is-private {
   padding-top:25px;
   text-align:center;

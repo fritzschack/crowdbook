@@ -72,8 +72,8 @@ class CampaignsController < ApplicationController
         instance_array << category
       end
 
-      params[:campaign][:photos]['image_url'].each do |a|
-        @campaign_images = @campaign.photos.create!(image_url: a)
+      params[:campaign][:photos]['image_url'].each do |cloudinary_url|
+        @campaign.photos.create(image_url: cloudinary_url)
       end
 
       params[:campaign][:performances].each do |performance|
@@ -158,7 +158,7 @@ class CampaignsController < ApplicationController
   end
 
   def campaign_params
-    params.require(:campaign).permit(:name, :address, :description, :date, :url, :is_private?, :genre, :funding_goal, :campaign_end_date, :password, photos_attributes: [:id, :user_id, :image_url])
+    params.require(:campaign).permit(:name, :address, :description, :date, :url, :is_private?, :genre, :funding_goal, :campaign_end_date, :password)
   end
 
   def campaigns_backed
@@ -174,3 +174,5 @@ class CampaignsController < ApplicationController
     end
   end
 end
+
+# , photos_attributes: [:id, :user_id, :image_url]
