@@ -48,9 +48,10 @@
   <h2>This is a ticket</h2>
   </div>
     <h3>
-      <ul>Location:<%@order.ticket_categories.campaign.address %></ul>
-      <ul>Date:<%@order.ticket_categories.campaign.date %></ul>
-      <ul>Venue:<%#@order. %></ul>
+      <ul>Ticket No. <%@order.ticket.id %></ul>
+      <ul>Location: <%@order.ticket_categories.campaign.address %></ul>
+      <ul>Date: <%@order.ticket_categories.campaign.date %></ul>
+      <ul>Venue:<% @order.ticket_categories.first.campaign.address %></ul>
     </h3>
   <div>
   </div>

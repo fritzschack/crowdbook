@@ -1,0 +1,30 @@
+.internal-server-error {
+  position: relative;
+  top: 90px;
+  height: calc(100vh - 90px);
+  background-size: cover;
+}
+
+.internal-server-error-content {
+  margin-top: 100px;
+  text-align: center;
+  color: white;
+  h1 {
+    font-size: 100px;
+  }
+}
+
+.internal-server-error-button {
+  padding: 5px 30px;
+  font-size: 30px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: white;
+  border: 3px solid white;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+    color: white;
+  }
+}
+

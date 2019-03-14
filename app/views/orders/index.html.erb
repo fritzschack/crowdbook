@@ -38,7 +38,7 @@
                 </div>
               </div>
               <div class="list-card-status">
-                <div class="progress-circle" data-progress="<%= (order.ticket_categories.first.campaign.current_funding_amount / order.ticket_categories.first.campaign.funding_goal) * 100 %>">
+                <div class="progress-circle" data-progress="<%= (((order.ticket_categories.first.campaign.current_funding_amount).to_f / (order.ticket_categories.first.campaign.funding_goal).to_f) * 100).round %>">
                 </div>
               </div>
             </div>

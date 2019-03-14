@@ -6,7 +6,7 @@ class TicketsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "Your_filename", template: "tickets/ticket.html.erb", layout: 'layouts/pdf.html.erb'
+        render pdf: @ticket.id && @ticket.ticket_category.campaign.name, template: "tickets/ticket.html.erb", layout: 'layouts/pdf.html.erb'
         # @html = get_html
         # @pdf = WickedPdf.new.pdf_from_string(@html)
     end
@@ -27,10 +27,9 @@ class TicketsController < ApplicationController
     @ticket.update(ticket_params)
     redirect_to my_profile_path
   end
-  private
 
+  private
   def ticket_params
     params.require(:ticket).permit(:ticket_used)
   end
-
 end

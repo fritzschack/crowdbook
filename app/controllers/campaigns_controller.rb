@@ -6,7 +6,7 @@ class CampaignsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :verify_private_campaign, :check_codeword]
 
   def index
-    @campaigns = Campaign.all
+    @campaigns = Campaign.where(is_private: false)
     if params[:name_query].present?
       @campaigns = @campaigns.where(
         "name @@ :name_query OR description @@ :name_query",
@@ -56,6 +56,9 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
     instance_array = []
+    if @campaign.password != nil
+      @campaign.is_private = true
+    end
     if @campaign.save
       params[:campaign][:categories].each do |ticket_category|
         category = @campaign.ticket_categories.new(
