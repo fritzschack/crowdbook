@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CrowdBook</title>
+    <%= favicon_link_tag asset_path('ms-icon-310x310.png'), :rel => 'icon', :type =>  'image/png' %>
     <%= csrf_meta_tags %>
     <%#=action_cable_meta_tag %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
   </head>
   <body>
     <%= render 'components/navbar' %>

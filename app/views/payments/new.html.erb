@@ -1,40 +1,35 @@
-<div class="container container-top payment-summary">
-  <div class="payment">
-    <h2><strong>Your Order Summary:</strong></h2>
-    <h3>Pledge Towards: <%= @order.ticket_categories.first.campaign.name %></h3>
+<div class="container" style="margin-top: 100px;">
+  <h2><strong>Your Order Summary:</strong></h2>
+  <hr>
+  <div class="row">
     <%= form_tag order_payments_path(@order) do %>
-      <article>
-        <label class="amount">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Pledge Type</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Price per Pledge</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @order.tickets.group_by(&:ticket_category).each do |ticket_category, tickets| %>
-                <tr>
-                  <td><%= ticket_category.name %></td>
-                  <td><%= tickets.count %></td>
-                  <td><%= ticket_category.price %></td>
-                </tr>
-              <% end %>
-            </tbody>
-            <td>Total Amount: <%= humanized_money_with_symbol(@order.amount) %></td>
-          </table>
-        </label>
-      </article>
-
-      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      <div class="col-sm-8">
+        <% @order.tickets.group_by(&:ticket_category).each do |ticket_category, tickets| %>
+          <div class="list-card payment-card">
+            <div class="list-card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= cl_image_path ticket_category.campaign.photos.first.image_url, height: 200, width: 400, crop: :fill %>')">
+            </div>
+            <div class="list-card-text">
+              <h4><%= ticket_category.campaign.name %></h4>
+                <h5>Pledge type: <%= ticket_category.name %></h5>
+                <p>Quantity: <%= tickets.count %></p>
+                <p>Price: <%= humanized_money_with_symbol(ticket_category.price)%></p>
+            </div>
+          </div>
+        <hr>
+        <% end %>
+      </div>
+      <div class="col-sm-4 payment-order-stripe">
+        <h5><%= @order.ticket_categories.count %> Pledge(s) in Total</h5>
+        <h4>Subtotal: <%= humanized_money_with_symbol(@order.amount) %></h4>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
         data-name="<%= current_user.first_name %>'s Pledge Towards:"
         data-email="<%= current_user.email %>"
         data-description="<%= @order.ticket_categories.first.campaign.name  %>"
         data-amount="<%= @order.amount_cents %>"
         data-currency="<%= @order.amount.currency %>">
-      </script>
+        </script>
+      </div>
     <% end %>
   </div>
 </div>
