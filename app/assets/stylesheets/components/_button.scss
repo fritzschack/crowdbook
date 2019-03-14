@@ -40,6 +40,12 @@
   }
 }
 
+.switch-buttons {
+  position: absolute;
+  right: -25px;
+  top: 22px;
+}
+
 .home-mobile-green-button {
   display: none;
   background-color: $pastel-green;
@@ -97,4 +103,13 @@
     color: white;
     text-decoration: none;
   }
+}
+
+.search-button-wrapper {
+  position: relative;
+}
+
+.search-button {
+  position: absolute;
+  left: 0;
 }

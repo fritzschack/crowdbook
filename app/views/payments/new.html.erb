@@ -19,7 +19,7 @@
         <% end %>
       </div>
       <div class="col-sm-4 payment-order-stripe">
-        <h5><%= @order.ticket_categories.count %> Pledge(s) in Total</h5>
+        <h5><%= @order.ticket_categories.count %> <% if @order.ticket_categories.count == 1 %> Pledge <% else %>Pledges<% end %> in Total</h5>
         <h4>Subtotal: <%= humanized_money_with_symbol(@order.amount) %></h4>
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
