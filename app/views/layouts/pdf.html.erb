@@ -54,6 +54,7 @@
   <h2>This is a ticket</h2>
   </div>
     <h3>
+      <ul>Ticket No. <%= @ticket.id %></ul>
       <ul><%=@ticket.ticket_category.campaign.name %></ul>
       <ul><%=@ticket.ticket_category.campaign.address %></ul>
       <ul><%=@ticket.ticket_category.campaign.date.strftime('%d/%m/%Y')%></ul>

@@ -98,3 +98,20 @@
     font-weight: lighter;
   }
 }
+
+.tickets-left {
+  position: absolute;
+  right: 20px;
+}
+
+.campaign-show-is-private {
+  padding-top:25px;
+  text-align:center;
+  h2 {
+    margin: 0 auto;
+    font-weight: lighter;
+  }
+  h3 {
+    font-weight: lighter;
+  }
+}

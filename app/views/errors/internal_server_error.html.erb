@@ -1,2 +1,10 @@
-<h1>Errors#internal_server_error</h1>
-<p>Find me in app/views/errors/internal_server_error.html.erb</p>
+<div class="row internal-server-error"style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://media.giphy.com/media/YIQG7dmoR6geY/giphy.gif')">
+  <div class="col-sm-12 internal-server-error-content">
+    <h1>Oops!</h1>
+    <p>Error 500: Internal Server Error</p>
+    <h2>Looks like our server messed up!</h2>
+    <h2>Press the button to go back to safety!</h2>
+    <%= link_to "Back", :back, class: 'btn internal-server-error-button' %>
+  </div>
+</div>
+
