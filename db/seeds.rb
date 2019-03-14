@@ -492,7 +492,7 @@ Now Pridelands are set to release their second EP 'Any Colour You Desire' on May
 
 redhook_c = Campaign.create(
   name: "Redhook plays Cherry Bar",
-  address: "AC/DC Lane, Melbourne VIC 3000",
+  address: "Cherry, AC/DC La, Melbourne VIC 3000",
   description: "Screaming rap rock electro pop mutants from Sydney fighting against the forces of darkness inside our own heads & doing to genre barriers what Godzilla did to Tokyo
 
 'Dynamic and engaging – genre synergy at its best' -- (Grace Farrell, FBI Radio)
@@ -943,55 +943,75 @@ yb_o = Order.create(
 
 puts "Creating Tickets..."
 
-Ticket.create(
-  order: chris_o,
-  ticket_category: dulcie_tv,
-)
+7.times do
+  Ticket.create(
+    order: chris_o,
+    ticket_category: dulcie_tv,
+  )
+end
 
-Ticket.create(
-  order: adora_o,
-  ticket_category: fergus_tv,
-)
+11.times do
+  Ticket.create(
+    order: adora_o,
+    ticket_category: fergus_tv,
+  )
+end
 
-Ticket.create(
-  order: paal_o,
-  ticket_category: grace_tv,
-)
+5.times do
+  Ticket.create(
+    order: paal_o,
+    ticket_category: grace_tv,
+  )
+end
 
-Ticket.create(
-  order: alex_o,
-  ticket_category: murmurmur_tv,
-)
+14.times do
+  Ticket.create(
+    order: alex_o,
+    ticket_category: murmurmur_tv,
+  )
+end
 
-Ticket.create(
-  order: daniel_o,
-  ticket_category: nerve_tv,
-)
+12.times do
+  Ticket.create(
+    order: daniel_o,
+    ticket_category: nerve_tv,
+  )
+end
 
-Ticket.create(
-  order: jessie_o,
-  ticket_category: ollie_tv,
-)
+4.times do
+  Ticket.create(
+    order: jessie_o,
+    ticket_category: ollie_tv,
+  )
+end
 
-Ticket.create(
-  order: fritz_o,
-  ticket_category: pridelands_tv,
-)
+5.times do
+  Ticket.create(
+    order: fritz_o,
+    ticket_category: pridelands_tv,
+  )
+end
 
-Ticket.create(
-  order: rutger_o,
-  ticket_category: redhook_tv,
-)
+6.times do
+  Ticket.create(
+    order: rutger_o,
+    ticket_category: redhook_tv,
+  )
+end
 
-Ticket.create(
-  order: jonas_o,
-  ticket_category: tobiahs_tv,
-)
+9.times do
+  Ticket.create(
+    order: jonas_o,
+    ticket_category: tobiahs_tv,
+  )
+end
 
-Ticket.create(
-  order: richa_o,
-  ticket_category: will_tv,
-)
+11.times do
+  Ticket.create(
+    order: richa_o,
+    ticket_category: will_tv,
+  )
+end
 
 Ticket.create(
   order: ew_o,
