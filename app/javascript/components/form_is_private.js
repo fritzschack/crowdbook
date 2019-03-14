@@ -5,11 +5,11 @@ const initEventListenerCheckbox = () => {
     checkbox.addEventListener('change', function() {
       if(this.checked) {
         console.log("checked");
-        checkbox_div.insertAdjacentHTML('afterend', '<div id="password_div" class="form-group col-xs-12 col-sm-4"><div class="form-group string required campaign_password"><label class="form-control-label string" for="campaign_address">Password</label><input class="form-control string input" placeholder="Please enter the password for your private event." type="text" name="campaign[password]" id="campaign_password"></div></div>');
+        checkbox_div.insertAdjacentHTML('afterend', '<div id="codeword_div" class="form-group col-xs-12 col-sm-4"><div class="form-group string required campaign_codeword"><label class="form-control-label string" for="campaign_address">codeword</label><input class="form-control string input" placeholder="Please enter the codeword for your private event." type="text" name="campaign[codeword]" id="campaign_codeword"></div></div>');
       } else {
         console.log("unchecked");
-        const password_div = document.getElementById("password_div")
-        password_div.remove();
+        const codeword_div = document.getElementById("codeword_div")
+        codeword_div.remove();
       }
     });
   }

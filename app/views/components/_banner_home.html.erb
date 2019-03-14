@@ -1,31 +1,30 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(57,160,237,0.9) 0%, rgba(57,160,237,0.9) 50%), url('https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/3/2017/01/03145133/twenty20_ec812a3a-48ad-40af-983b-129484cf6086.jpg');">
   <div class="row home-form">
-<!--     <div class="col-12-sm"> -->
-      <h1 class="home-form__title">Welcome To CrowdBook.</h1>
-      <%= form_tag campaigns_path, method: :get, class: "form-inline" do%>
-        <div class="search-flexbox">
-          <h4 style="margin-right: 20px;">
-            Find me campaigns for
-            <% collection =  ["all", "Pop", "Rock 'n' Roll", "Rap / Hip-hop Music", "Techno", "House", "Alternative / Indie (Rock)", "Trance", "Downtempo / Ambient", "Electronic", "Industrial & Gothic", "(Heavy) Metal", "Golden Age", "Punk (Rock) / (New) Wave", "Hardcore (Punk)", "Contemporary (Rock)", "Country", "Rhythm 'n' Blues (R&B)", "Gospel & Pioneers", "Blues", "Jazz", "Jamaican (Music) / Reggae", "Breakbeat", "Drum 'n' Bass / Jungle", "Hardcore (Techno)"] %>
-            <%= select_tag :genre_query, options_for_select(collection, params[:genre_query]), class: "js-selection-search-banner home-form__input" %>
-            events in
-            <%= text_field_tag :location_query,
-              params[:location_query],
-              class: "home-form__input js-auto-size-input",
-              placeholder: "any location"
-            %>
-            where
-            <% collection = Musician.all.collect { |p| [p.name, p.id] } %>
-            <% collection.unshift("any musician") %>
-            <%= select_tag :musician_query, options_for_select(collection, params[:musician_query]), class: "js-selection-search-banner home-form__input" %>
-            is playing.
-          </h4>
-          <div>
-            <%= submit_tag "➜", class: "button-banner" %>
-          </div>
-<!--         </div> -->
-      <% end %>
-    </div>
+    <h1 class="home-form__title">Welcome To CrowdBook.</h1>
+    <%= form_tag campaigns_path, method: :get, class: "form-inline" do%>
+      <div class="search-flexbox">
+        <h4 style="margin-right: 20px;">
+          Find me campaigns for
+          <% collection =  ["all", "Pop", "Rock 'n' Roll", "Rap / Hip-hop Music", "Techno", "House", "Alternative / Indie (Rock)", "Trance", "Downtempo / Ambient", "Electronic", "Industrial & Gothic", "(Heavy) Metal", "Golden Age", "Punk (Rock) / (New) Wave", "Hardcore (Punk)", "Contemporary (Rock)", "Country", "Rhythm 'n' Blues (R&B)", "Gospel & Pioneers", "Blues", "Jazz", "Jamaican (Music) / Reggae", "Breakbeat", "Drum 'n' Bass / Jungle", "Hardcore (Techno)"] %>
+          <%= select_tag :genre_query, options_for_select(collection, params[:genre_query]), class: "js-selection-search-banner home-form__input" %>
+          events in
+          <%= text_field_tag :location_query,
+            params[:location_query],
+            class: "home-form__input js-auto-size-input",
+            placeholder: "any location"
+          %>
+          where
+          <% collection = Musician.all.collect { |p| [p.name, p.id] } %>
+          <% collection.unshift("any musician") %>
+          <%= select_tag :musician_query, options_for_select(collection, params[:musician_query]), class: "js-selection-search-banner home-form__input" %>
+          is playing.
+        </h4>
+        <div>
+          <%= submit_tag "➜", class: "button-banner" %>
+        </div>
+      </div>
+    <% end %>
+    <%= link_to "Explore campaigns now!", campaigns_path, class: "home-mobile-green-button" %>
   </div>
   <div class="arrow" id="down-arrows">
     <span></span>
