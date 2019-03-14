@@ -5,7 +5,7 @@
         <div class="col-sm-12 campaign-show-is-private">
           <h2>Shhhh... This is a private campaign!</h2>
           <% if (@campaign.is_private == true) && (@campaign.user == current_user) %>
-          <h3>Your Private Password is: <strong><%= @campaign.password %></strong></h3>
+          <h3>Your Private Codeword is: <strong><%= @campaign.codeword %></strong></h3>
           <% end %>
         </div>
       </div>
@@ -83,7 +83,6 @@
           </div>
         </div>
         <div class="campaign-description">
-          <h5>Description</h5>
           <%= @campaign.description %>
         </div>
       </div>
