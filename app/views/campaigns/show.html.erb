@@ -1,3 +1,8 @@
+<head>
+  <% content_for :meta_title, "#{@campaign.name} is on #{DEFAULT_META["meta_crowdbook"]}" %>
+  <% content_for :meta_description, @campaign.description %>
+  <% content_for :meta_image, cl_image_path(@campaign.photos.first.image_url) %>
+</head>
 <div class="wrapper-dark-green">
   <div class="container container-top">
     <% if @campaign.is_private == true %>

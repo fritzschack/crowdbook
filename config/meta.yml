@@ -1,0 +1,8 @@
+# config/meta.yml
+
+meta_product_name: "Crowdbook"
+meta_title: "Crowdbook - concert, music and event crowdfunding"
+meta_description: "Relevant description"
+meta_image: "meta_image.png" # should exist in `app/assets/images/`
+twitter_account: "@Crowdbook1"   # required for Twitter Cards
+
