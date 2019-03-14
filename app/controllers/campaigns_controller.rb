@@ -57,7 +57,7 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
     instance_array = []
-    if @campaign.password != nil
+    if @campaign.codeword != nil
       @campaign.is_private = true
     end
     if @campaign.save && params[:ticket_categories].count.positive? && params[:campaign][:performances].count > 1 && params[:campaign][:photos]['image_url']
@@ -143,7 +143,7 @@ class CampaignsController < ApplicationController
   def check_codeword
     @campaign_creator = User.find(@campaign.user_id)
 
-    if params[:codeword][:input] == @campaign.password
+    if params[:codeword][:input] == @campaign.codeword
       render :show
     else
       redirect_to verify_private_campaign_path
@@ -158,7 +158,7 @@ class CampaignsController < ApplicationController
   end
 
   def campaign_params
-    params.require(:campaign).permit(:name, :address, :description, :date, :url, :is_private?, :genre, :funding_goal, :campaign_end_date, :password)
+    params.require(:campaign).permit(:name, :address, :description, :date, :url, :is_private?, :genre, :funding_goal, :campaign_end_date, :codeword)
   end
 
   def campaigns_backed
@@ -174,5 +174,3 @@ class CampaignsController < ApplicationController
     end
   end
 end
-
-# , photos_attributes: [:id, :user_id, :image_url]

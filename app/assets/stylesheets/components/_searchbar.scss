@@ -1,15 +1,51 @@
 .searchbar {
-  background: white;
   position: fixed;
   top: 90px;
   width: 100vw;
   padding: 20px 0;
   border: 5px;
   z-index: 3;
+  background: #eee;
+  border-bottom: 1px solid #ddd;
+
+  .select2 {
+    max-width: 100%;
+    .select2-selection {
+      border: none;
+      border-bottom: 3px solid #ccc;
+      color: black;
+    }
+  }
+}
+
+.searchbar-columns {
+  margin: 10px 0;
+  height: 34px;
+  vertical-align: middle;
 }
 
 .view-description {
   position: absolute;
   right: 60px;
   bottom: 0px;
+}
+.search-box-column {
+  position: relative;
+
+  input {
+    width: 100%;
+    padding-right: 30px;
+    border: none;
+    border-bottom: 3px solid #ccc;
+    &::placeholder {
+      color: black;
+    }
+  }
+}
+.search-box-column-icon {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: #ccc;
+  pointer-events: none;
 }

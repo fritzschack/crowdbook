@@ -552,6 +552,318 @@ There will be two versions of ‘For You’ out October 25th, along with an acou
   current_funding_amount: 1700
 )
 
+bestival_c = Campaign.create(
+  name: "Bestival",
+  address: "Dorset, UK",
+  description: "Last year, Bestival had a bit of a one-off blip, with curator Rob da Bank conceding that the sound and tent size was not what they ‘wanted it to be’. Not to worry though – we’re now promised ‘a new era’ – and we have a new location in the form of Dorset, which is where the fabulously cute sister festival Camp Bestival is held. The Isle of Wight was a great location for the festival, but we’re confident that the same fab vibes from the last 13 years will remain. With a focus on stellar fancy dress and acts old and new, but always happy to have a big ol’ party, Bestival is four days of cracking craic. To paraphrase John Donne, no festival is an island; Bestival will coast back into our favourite festies, regardless of being on the mainland.",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+field_day_c = Campaign.create(
+  name: "Field Day ",
+  address: "London, UK",
+  description: "Expanded again to a two-day event (after a year as a one-dayer), Field Day continues to be cooler than a cucumber with a hipster beard and an ironic tattoo. It’s a great place to get day-drunk on craft beer after lining your stomach with the latest vegan food in the super-chill Village Green area. But Field Day has serious muso cred too; it's carefully curated to include edgy guitar music, shoegaze, alternative R&B, smart rap, revered DJs and everything else that’s in vogue. It also boasts one of the best stages on the UK festival circuit, the Barn, a state-of-the-art hangar with a seriously impressive lighting rig. ",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+glastonbury_c = Campaign.create(
+  name: "Glastonbury",
+  address: "Somerset, UK",
+  description: "Every summer, when it isn't having a 'fallow year' to give locals a break, the Big Daddy of UK festivals commandeers a chunk of Somerset for music, mischief, hippies, healing and a whole lot of cider. It’s difficult to convey quite how vast Glasto is, with whole worlds of activity taking place outside the arena as well as an awe-inspiring musical line-up ranging from pop to reggae to rock to dubstep to metal to folk to techno. Everywhere you turn there’s vitality to be found – especially if you stumble into some of the more anarchic cabaret tents and stages dotting the woods and fields far from the Pyramid-stage hordes. And in terms of sheer scale, Glastonbury remains untouchable as a pilgrimage for hedonists of all stripes, where all the ley lines of British pop culture converge. Usually, by day four, into an immense, blasted muddy heap on the floor.",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+green_man_c = Campaign.create(
+  name: "Green Man",
+  address: "Brecon Beacons, Wales",
+  description: "Now in its fifteenth year, Green Man is as cute as a button. It’s got pretty incredible fresh food from every nook and cranny of the globe, 99 ales and ciders in its very own beer festival and eight bars selling all your fave cocktails. Music wise, it’s the wet dream of middle-aged Guardian readers (i.e. lots, and lots of Laura Marling).",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+lollapalooza_c = Campaign.create(
+  name: "Lollapalooza",
+  address: "New York, US",
+  description: "The 1980s were a quiet decade for music festivals in the US, with Live Aid taking the stage in 1985, the English import Monsters of Rock touring in 1988, and little else besides. Enter Perry Farrell and the 1991 Lollapalooza tour featuring his own Jane’s Addiction and other alternative bands. “Lollapalooza” is an American slang term meaning “an extraordinary or unusual thing, person, or event; an exceptional example or instance.” Farrell reportedly got the term from The Three Stooges, though nobody’s been able to find the episode yet.",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+coachella_c = Campaign.create(
+  name: "Coachella",
+  address: "London",
+  description: "The official name is the Coachella Valley Music and Arts Festival, but people refer to it as just “Coachella.” This has become one of the premier events during festival season, known for showcasing new artists as well as setting the stage for legendary reunions like Iggy Pop and the Stooges, Bauhaus, and The Pixies. The namesake city’s website explains that “Coachella” is actually the result of a printer’s misreading of “Conchilla,” a Spanish word paying honor to the little shells found nearby.",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+warped_tour_c = Campaign.create(
+  name: "Warped Tour",
+  address: "Melbourne",
+  description: "The first Vans Warped Tour was almost called “The Bomb” until the tragedy of the Oklahoma City bombing on April 19, 1995 forced festival founder Kevin Lyman to find a new name. He turned to Transworld Publications for permission to borrow the title of their board-sports-centric Warp Magazine under the agreement that he wouldn’t start a magazine (and they wouldn’t start a music festival). Bonus name fact: Vans, the shoe company that has sponsored the tour since 1996, was originally called The Van Doren Rubber Company, after founding brothers Paul and James Van Doren.",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+sasquatch_c = Campaign.create(
+  name: "Sasquatch!",
+  address: "Madrid",
+  description: "Like the legendary ape-man whose name it bears, this festival is an institution in the Pacific Northwest. Sasquatch! debuted in 2002 and draws scores of music fans every May to one of the most stunning natural settings of any event of its kind, a hillside venue overlooking the Columbia River in George, Washington. The beast sasquatch takes his name from the word for “wild men” in Halkomelem (Salishan), a native language of the Pacific Northwest.",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+bonnaroo_c = Campaign.create(
+  name: "Bonnaroo",
+  address: "Cambridge",
+  description: "The fact that this Manchester, Tennessee event began the same year as Sasquatch! makes 2002 a watershed year in music festival history. The four-day fest takes place on open farmland, hearkening back to New York’s Woodstock",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+bumbershoot_c = Campaign.create(
+  name: "Bumbershoot",
+  address: "Seoul",
+  description: "Another Northwest staple, the Bumbershoot music and arts festival closes out our list just as it closes out the summer every Labor Day weekend at the Seattle Center. It dates all the way back to 1971 when it went by the rather dull name Festival ’71, before taking on its more colorful appellation in 1973. ",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+outside_lands_c = Campaign.create(
+  name: "Outside Lands",
+  address: "San Francisco",
+  description: 'The name “Outside Lands” predates not only this San Francisco music festival but even Golden Gate Park, where the event has been held every August since 2008. Back in the 1800s, people called the area that’s now the Richmond and Sunset districts',
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+governors_ball_c = Campaign.create(
+  name: "Governors Ball",
+  address: "New York",
+  description: "Note the lack of an apostrophe: No governor is responsible for or associated with one of the newest annual festivals. The source of the name is actually older than the country itself. Governors Island, home to the Governors Ball Music Festival since it started in 2011, was named by British authorities who set aside the New York City island for the exclusive use of the local royal governors. The island is much more welcoming these days, with 67 artists playing for about 150,000 people in 2015.",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+burning_man_c = Campaign.create(
+  name: "BURNING MAN",
+  address: "Black Rock Desert, Nevada",
+  description: "According to the Merriam-Webster Dictionary there are nearly one million words in the English language. But we’re not sure any of them can adequately explain the inspired madness that goes down in the northwestern Nevada desert every summer.",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+carnival_c = Campaign.create(
+  name: "CARNIVAL",
+  address: "Rio de Janeiro, Brazil",
+  description: "Arguably the biggest festival in the world (not to mention its wildest party), Brazil’s Carnival is widely considered “the greatest show on Earth.” The event attracts nearly 5 million people each year, with a half-million or so being visitors traveling to see the spectacle.",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+harbin_international_c = Campaign.create(
+  name: "HARBIN INTERNATIONAL",
+  address: "Harbin, China",
+  description: "Where Carnival celebrates the end of Brazil’s oppressive heat, the International Ice & Snow Sculpture Festival makes the most of the bitter winter weather you’ll find in Harbin, China.",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+south_west_four_c = Campaign.create(
+  name: "South West Four",
+  address: "Clapham Common, London, UK",
+  description: "If London ever needed an extra club, South West Four is it. And what a club it is. Forget those tasteless, champagne with sparklers joints, this is an open-air party palace that sorts out the essentials first: music, music and more music. A coming together of the EDM world, their understudies, and up-and-comings stars, the four stages of house, techno, minimal, trance and electronica will fill your ears for the evening, before you head out to one of the countless after parties.",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+Campaign.create(
+  name: "CTM FESTIVAL",
+  address: "BERLIN, GERMANY",
+  description: "One of Berlin’s best Avant-Garde events, this is visual and musical festival (pictured above) with a strong focus on left-field pop, contemporary electronic and experimental music genres. Immerse yourself in visual light installations, sound shows, and electronic raves that all bring attention to the world’s state of turmoil.",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+Campaign.create(
+  name: "Boomtown",
+  address: "Winchester, UK",
+  description: "A boiling pot of vibrancy, theatre, fantasy, escapism and camaraderie, Boomtown Fair is a hub of diverse and non-commercialised musical movements whose roots stretch far and wide. Consisting of nine districts with a different emphasis, you may be chilling to some folk one minute, and then travelling at 180 BPM to some drum & bass the next",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+Campaign.create(
+  name: "Creamfields",
+  address: "Daresbury, UK",
+  description: "Dance brand Cream has become a global superstar, taking its legendary parties across continents; and yet it all began as an offshoot from Liverpool's Cream nightclub. Now in Daresbury, Creamfields attracts tens of thousands every year seeking to party to the finest names in dance, along with immense visuals, lighting and pyrotechnics. Joined by a devoted following, Creamfields continues to shape the dance scene as we know it.",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+Campaign.create(
+  name: "Lovebox",
+  address: "London",
+  description: "London’s beat lovers, freaks and hipsters convene for an annual party created by Groove Armada. A colourful mix of dance dons, rock gods, vintage markets, bespoke bars and fairground tides, Lovebox is a carousel of creativity.",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+Campaign.create(
+  name: "Fusion Festival",
+  address: "Liverpool",
+  description: "Fusion Festival is one of the UK's go-to pop music festival, each year bringing some of the genre's biggest stars to Liverpool for a weekend of catchy sing-a-longs.",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+Campaign.create(
+  name: "Camp Bestival",
+  address: "Lulworth Castle",
+  description: "With all the playful nonsense of its naughty older sister event Bestival, Camp Bestival offers the same novelty of fancy dress and late night silliness, but with a twist: it’s completely family friendly. Taking place in a beautiful English castle, it has everything from medieval jousting to face painting with music, comedy and poets hand-picked by Rob da Bank. ",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+Campaign.create(
+  name: "Latitude Festival",
+  address: "Southwold",
+  description: "Taking over the idyllic English countryside, Latitude is, as its tagline proclaims, much more than just a music festival. With DJs hidden in the woods, colourful sheep roaming the tufty fields, opera on the lake, film debuts in its onsite cinema, clowns under canvas, actors treading the boards, local ales, dance troupes and a huge children’s area, there's something to keep whatever age entertained. Oh, and there’s a full programme of music too.",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+Campaign.create(
+  name: "Boardmasters Festival",
+  address: "Newquay",
+  description: "Hidden amongst the swell and sunshine of the south-west coast of England, Boardmasters mixes the best boarders in the world – whether they’re surfers or skaters – with BMX kings, and soundtracks the action with dance dons, folk stars, and pop favourites. ",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+Campaign.create(
+  name: "Download Festival",
+  address: "Derby",
+  description: "Probably the most prestigious hard rock and heavy metal festival in the world, Download took over from the legendary Monsters of Rock Festival at Derby's Donington Park. Its three days packed full of the biggest names from the 70s right up to the newest generation, and if the heavier end of the spectrum is your thing then Download will take a heck of a lot of beating.",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+houghton_festival = Campaign.create(
+  name: "Houghton Festival",
+  address: "Houghton",
+  description: "Few festivals – if any – make as remarkable an impression after only two editions as Houghton Festival has. Curated by British electronic music veteran Craig Richards and produced by another firm favourite Gottwood, the festival's first two events have won praise on basically all counts – lineup, scheduling, sound quality, location, atmosphere. Let's hope they can keep it up.  ",
+  date: Faker::Date.forward(23),
+  user: User.all.sample,
+  genre: genres.sample,
+  funding_goal: 10000,
+  campaign_end_date: DateTime.now + rand(10..20).days,
+  current_funding_amount: (rand(1..10) * 100)
+)
+
+
 puts "Creating Performances..."
 
 Performance.create(
@@ -603,6 +915,121 @@ Performance.create(
   campaign: will_c,
   musician: will_clift
 )
+Performance.create(
+  campaign_id: 11,
+  musician_id: 11
+)
+Performance.create(
+  campaign_id: 12,
+  musician_id: 12
+)
+Performance.create(
+  campaign_id: 13,
+  musician_id: 13
+)
+Performance.create(
+  campaign_id: 14,
+  musician_id: 14
+)
+Performance.create(
+  campaign_id: 15,
+  musician_id: 15
+)
+Performance.create(
+  campaign_id: 16,
+  musician_id: 16
+)
+Performance.create(
+  campaign_id: 17,
+  musician_id: 17
+)
+Performance.create(
+  campaign_id: 18,
+  musician_id: 18
+)
+Performance.create(
+  campaign_id: 19,
+  musician_id: 19
+)
+Performance.create(
+  campaign_id: 20,
+  musician_id: 20
+)
+Performance.create(
+  campaign_id: 21,
+  musician_id: 21
+)
+Performance.create(
+  campaign_id: 22,
+  musician_id: 22
+)
+Performance.create(
+  campaign_id: 23,
+  musician_id: 23
+)
+Performance.create(
+  campaign_id: 24,
+  musician_id: 24
+)
+Performance.create(
+  campaign_id: 25,
+  musician_id: 25
+)
+Performance.create(
+  campaign_id: 26,
+  musician_id: 26
+)
+Performance.create(
+  campaign_id: 27,
+  musician_id: 27
+)
+
+Performance.create(
+  campaign_id: 28,
+  musician_id: 28
+)
+
+Performance.create(
+  campaign_id: 29,
+  musician_id: 29
+)
+
+Performance.create(
+  campaign_id: 30,
+  musician_id: 30
+)
+
+Performance.create(
+  campaign_id: 31,
+  musician_id: 31
+)
+
+Performance.create(
+  campaign_id: 32,
+  musician_id: 32
+)
+
+Performance.create(
+  campaign_id: 33,
+  musician_id: 33
+)
+
+Performance.create(
+  campaign_id: 34,
+  musician_id: 34
+)
+
+Performance.create(
+  campaign_id: 35,
+  musician_id: 35
+)
+
+Performance.create(
+  campaign_id: 36,
+  musician_id: 36
+)
+
+
 
 Photo.create(
   campaign: dulcie_c,
@@ -654,10 +1081,124 @@ Photo.create(
   remote_image_url_url: "https://res.cloudinary.com/cjward/image/upload/v1551843074/band_7.jpg",
 )
 
+Photo.create(
+  campaign_id: 11,
+  remote_image_url_url: "https://accessaa.co.uk/wp-content/uploads/2016/12/bestival-logo-759x500.jpg",
+)
+Photo.create(
+  campaign_id: 12,
+  remote_image_url_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/FD15-URI-0337.jpg/1200px-FD15-URI-0337.jpg",
+)
+Photo.create(
+  campaign_id: 13,
+  remote_image_url_url: "https://cdn.glastonburyfestivals.co.uk/wp-content/uploads/2014/03/newsmob-1.jpg",
+)
+Photo.create(
+  campaign_id: 14,
+  remote_image_url_url: "https://d2pqakzhfrqaqd.cloudfront.net/assets/files/1/green_man_festival_9.800x531.jpg",
+)
+Photo.create(
+  campaign_id: 15,
+  remote_image_url_url: "https://upload.wikimedia.org/wikipedia/commons/3/36/Lollapalooza_2015.JPG",
+)
+Photo.create(
+  campaign_id: 16,
+  remote_image_url_url: "https://www.cactushugs.com/wp-content/uploads/2018/01/coachella-big-tent.jpg",
+)
+Photo.create(
+  campaign_id: 17,
+  remote_image_url_url: "https://i.ytimg.com/vi/qrAoxxIE4kg/maxresdefault.jpg",
+)
+Photo.create(
+  campaign_id: 18,
+  remote_image_url_url: "https://www.rollingstone.com/wp-content/uploads/2018/07/9695133h-10efeaa0-7bed-4106-b7ad-87cfd1a513ed.jpg?crop=900:600&width=440",
+)
+Photo.create(
+  campaign_id: 19,
+  remote_image_url_url: "https://dvmzgq36yy8ja.cloudfront.net/wp-content/uploads/2017/09/Bonnaroo-Festival-.jpg",
+)
+Photo.create(
+  campaign_id: 20,
+  remote_image_url_url: "https://static1.squarespace.com/static/5884f5769f74568208823e96/5b9963ee4d7a9ce10e0ef64d/5b9965d3f950b779d5562215/1536779741343/Photo+Sep+01%2C+19+06+31+%281%29.jpg",
+)
+Photo.create(
+  campaign_id: 21,
+  remote_image_url_url: "https://www.billboard.com/files/styles/article_main_image/public/media/outside-lands-music-fest-2014-billboard-1548.jpg",
+)
+Photo.create(
+  campaign_id: 22,
+  remote_image_url_url: "https://dl1.cbsistatic.com/i/r/2018/08/09/b6ca69f8-f123-408c-9b1f-ea3f9cf1fb17/resize/620xauto/8787947d1d00135d3f2ed512e56bee72/concert-crowd.jpg",
+)
+Photo.create(
+  campaign_id: 23,
+  remote_image_url_url: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Masterplan_%28band%29_-_B%C3%B6rsencrash_Festival_Wuppertal_2016-AL2155.jpg",
+)
+Photo.create(
+  campaign_id: 24,
+  remote_image_url_url: "https://www.billboard.com/files/media/Jungle-live-press-photo-cr-band-2018-billboard-1548.jpg",
+)
+Photo.create(
+  campaign_id: 25,
+  remote_image_url_url: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwio7qaKuIHhAhVNfn0KHZMGAeAQjRx6BAgBEAU&url=http%3A%2F%2Fwww.ticketmaster.co.nz%2FTwo-Door-Cinema-Club-tickets%2Fartist%2F1407642&psig=AOvVaw3e4TmzWDoC00JrdkTssIvQ&ust=1552646229702975",
+)
+Photo.create(
+  campaign_id: 26,
+  remote_image_url_url: "https://media.resources.festicket.com/www/magazine/SW4_L_hZButIZ.jpg",
+)
+
+Photo.create(
+  campaign_id: 26,
+  remote_image_url_url: "https://media.resources.festicket.com/www/admin/uploads/images/SW4_8iu8hh9.png",
+)
+
+Photo.create(
+  campaign_id: 27,
+  remote_image_url_url: "http://www.matchboxmusic.co.uk/images/blog/141/secret-garden-party__large.jpg",
+)
+
+Photo.create(
+  campaign_id: 28,
+  remote_image_url_url: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiwv7ThuIHhAhWm8HMBHXbsDKMQjRx6BAgBEAU&url=https%3A%2F%2Fwww.visitlondon.com%2Fthings-to-do%2Fevent%2F43379068-barclaycard-presents-british-summer-time-hyde-park&psig=AOvVaw3erE0xAFYHIpbNPbZgW3ee&ust=1552646407947155",
+)
+
+Photo.create(
+  campaign_id: 29,
+  remote_image_url_url: "https://www.iamsterdam.com/media/agenda/festivals/amsterdam-open-air-2015-7amsterdam-open-air-2015.jpg ",
+)
+Photo.create(
+  campaign_id: 30,
+  remote_image_url_url: "https://media.resources.festicket.com/image/412x235/smart/filters:quality(70)/www/photos/AMFThumb1.png",
+)
+Photo.create(
+  campaign_id: 31,
+  remote_image_url_url: "https://www.iamexpat.nl/sites/default/files/styles/article--full/public/ziggo-dome-tom-doms.jpg?itok=x1T8HE9k",
+)
+Photo.create(
+  campaign_id: 32,
+  remote_image_url_url: "https://www.iamexpat.nl/sites/default/files/styles/article--full/public/concerts-amsterdam_0.jpg?itok=TWszOePD",
+)
+Photo.create(
+  campaign_id: 33,
+  remote_image_url_url: "https://www.latitudefestival.com/sites/live.inviqa.latitudefestival.com/files/styles/fr_page/public/images/news/latitude_festival_20171348_website_image_vfpk_standard_0.jpg?itok=y2dmjv_p",
+)
+Photo.create(
+  campaign_id: 34,
+  remote_image_url_url: "https://i2-prod.mirror.co.uk/incoming/article3106960.ece/ALTERNATES/s615/Red-Hot-Chili.jpg",
+)
+Photo.create(
+  campaign_id: 35,
+  remote_image_url_url: "https://blog.malwarebytes.com/wp-content/uploads/2018/10/shutterstock_612941954-900x506.jpg",
+)
+Photo.create(
+  campaign_id: 36,
+  remote_image_url_url: "https://www.northdeltareporter.com/wp-content/uploads/2018/11/14558311_web1_181107-CLR-LanternFestivalDelayed_1.jpg",
+)
+
 
 
 
 puts "Creating Ticket Categories..."
+
 # 5.times do
 #   TicketCategory.create(name: "Regular", campaign: Campaign.all.sample, quantity: rand(1..100), available_tickets: rand(1..50), description: "Grants Entry")
 # end
@@ -844,7 +1385,6 @@ will_tv = TicketCategory.create(
 
 
 puts "Creating Orders..."
-
 
 adora_o = Order.create(
   user: adora
@@ -1068,4 +1608,3 @@ end
 
 
 puts "Done!"
-

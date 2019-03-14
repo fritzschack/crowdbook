@@ -1,0 +1,88 @@
+@media (max-width: 500px) {
+  body {
+    .container-index {
+      margin-top: 470px;
+    }
+
+    .searchbar {
+      position: absolute;
+      top: 90px;
+    }
+
+    .search-flexbox {
+      display: none;
+    }
+
+    .home-mobile-green-button {
+      margin: auto;
+      width: 200px;
+      display: block;
+      padding: 7px 10px;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .banner h1.home-form__title {
+      font-size: 45px;
+    }
+
+    .list-card {
+      flex-direction: column;
+      height: auto;
+      position: relative;
+      margin-bottom: 30px;
+
+      &:hover {
+        margin-left: 0;
+        border-left: 0;
+      }
+
+      .list-card-photo {
+        border-radius: 0;
+        width: 100%;
+        .list-card-date {
+          float: left;
+        }
+      }
+      .list-card-text {
+        padding-top: 30px;
+      }
+      .list-card-status {
+        position: absolute;
+        top: 17px;
+        right: 14px;
+      }
+    }
+    .order-success {
+      padding: 0;
+      h2, h3 {
+        font-size: 24px;
+      }
+    }
+    .profile {
+      .profile-right,
+      .edit-profile-button {
+        position: static;
+      }
+      h1 {
+        color: black;
+      }
+    }
+    .navbar-item, .navbar-home-item {
+      .fas {
+        color: white!important;
+        font-size: 28px;
+        margin-top: 18px;
+      }
+    }
+    .category-field {
+      .btn-danger {
+        display: none;
+      }
+    }
+    .campaign-body {
+      z-index: 5;
+    }
+  }
+}

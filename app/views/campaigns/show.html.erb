@@ -10,7 +10,7 @@
         <div class="col-sm-12 campaign-show-is-private">
           <h2>Shhhh... This is a private campaign!</h2>
           <% if (@campaign.is_private == true) && (@campaign.user == current_user) %>
-          <h3>Your Private Password is: <strong><%= @campaign.password %></strong></h3>
+          <h3>Your Private Codeword is: <strong><%= @campaign.codeword %></strong></h3>
           <% end %>
         </div>
       </div>
@@ -63,7 +63,6 @@
                 <% end %>
               <% end %>
             </ol>
-
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
               <div class="item gallery-image-parent active" style="background-image: url('<%= cl_image_path @campaign.photos.first.image_url, height: 450, width: 900, radius: 12, crop: :fill %>')"></div>
@@ -88,7 +87,6 @@
           </div>
         </div>
         <div class="campaign-description">
-          <h5>Description</h5>
           <%= @campaign.description %>
         </div>
       </div>
