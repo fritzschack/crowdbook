@@ -41,7 +41,6 @@
             <p><%= campaign.genre %> | <%= campaign.address %></p>
           </div>
           <div class="list-card-status">
-            <!-- .progress-circle(data-progress = <%#= (campaign.current_funding_amount / campaign.funding_goal) * 100 %>) -->
             <div class="progress-circle" data-progress="<%= (((campaign.current_funding_amount).to_f / (campaign.funding_goal).to_f) * 100).round %>">
             </div>
           </div>
@@ -50,3 +49,4 @@
     </div>
   </div>
 </div>
+
