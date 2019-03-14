@@ -492,7 +492,7 @@ Now Pridelands are set to release their second EP 'Any Colour You Desire' on May
 
 redhook_c = Campaign.create(
   name: "Redhook plays Cherry Bar",
-  address: "Cherry, AC/DC La, Melbourne VIC 3000",
+  address: "103-105 Flinders Lane, Melbourne VIC 3000",
   description: "Screaming rap rock electro pop mutants from Sydney fighting against the forces of darkness inside our own heads & doing to genre barriers what Godzilla did to Tokyo
 
 'Dynamic and engaging – genre synergy at its best' -- (Grace Farrell, FBI Radio)
