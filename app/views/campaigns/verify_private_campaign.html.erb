@@ -1,6 +1,10 @@
 <div class="container">
-  <h1>Please enter the codeword.</h1>
-  <%= simple_form_for :codeword, url: check_codeword_path do |f| %>
-    <%= f.input :input %>
-  <% end %>
+  <div class="row" style="margin-top: 150px;">
+    <div class="col-sm-12">
+      <h1>Please enter the codeword for this Campaign</h1>
+      <%= simple_form_for :codeword, url: check_codeword_path do |f| %>
+        <%= f.input :input %>
+      <% end %>
+    </div>
+  </div>
 </div>

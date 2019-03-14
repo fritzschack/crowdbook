@@ -25,10 +25,6 @@ class PaymentsController < ApplicationController
     end
     @campaign = @order.ticket_categories.first.campaign
 
-    # @funding_array = @order.ticket_categories.map do |ticket_category|
-    #   (ticket_category.quantity - ticket_category.available_tickets) * ticket_category.price
-    # end
-    # @campaign.update(current_funding_amount: @funding_array.sum)
     @funding_array = @campaign.ticket_categories.map do |ticket_category|
       (ticket_category.quantity - ticket_category.available_tickets) * ticket_category.price
     end
@@ -36,7 +32,6 @@ class PaymentsController < ApplicationController
     @order.update(payment: charge.to_json, state: 'paid')
 
     redirect_to order_path(@order)
-
   rescue Stripe::CardError => e
     flash[:alert] = e.message
     redirect_to new_order_payment_path(@order)

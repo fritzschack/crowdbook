@@ -1,5 +1,15 @@
 <div class="wrapper-dark-green">
   <div class="container container-top">
+    <% if @campaign.is_private == true %>
+      <div class="row">
+        <div class="col-sm-12 campaign-show-is-private">
+          <h2>Shhhh... This is a private campaign!</h2>
+          <% if (@campaign.is_private == true) && (@campaign.user == current_user) %>
+          <h3>Your Private Password is: <strong><%= @campaign.password %></strong></h3>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
     <% if @campaign_active == false %>
       <div class="row">
         <div class="col-sm-12 campaign-show-ended">
@@ -84,8 +94,8 @@
             </div>
             <h4>Amount Pledged: <%= humanized_money_with_symbol(@campaign.current_funding_amount) %></h4>
             <h5>The Goal is <%= humanized_money_with_symbol(@campaign.funding_goal) %></h5>
-            <h5><%= @campaign.tickets.count %> Pledges Made</h5>
-            <h4><strong><%= @campaign_days_left %></strong> <% if @campaign_days_left == 1 %> Day <% else %> Days <% end %> Left</h4>
+            <h5><%= @campaign.tickets.count %> <% if @campaign.tickets.count == 1 %> Pledge <% else %> Pledges <% end %> Made</h5>
+            <h4><%= @campaign_days_left %> <% if @campaign_days_left == 1 %> Day <% else %> Days <% end %> Left</h4>
           </div>
           <% if @campaign_active == true %>
             <%= simple_form_for :order, url: orders_path do |f| %>
@@ -93,13 +103,24 @@
                 <%= simple_fields_for :categories do |c| %>
                   <% @campaign.ticket_categories.each do |category| %>
                     <div class="col-sm-3 ticket-category-boxes">
+                      <div class="tickets-left">
+                        <p><strong><%= category.available_tickets %></strong> <% if category.available_tickets == 1 %> Ticket <% else %> Tickets <% end %> Left</p>
+                      </div>
                       <h4><%= category.name %> | <%= humanized_money_with_symbol(category.price) %></h4>
                       <p><small><%= category.description %></small></p>
-                      <%= c.input "#{category.id}", collection: [1,2,3,4,5], label: "Quantity" %>
+                      <% if category.available_tickets > 1 %>
+                        <%= c.input "#{category.id}", collection: [1,2,3,4,5], label: "Quantity" %>
+                      <% else %>
+                        <%= c.input "#{category.id}", collection: [1,2,3,4,5], label: "Quantity", :disabled => true %>
+                      <% end %>
                     </div>
                   <% end %>
                   <div style="text-align: center;">
-                    <%= f.submit 'Purchase', class: 'btn btn-primary green-button' %>
+                    <% if @campaign.ticket_categories.count >= 1 %>
+                      <%= f.submit 'Purchase', class: 'btn btn-primary green-button' %>
+                    <% else %>
+                    <h4>No Tickets Available!</h4>
+                    <% end %>
                   </div>
                 <% end %>
             <% end %>
