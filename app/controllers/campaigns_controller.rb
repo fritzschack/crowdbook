@@ -60,7 +60,7 @@ class CampaignsController < ApplicationController
     if @campaign.codeword != nil
       @campaign.is_private = true
     end
-    if @campaign.save && params[:ticket_categories].count.positive? && params[:campaign][:performances].count > 1 && params[:campaign][:photos]['image_url']
+    if params[:ticket_categories].count.positive? && params[:campaign][:performances].count > 1 && params[:campaign][:photos]['image_url'] && @campaign.save
       params[:ticket_categories].each do |ticket_category|
         category = @campaign.ticket_categories.new(
           name: ticket_category[:name],
