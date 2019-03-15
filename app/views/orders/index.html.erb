@@ -28,7 +28,7 @@
                     <ul class="dropdown-menu">
                       <% counter = 1 %>
                       <% order.tickets.each do |ticket| %>
-                        <li><%= link_to "Ticket #{counter}", ticket_path(ticket.id, :format => :pdf) %></li>
+                        <li><%= link_to "Ticket #{counter}", ticket_path(ticket.id, :format => :pdf), target: :_blank %></li>
                         <% counter += 1 %>
                       <% end %>
                     </ul>
